@@ -775,6 +775,31 @@ router.get('/hitungmundur', async (req, res) => {
 
 })
 
+router.get('/jarak', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            asal = req.query.asal,
+            tujuan = req.query.tujuan
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+    if (!asal) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter asal"})
+    if (!tujuan) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter tujuan"})
+
+       fetch(encodeURI(`https://api.lolhuman.xyz/api/jaraktempuh?apikey=sayahafiz&kota1=${asal}&kota2=${tujuan}`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+             	creator: 'Hafidz Abdillah',
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+
+})
+
 router.get('/nsfwcek', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
             url = req.query.url
