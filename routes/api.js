@@ -775,7 +775,7 @@ router.get('/hitungmundur', async (req, res) => {
 
 })
 
-router.get('/ig', async (req, res, next) => {
+router.get('/nsfwcek', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
             url = req.query.url
             
@@ -797,6 +797,8 @@ router.get('/ig', async (req, res, next) => {
 })
 
 })
+
+
 
 router.get('/rscovid', async (req, res, next) => {
         var apikeyInput = req.query.apikey
