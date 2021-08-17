@@ -2251,6 +2251,29 @@ router.get('/tebakanime', async (req, res, next) => {
 
 })
 
+router.get('/stalkyt', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            user = req.query.user
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+    if (!user) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter user"})
+
+       fetch(encodeURI(`https://api.lolhuman.xyz/api/ytchannel?apikey=sayahafiz&query=${user}`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+             	creator: 'Hafidz Abdillah',
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+
+})
+
 router.get('/katadilan', async (req, res, next) => {
         var apikeyInput = req.query.apikey
             
