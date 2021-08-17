@@ -2251,15 +2251,14 @@ router.get('/tebakanime', async (req, res, next) => {
 
 })
 
-router.get('/infocuaca', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
-            kota = req.query.kota
+router.get('/ceritahoror', async (req, res, next) => {
+        var apikeyInput = req.query.apikey
+           
             
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
-        if(!kota) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kota"})
-
-       fetch(encodeURI(`https://api.lolhuman.xyz/api/cuaca/${kota}?apikey=sayahafiz`))
+        
+       fetch(encodeURI(`https://api.lolhuman.xyz/api/ceritahoror?apikey=sayahafiz`))
         .then(response => response.json())
         .then(falsedata => {
         var result = data;
