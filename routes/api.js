@@ -2669,47 +2669,8 @@ router.get('/infotsunami', async (req, res, next) => {
 })
 })
 
-router.get('/ssweb', async (req, res, next) => {
-
-        var apikeyInput = req.query.apikey,
-
-	    url = req.query.url;
-
-try {
-  if(!apikeyInput) return res.json(loghandler.notparam)
-  if(apikeyInput !== 'freeapi') return res.sendFile(invalidKey)
-  if (!url) return res.json(loghandler.noturl)
-  if (!url.startsWith('http')) return res.json(loghandler.invalidLink)
-
-     var hasil = await getBuffer(`http://nurutomo.herokuapp.com/api/ssweb?url=${url}`)
-       await fs.writeFileSync(__path + '/tmp/screenshot.png', hasil)
-
-         res.sendFile(__path + '/tmp/screenshot.png')
-} catch (e) {
-     console.log(e)
-	res.sendFile(error)
-   }
-})
-
-router.get('/memeindo', async (req, res, next) => {
-
-        var apikeyInput = req.query.apikey;
 
 
-try {
-  if(!apikeyInput) return res.json(loghandler.notparam)
-  if(apikeyInput !== 'freeapi') return res.sendFile(invalidKey)
-
-     var json = await (await fetch(`https://api.zeks.xyz/api/memeindo?apikey=apivinz`)).json()
-     var hasil = await getBuffer(json.result)
-       await fs.writeFileSync(__path + '/tmp/memeindo.png', hasil)
-
-         res.sendFile(__path + '/tmp/memeindo.png')
-} catch (e) {
-     console.log(e)
-	res.sendFile(error)
-   }
-})	
 
 router.get('/random/meme', async (req, res, next) => {
         var apikeyInput = req.query.apikey
