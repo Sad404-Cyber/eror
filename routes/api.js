@@ -2592,26 +2592,6 @@ router.get('/kodepos', async (req, res, next) => {
 })
 
 
-router.get('/infocuaca', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
-	    provinsi = req.query.provinsi
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
-	if(!provinsi) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter provinsi"})
-       fetch(encodeURI(`https://bmkg-api-zahirr.herokuapp.com/api/cuaca/${provinsi}`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
-
 
 router.get('/infocuaca/bandara', async (req, res, next) => {
         var apikeyInput = req.query.apikey
