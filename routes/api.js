@@ -2214,11 +2214,34 @@ router.get('/wikipedia', async (req, res, next) => {
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
         if(!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
 
-       fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/wiki?keyword=${search}`))
+       fetch(encodeURI(`https://api.lolhuman.xyz/api/wiki?apikey=sayahafiz&query=${search}`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
+                 creator: `${creator}`
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
+router.get('/infocuaca', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            kota = req.query.kota
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+        if(!kota) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kota"})
+
+       fetch(encodeURI(`https://api.lolhuman.xyz/api/cuaca/${kota}?apikey=sayahafiz`))
+        .then(response => response.json())
+        .then(falsedata => {
+        var result = data;
+             res.json({
+                 creator: `${creator}`
                  result
              })
          })
