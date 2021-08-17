@@ -109,7 +109,7 @@ var x = setInterval(function() {
   + minutes + " Min " + seconds + " Sec ";
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("IdulAdha").innerHTML = "Selamat Tahun Baru✨ ";
+    document.getElementById("IdulAdha").innerHTML =IdulAdha;
   }
 }, 1000);
 
