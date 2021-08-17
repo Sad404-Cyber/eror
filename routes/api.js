@@ -2228,6 +2228,29 @@ router.get('/wikipedia', async (req, res, next) => {
 })
 })
 
+router.get('/tebakanime', async (req, res, next) => {
+        var apikeyInput = req.query.apikey
+            
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+    
+
+       fetch(encodeURI(`https://api.lolhuman.xyz/api/tebakchara?apikey=sayahafiz`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+             	creator: 'Hafidz Abdillah',
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+
+})
+
 router.get('/infocuaca', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
             kota = req.query.kota
