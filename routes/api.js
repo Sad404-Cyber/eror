@@ -775,33 +775,29 @@ router.get('/hitungmundur', async (req, res) => {
 
 })
 
-router.get('/repeat', (req, res, next) => {
+router.get('/ig', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            url = req.query.url
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+    if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
 
-
-
-const repeat = (text, total) => {
-		return text.repeat(total)
-	}
-      var text = req.query.text,
-             jumlah = req.query.jumlah,
-            apikeyInput = req.query.apikey;
-
-  if(!apikeyInput) return res.json(loghandler.notparam)
-  if(apikeyInput !== `${key}`) return res.sendFile(invalidKey)
-  if (!text) return res.json(loghandler.nottext)
-  if (!jumlah) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter nomor"})
-  if (isNaN(jumlah)) return res.json({ status : false, creator : `${creator}`, message : "teks harus berupa angka"})
-  if (jumlah > 10000) return res.json({ message: `Maximal 10rb Kali!` })
-
-  var result = repeat(text, jumlah)
-       res.json({
-             status: true,
-             creator: `${creator}`,
-             result: result
-       })
-
-  
+       fetch(encodeURI(`https://api.lolhuman.xyz/api/nsfwcheck?apikey=sayahafiz&img=${url}`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+             	creator: 'Hafidz Abdillah',
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
 })
+
+})
+
 router.get('/rscovid', async (req, res, next) => {
         var apikeyInput = req.query.apikey
             
