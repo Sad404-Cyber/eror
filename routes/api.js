@@ -2219,7 +2219,7 @@ router.get('/wikipedia', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-                 creator: `${creator}`
+                 creator: `Hafidz Abdillah`
                  result
              })
          })
@@ -2264,7 +2264,7 @@ router.get('/infocuaca', async (req, res, next) => {
         .then(falsedata => {
         var result = data;
              res.json({
-                 creator: `${creator}`
+                 creator: `Hafidz Abdillah`
                  result
              })
          })
