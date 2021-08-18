@@ -898,7 +898,7 @@ router.get('/maker/ttp', async(req, res, next) => {
     if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter text"})
  
   var hasil = 'https://leyscoders-api.herokuapp.com/api/ttp1?text='+ text +'&apikey=SayaHafiz'
-  data = fetch(hasil).then(v => v.getBuffer())
+  data = await fetch(hasil).then(v => v.getBuffer())
   await fs.writeFileSync(__path +'/tmp/attp.gif', data)
   res.sendFile(__path +'/tmp/attp.gif')
          
