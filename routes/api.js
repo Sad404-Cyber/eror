@@ -895,6 +895,29 @@ router.get('/stalkgh', async (req, res, next) => {
 
 router.get('/ig', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
+            url = req.query.url
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+    if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
+
+       fetch(encodeURI(`https://api.lolhuman.xyz/api/joox/${url}?apikey=sayahafiz`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+             	creator: 'Hafidz Abdillah',
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+
+})
+
+router.get('/ig', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
             username = req.query.username
             
 	if(!apikeyInput) return res.json(loghandler.notparam)
