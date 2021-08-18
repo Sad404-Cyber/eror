@@ -292,7 +292,7 @@ router.get('/addapikey', (req, res, next) => {
               res.json({
                   status: true,
                   creator: `${creator}`,
-                  result: 'berhasil menambah data, apikey : ' + apikeyInput + '
+                  result: 'berhasil menambah data apikey : ' + apikeyInput + ''
               })
         })
     } catch (e) {
@@ -303,35 +303,20 @@ router.get('/addapikey', (req, res, next) => {
 
 router.get('/remove', (req, res, next) => {
     var apikey = req.query.apikey,
-        status = req.query.status,
-        apikeyInput  = req.query.apikeyInput,
-        email = req.query.email,
-        nomorhp = req.query.nomorhp
-        name = req.query.name,
-        age = req.query.age,
-        country = req.query.country;
-        exp = req.query.exp;
+        apikeyInput  = req.query.apikeyInput
 
     if (!apikey) return res.json(loghandler.notparam)
-    if (!(status && apikeyInput && email && nomorhp && name && age && country && exp)) return res.json(loghandler.notAddApiKey)
     if (apikey != 'freeapi') return res.sendFile(invalidKey)
 
     try {
         zahirr.remove({
-            status: status,
-            apikey: apikeyInput,
-            email: email,
-            nomor_hp: nomorhp,
-            name: name,
-            age: age,
-            country: country,
-            exp: exp
+            apikey: apikeyInput
         })
         .then(() => {
              res.json({
                   status: true,
                   creator: `${creator}`,
-                  result: 'berhasil menghapus data, status : ' + status + ', apikey : ' + apikeyInput + ', email : ' + email + ', nomor_hp : ' + nomorhp + ', name :  ' + name + ', age : ' + age + ', country : ' + country + ', exp : ' + exp
+                  result: 'berhasil menghapus data apikey : ' + apikeyInput + ''
               })
         })
     } catch (e) {
