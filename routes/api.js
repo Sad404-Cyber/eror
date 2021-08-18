@@ -890,8 +890,9 @@ router.get('/joox', async (req, res, next) => {
 
 router.get('/maker/ttp', async(req, res, next) => {
 
-  const text = req.query.text;
-  const apikey = req.query.apikey;
+  text = req.query.text,
+  var apikey = req.query.apikey
+  
   if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
     if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter text"})
