@@ -893,7 +893,7 @@ router.get('/stalkgh', async (req, res, next) => {
 
 })
 
-router.get('/ig', async (req, res, next) => {
+router.get('/joox', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
             url = req.query.url
             
