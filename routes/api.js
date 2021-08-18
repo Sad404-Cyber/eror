@@ -900,7 +900,7 @@ router.get('/maker/ttp', async(req, res, next) => {
   data = await fetch(hasil).then(v => v.getBuffer())
   await fs.writeFileSync(__path +'/tmp/attp.gif', data)
   res.sendFile(__path +'/tmp/attp.gif')
-  
+          
          .catch(e => {
          	res.json(loghandler.error)
       
