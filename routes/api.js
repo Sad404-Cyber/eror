@@ -1251,18 +1251,18 @@ router.get('/string', async (req, res, next) => {
 
 router.get('/hex', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
-            text = req.query.text
+            code = req.query.code
             
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
-    if (!username) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter text"})
+    if (!code) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter code"})
 
-       fetch(encodeURI(`https://api.lolhuman.xyz/api/convert/hextostr?apikey=beta&hex=${text}`))
+       fetch(encodeURI(`https://api.lolhuman.xyz/api/convert/hextostr?apikey=beta&hex=${code}`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Hafidz Abdillah',
+             	creator: 'Hafidz Abdillah',
                  result
              })
          })
