@@ -415,7 +415,7 @@ router.get('/covid', async (req, res, next) => {
 })
 })
 
-router.get('/styletext', async (req, res, next) => {
+router.get('/styext', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
             text = req.query.text
             
@@ -423,7 +423,7 @@ router.get('/styletext', async (req, res, next) => {
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
         if(!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter text"})
 
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/others/styletext?text=${text}&apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/others/styext?text=${text}&apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -629,7 +629,7 @@ router.get('/ucapan', async (req, res) => {
     if (!timeZone) return res.json({ status : false, creator : `Hafidz Abdillah`, message : "masukan parameter timeZone"})
 
     try {
-    let WaktuJKt = new Date().toLocaleString("en-US", {timeZone: timeZone});
+     WaktuJKt = new Date().toLocaleString("en-US", {timeZone: timeZone});
 
 		function tamHari(WaktuJKt){
             var date = new Date(WaktuJKt);
@@ -682,7 +682,7 @@ router.get('/jawa', async (req, res) => {
     if (!DaysZone) return res.json({ status : false, creator : `Hafidz Abdillah`, message : "masukan parameter Day"})
 
     try {
-    let DaysJkt = new Date().toLocaleString("en-US", {DaysZone: DaysZone});
+     DaysJkt = new Date().toLocaleString("en-US", {DaysZone: DaysZone});
 
 		function tamDay(DaysJKt){
             var date = new Date(DaysJKt);
@@ -897,8 +897,8 @@ router.get('/maker/ttp', async(req, res, next) => {
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
     if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter text"})
  
-  let hasil = 'https://leyscoders-api.herokuapp.com/api/ttp1?text='+ text +'&apikey=SayaHafiz'
-  data = await fetch(hasil).then(v => v.getBuffer())
+  var hasil = 'https://leyscoders-api.herokuapp.com/api/ttp1?text='+ text +'&apikey=SayaHafiz'
+  data = fetch(encodeURI(hasil)).then(v => v.getBuffer())
   await fs.writeFileSync(__path +'/tmp/attp.gif', data)
   res.sendFile(__path +'/tmp/attp.gif')
          
@@ -1347,14 +1347,14 @@ router.get('/textmaker', async (req, res, next) => {
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
-                                        delete_url = data.data.delete_url;
+                                        dee_url = data.data.dee_url;
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
                                             message : `Semoga Kalian Senang:)`,
                                             result:{
                                                 url:urlnya,
-                                                delete_url: delete_url,
+                                                dee_url: dee_url,
                                                 info: 'url akan hilang setelah 2 menit'
                                             }
                                         })
@@ -1385,14 +1385,14 @@ router.get('/textmaker', async (req, res, next) => {
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
-                                        delete_url = data.data.delete_url;
+                                        dee_url = data.data.dee_url;
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
                                             message : `Semoga Kalian Senang:)`,
                                             result:{
                                                 url:urlnya,
-                                                delete_url: delete_url,
+                                                dee_url: dee_url,
                                                 info: 'url akan hilang setelah 2 menit'
                                             }
                                         })
@@ -1437,14 +1437,14 @@ router.get('/textmaker/game', async (req, res, next) => {
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
-                                        delete_url = data.data.delete_url;
+                                        dee_url = data.data.dee_url;
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
                                             message : `Semoga Kalian Senang:)`,
                                             result:{
                                                 url:urlnya,
-                                                delete_url: delete_url,
+                                                dee_url: dee_url,
                                                 info: 'url akan hilang setelah 2 menit'
                                             }
                                         })
@@ -1474,14 +1474,14 @@ router.get('/textmaker/game', async (req, res, next) => {
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
-                                        delete_url = data.data.delete_url;
+                                        dee_url = data.data.dee_url;
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
                                             message : `Semoga Kalian Senang:)`,
                                             result:{
                                                 url:urlnya,
-                                                delete_url: delete_url,
+                                                dee_url: dee_url,
                                                 info: 'url akan hilang setelah 2 menit'
                                             }
                                         })
@@ -1525,14 +1525,14 @@ router.get('/textmaker/senja', async (req, res, next) => {
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
-                                        delete_url = data.data.delete_url;
+                                        dee_url = data.data.dee_url;
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
                                             message : `Semoga Kalian Senang:)`,
                                             result:{
                                                 url:urlnya,
-                                                delete_url: delete_url,
+                                                dee_url: dee_url,
                                                 info: 'url akan hilang setelah 2 menit'
                                             }
                                         })
@@ -1561,14 +1561,14 @@ router.get('/textmaker/senja', async (req, res, next) => {
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
-                                        delete_url = data.data.delete_url;
+                                        dee_url = data.data.dee_url;
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
                                             message : `Semoga Kalian Senang:)`,
                                             result:{
                                                 url:urlnya,
-                                                delete_url: delete_url,
+                                                dee_url: dee_url,
                                                 info: 'url akan hilang setelah 2 menit'
                                             }
                                         })
@@ -1719,14 +1719,14 @@ router.get('/textmaker/metallic', async (req, res, next) => {
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
-                                        delete_url = data.data.delete_url;
+                                        dee_url = data.data.dee_url;
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
                                             message : `Semoga Kalian Senang:)`,
                                             result:{
                                                 url:urlnya,
-                                                delete_url: delete_url,
+                                                dee_url: dee_url,
                                                 info: 'url akan hilang setelah 2 menit'
                                             }
                                         })
@@ -1755,14 +1755,14 @@ router.get('/textmaker/metallic', async (req, res, next) => {
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
-                                        delete_url = data.data.delete_url;
+                                        dee_url = data.data.dee_url;
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
                                             message : `Semoga Kalian Senang:)`,
                                             result:{
                                                 url:urlnya,
-                                                delete_url: delete_url,
+                                                dee_url: dee_url,
                                                 info: 'url akan hilang setelah 2 menit'
                                             }
                                         })
@@ -1806,14 +1806,14 @@ router.get('/textmaker/alam', async (req, res, next) => {
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
-                                        delete_url = data.data.delete_url;
+                                        dee_url = data.data.dee_url;
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
                                             message : `Semoga Kalian Senang:)`,
                                             result:{
                                                 url:urlnya,
-                                                delete_url: delete_url,
+                                                dee_url: dee_url,
                                                 info: 'url akan hilang setelah 2 menit'
                                             }
                                         })
@@ -1842,14 +1842,14 @@ router.get('/textmaker/alam', async (req, res, next) => {
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
-                                        delete_url = data.data.delete_url;
+                                        dee_url = data.data.dee_url;
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
                                             message : `Semoga Kalian Senang:)`,
                                             result:{
                                                 url:urlnya,
-                                                delete_url: delete_url,
+                                                dee_url: dee_url,
                                                 info: 'url akan hilang setelah 2 menit'
                                             }
                                         })
@@ -3549,14 +3549,14 @@ router.get('/textmaker/random', async (req, res, next) => {
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
-                                        delete_url = data.data.delete_url;
+                                        dee_url = data.data.dee_url;
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
                                             message : `Semoga Kalian Senang:)`,
                                             result:{
                                                 url:urlnya,
-                                                delete_url: delete_url,
+                                                dee_url: dee_url,
                                                 info: 'url akan hilang setelah 2 menit'
                                             }
                                         })
@@ -3585,14 +3585,14 @@ router.get('/textmaker/random', async (req, res, next) => {
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
-                                        delete_url = data.data.delete_url;
+                                        dee_url = data.data.dee_url;
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
                                             message : `Semoga Kalian Senang:)`,
                                             result:{
                                                 url:urlnya,
-                                                delete_url: delete_url,
+                                                dee_url: dee_url,
                                                 info: 'url akan hilang setelah 2 menit'
                                             }
                                         })
@@ -3636,14 +3636,14 @@ router.get('/textmaker/roses', async (req, res, next) => {
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
-                                        delete_url = data.data.delete_url;
+                                        dee_url = data.data.dee_url;
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
                                             message : `Semoga Kalian Senang:)`,
                                             result:{
                                                 url:urlnya,
-                                                delete_url: delete_url,
+                                                dee_url: dee_url,
                                                 info: 'url akan hilang setelah 2 menit'
                                             }
                                         })
@@ -3672,14 +3672,14 @@ router.get('/textmaker/roses', async (req, res, next) => {
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
-                                        delete_url = data.data.delete_url;
+                                        dee_url = data.data.dee_url;
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
                                             message : `Semoga Kalian Senang:)`,
                                             result:{
                                                 url:urlnya,
-                                                delete_url: delete_url,
+                                                dee_url: dee_url,
                                                 info: 'url akan hilang setelah 2 menit'
                                             }
                                         })
