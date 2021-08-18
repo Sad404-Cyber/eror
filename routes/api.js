@@ -2636,6 +2636,27 @@ router.get('/kodepos', async (req, res, next) => {
 })
 
 
+router.get('/cuaca', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            kota = req.query.kota
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+    if (!kota) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kota"})
+
+       fetch(encodeURI(`https://api.lolhuman.xyz/api/cuaca/${kota}?apikey=sayahafiz`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+             	creator: 'Hafidz Abdillah',
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
 
 router.get('/infocuaca/bandara', async (req, res, next) => {
         var apikeyInput = req.query.apikey
