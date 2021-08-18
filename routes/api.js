@@ -256,6 +256,7 @@ router.get('/resep', async (req, res, next) => {
 })
 
 
+
 router.get('/cekapikey', async (req, res, next) => {
     var apikeyInput = req.query.apikey;
 
@@ -885,6 +886,25 @@ router.get('/joox', async (req, res, next) => {
          	res.json(loghandler.error)
 })
 
+})
+
+router.get('/maker/ttp', async(req, res, next) => {
+
+
+
+  const text = req.query.text;
+  const apikey = req.query.apikey;
+  if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+    if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter text"})
+ 
+  let hasil = 'https://leyscoders-api.herokuapp.com/api/ttp1?text='+ text +'&apikey=SayaHafiz'
+  data = await fetch(hasil).then(v => v.getBuffer())
+  await fs.writeFileSync(__path +'/tmp/attp.gif', data)
+  res.sendFile(__path +'/tmp/attp.gif')
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
 })
 
 router.get('/ig', async (req, res, next) => {
