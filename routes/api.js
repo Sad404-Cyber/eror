@@ -890,8 +890,6 @@ router.get('/joox', async (req, res, next) => {
 
 router.get('/maker/ttp', async(req, res, next) => {
 
-
-
   const text = req.query.text;
   const apikey = req.query.apikey;
   if(!apikeyInput) return res.json(loghandler.notparam)
@@ -902,9 +900,11 @@ router.get('/maker/ttp', async(req, res, next) => {
   data = await fetch(hasil).then(v => v.getBuffer())
   await fs.writeFileSync(__path +'/tmp/attp.gif', data)
   res.sendFile(__path +'/tmp/attp.gif')
-         })
+  
          .catch(e => {
          	res.json(loghandler.error)
+      
+})
 })
 
 router.get('/ig', async (req, res, next) => {
