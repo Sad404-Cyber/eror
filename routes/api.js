@@ -1257,7 +1257,7 @@ router.get('/hex', async (req, res, next) => {
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
     if (!code) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter code"})
 
-       fetch(encodeURI(`https://api.lolhuman.xyz/api/convert/hextostr?apikey=beta&hex=${code}`))
+       fetch(encodeURI(`https://api.lolhuman.xyz/api/convert/hextostr?apikey=sayahafiz&hex=${code}`))
         .then(response => response.json())
         .then(data => {
         var result = data;
