@@ -1249,6 +1249,29 @@ router.get('/string', async (req, res, next) => {
 
 })
 
+router.get('/hex', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            text = req.query.text
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+    if (!username) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter text"})
+
+       fetch(encodeURI(`https://api.lolhuman.xyz/api/convert/hextostr?apikey=beta&hex=${text}`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+             	author: 'Hafidz Abdillah',
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+
+})
+
 router.get('/base', async (req, res, next) => {
 	var type = req.query.type,
 		encode = req.query.encode,
