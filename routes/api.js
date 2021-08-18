@@ -2390,7 +2390,7 @@ router.get('/jadwalshalat', async (req, res, next) => {
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
         if(!kota) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kota"})
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/Zhirrr-Database/main/adzan/${kota}/2021/03.json`))
+       fetch(encodeURI(`https://api.lolhuman.xyz/api/sholat/${kota}?apikey=sayahafiz`))
         .then(response => response.json())
         .then(data => {
         var result = data;
