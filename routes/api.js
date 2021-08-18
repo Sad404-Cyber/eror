@@ -2496,7 +2496,7 @@ router.get('/liriklagu', async (req, res, next) => {
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
         if(!lagu) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
 
-       fetch(encodeURI(`https://python-api-zhirrr.herokuapp.com/api/lirik?search=${lagu}`))
+       fetch(encodeURI(`https://api.lolhuman.xyz/api/lirik?apikey=sayahafiz&query=${lagu}`))
         .then(response => response.json())
         .then(data => {
         var result = data;
