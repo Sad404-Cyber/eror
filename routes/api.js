@@ -888,7 +888,6 @@ router.get('/jawa', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-               
                  result
              })
          })
