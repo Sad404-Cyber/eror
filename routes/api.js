@@ -2205,6 +2205,29 @@ router.get('/wallpaper/pegunungan', async (req, res, next) => {
 })
 })
 
+router.get('/grupwa', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            search = req.query.search
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+    if (!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
+
+       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/whatsapp-group?q=${search}&apikey=SayaHafiz`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+             	creator: 'Hafidz Abdillah',
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+
+})
+
 router.get('/pinser', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
             search = req.query.search
