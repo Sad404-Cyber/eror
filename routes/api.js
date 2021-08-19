@@ -277,54 +277,7 @@ try {
    }
 })
 
-router.get('/addapikey', (req, res, next) => {
-    var apikey = req.query.apikey,
-       apikeyInput  = req.query.apikeyInput
 
-    if (!apikey) return res.json(loghandler.notparam)
-    if (apikey != 'freeapi') return res.sendFile(invalidKey)
-
-    try {
-        zahirr.insert({
-        	status: status,
-            apikey: apikeyInput
-        })
-        .then(() => {
-              res.json({
-                  status: true,
-                  creator: `${creator}`,
-                  result: 'berhasil menambah data apikey : ' + apikeyInput + ''
-              })
-        })
-    } catch (e) {
-        console.log(e)
-        res.json(loghandler.error)
-    }
-})
-
-router.get('/remove', (req, res, next) => {
-    var apikey = req.query.apikey,
-        apikeyInput  = req.query.apikeyInput
-
-    if (!apikey) return res.json(loghandler.notparam)
-    if (apikey != 'freeapi') return res.sendFile(invalidKey)
-
-    try {
-        zahirr.remove({
-            apikey: apikeyInput
-        })
-        .then(() => {
-             res.json({
-                  status: true,
-                  creator: `${creator}`,
-                  result: 'berhasil menghapus data apikey : ' + apikeyInput + ''
-              })
-        })
-    } catch (e) {
-        console.log(e)
-        res.json(loghandler.error)
-    }
-})
 
 const listkey = ["sayahafiz", "danugans"];
 
