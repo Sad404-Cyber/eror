@@ -959,6 +959,26 @@ router.get('/lucu', async (req, res, next) => {
 })
 })
 
+router.get('/jawa', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+
+       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/namajawa?apikey=SayaHafiz`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+               
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
 router.get('/nama', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
             nama = req.query.nama
