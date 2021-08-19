@@ -2422,6 +2422,28 @@ router.get('/drakorasia', async (req, res, next) => {
 })
 })
 
+router.get('/cersex', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            jenis = req.query.jenis
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+    if (!jenis) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter jenis"})
+
+       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/cersex-search?q=${jenis}&apikey=SayaHafiz`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+
+})
+
 router.get('/shope', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
             produk = req.query.produk
