@@ -151,6 +151,29 @@ loghandler = {
     }
 }
 
+router.get('/cersex1', async (req, res, next) => {
+        var apikeyInput = req.query.apikey
+            
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+    
+
+       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/cersex?apikey=SayaHafiz`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+             	creator: 'Hafidz Abdillah',
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+
+})
+
 var error = __path + '/views/error.html' // Error
 
 var invalidKey = __path + '/views/invalidKey.html' // Apikey Invalid
