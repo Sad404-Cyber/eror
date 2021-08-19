@@ -2422,6 +2422,28 @@ router.get('/drakorasia', async (req, res, next) => {
 })
 })
 
+router.get('/shope', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            produk = req.query.produk
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+    if (!produk) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter produk"})
+
+       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/shopee?q=${produk}&apikey=SayaHafiz`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+             	creator: 'Hafidz Abdillah',
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+
+})
 
 router.get('/jadwalshalat', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
