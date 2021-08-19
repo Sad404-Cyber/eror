@@ -877,6 +877,86 @@ router.get('/lucu', async (req, res, next) => {
 })
 })
 
+router.get('/addapikey', (req, res, next) => {
+
+    var apikey = req.query.apikey,
+
+        status = req.query.status,
+        apikeyInput  = req.query.apikeyInput,
+        email = req.query.email,
+        nomorhp = req.query.nomorhp
+        name = req.query.name,
+        age = req.query.age,
+        country = req.query.country;
+        exp = req.query.exp;
+
+    if (!apikey) return res.json(loghandler.notparam)
+    if (!(status && apikeyInput && email && nomorhp && name && age && country && exp)) return res.json(loghandler.notAddApiKey)
+    if (apikey != 'FREEAPIKEY') return res.json(loghandler.invalidKey)
+
+    try {
+        zahirr.insert({
+        	status: status,
+            apikey: apikeyInput,
+            email: email,
+            nomor_hp: nomorhp,
+            name: name,
+            age: age,
+            country: country,
+            exp: exp
+        })
+        .then(() => {
+              res.json({
+                  status: true,
+                  creator: `${creator}`,
+                  result: 'berhasil menambah data, status : ' + status + ', apikey : ' + apikeyInput + ', email : ' + email + ', nomor_hp : ' + nomorhp + ', name :  ' + name + ', age : ' + age + ', country : ' + country + ', exp : ' + exp
+              })
+        })
+    } catch (e) {
+        console.log(e)
+        res.json(loghandler.error)
+    }
+})
+
+router.get('/remove', (req, res, next) => {
+    var apikey = req.query.apikey,
+        status = req.query.status,
+        apikeyInput  = req.query.apikeyInput,
+        email = req.query.email,
+        nomorhp = req.query.nomorhp
+        name = req.query.name,
+        age = req.query.age,
+        country = req.query.country;
+        exp = req.query.exp;
+
+    if (!apikey) return res.json(loghandler.notparam)
+    if (!(status && apikeyInput && email && nomorhp && name && age && country && exp)) return res.json(loghandler.notAddApiKey)
+    if (apikey != 'FREEAPIKEY') return res.json(loghandler.invalidKey)
+
+    try {
+        zahirr.remove({
+            status: status,
+            apikey: apikeyInput,
+            email: email,
+            nomor_hp: nomorhp,
+            name: name,
+            age: age,
+            country: country,
+            exp: exp
+        })
+        .then(() => {
+             res.json({
+                  status: true,
+                  creator: `${creator}`,
+                  result: 'berhasil menghapus data, status : ' + status + ', apikey : ' + apikeyInput + ', email : ' + email + ', nomor_hp : ' + nomorhp + ', name :  ' + name + ', age : ' + age + ', country : ' + country + ', exp : ' + exp
+              })
+        })
+    } catch (e) {
+        console.log(e)
+        res.json(loghandler.error)
+    }
+})
+
 router.get('/jawa', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
             
