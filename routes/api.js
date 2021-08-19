@@ -2314,6 +2314,50 @@ router.get('/faktaunik', async (req, res, next) => {
 })
 })
 
+router.get('/kubik', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            q = req.query.q
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+    if (!q) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter query"})
+
+       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/bdr/kubik?q=${q}&apikey=SayaHafiz`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+
+})
+
+router.get('/kuadrat', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            q = req.query.q
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+    if (!q) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter query"})
+
+       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/bdr/kuadrat?q=${q}&apikey=SayaHafiz`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+
+})
+
 router.get('/wikipedia', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
             search = req.query.search
