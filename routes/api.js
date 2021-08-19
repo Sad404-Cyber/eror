@@ -2571,6 +2571,28 @@ router.get('/liriklagu', async (req, res, next) => {
 })
 })
 
+router.get('/artikata', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            kata = req.query.kata
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+    if (!kata) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
+
+       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/arti-kata?q=${kata}&apikey=SayaHafiz`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+             	creator: 'Hafidz Abdillah',
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+
+})
 
 router.get('/chordlagu', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
