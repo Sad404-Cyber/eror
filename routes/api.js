@@ -164,6 +164,7 @@ router.get('/cersex1', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
+             	creator: 'Hafidz Abdillah',
                  result
              })
          })
@@ -2280,6 +2281,27 @@ router.get('/serstik', async (req, res, next) => {
     if (!nama) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter nama"})
 
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/search/searchsticker?query=${nama}&apikey=tvT241pY5rPDYQW`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
+router.get('/faktaunik', async (req, res, next) => {
+        var apikeyInput = req.query.apikey
+            
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+    
+
+       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/fakta?apikey=SayaHafiz`))
         .then(response => response.json())
         .then(data => {
         var result = data;
