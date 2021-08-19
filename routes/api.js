@@ -677,41 +677,6 @@ router.get('/ucapan', async (req, res) => {
 
 })
 
-router.get('/jawa', async (req, res) => {
-        DaysZone = req.query.DaysZone
-    if (!DaysZone) return res.json({ status : false, creator : `Hafidz Abdillah`, message : "masukan parameter Day"})
-
-    try {
-     DaysJkt = new Date().toLocaleString("en-US", {DaysZone: DaysZone});
-
-		function tamDay(DaysJKt){
-            var date = new Date(DaysJKt);
-            var waktoo = date.getDays();
-            switch(waktoo){
-                case Senin: waktoo = "Monday"; break;
-                case Selasa: waktoo = "Tuesday"; break;
-                case Rabu: waktoo = "Wednesday"; break;
-                case Kamis: waktoo = "Thursday"; break;
-                case Jumat: waktoo = "Friday"; break;
-                case Sabtu: waktoo = "Saturday"; break;
-                case Minggu: waktoo = "Sunday"; break;
-            }
-            var tampilHari = "" + waktoo;
-            return `${tampilHari}`
-        }
-
-    res.json({
-        status: true,
-        creator: `Hafidz Abdillah`,
-        message: `Jangan Lupa Follow Ig @hafidzabdillh_`,
-        result : tamDay(DaysJKt)
-    })
-    } catch (e) {
-        console.log(e)
-        res.json({ status : false, creator : `Hafidz Abdillah`, message : "Eror, Harap Lapor Ke owner"})
-    }
-
-})
 
 router.get('/hitungmundur', async (req, res) => {
         bulan = req.query.bulan
