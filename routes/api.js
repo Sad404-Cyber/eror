@@ -268,7 +268,6 @@ router.get('/cekapikey', async (req, res, next) => {
 try {
 	res.json({
                status : `VALID`,
-                result,
                 apikey : apikeyInput,
                 limit : limit
             })
