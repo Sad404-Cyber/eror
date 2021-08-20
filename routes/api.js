@@ -263,11 +263,12 @@ router.get('/cekapikey', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput !== 'freeapi') return res.sendFile(invalidKey)
 	var limit = 'undefined'
-        if (apikeyInput == 'freeapi') { limit = 'Unlimited!' }
+        if (apikeyInput == 'freeapi') { limit = 'UNLIMITED' }
 
 try {
 	res.json({
-               status : `active`,
+               status : `VALID`,
+                result,
                 apikey : apikeyInput,
                 limit : limit
             })
