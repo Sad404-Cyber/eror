@@ -3,9 +3,9 @@ __path = process.cwd()
 var express = require('express');
 var db = require(__path + '/database/db');
 try {
-var zahirr = db.get("zahirr");
+var kuhong = db.get('ojan'); // jan diubah
 } catch (e) {
-	console.log('')
+	console.log('WELCOME TO GX API!') // boleh diubah
 }
 
 var creatorList = ['Hafidz Abdillah', 'Hafidz Abdillah.'];
