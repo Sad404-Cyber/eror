@@ -80,13 +80,6 @@ loghandler = {
         code: 406,
         message: 'masukan parameter text'
     },
-    notapikey: {
-        status: false,
-        creator: `${creator}`,
-        result,
-        code : 406,
-        message: `apikey ${apikey} invalid`
-    },
     nottext2: {
         status: false,
         creator: `${creator}`,
@@ -268,7 +261,7 @@ router.get('/cekapikey', async (req, res, next) => {
     var apikeyInput = req.query.apikey;
 
 	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput !== 'freeapi') return res.json(loghandler.notapikey)
+	if(apikeyInput !== 'freeapi') return res.sendFile(invalidKey)
 	var limit = 'undefined'
         if (apikeyInput == 'freeapi') { limit = 'UNLIMITED' }
 
