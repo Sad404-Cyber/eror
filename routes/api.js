@@ -164,7 +164,6 @@ router.get('/cersex1', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	creator: 'Hafidz Abdillah',
                  result
              })
          })
@@ -474,6 +473,49 @@ router.get('/google', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+})
+
+router.get('/dataindo', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+
+       fetch(encodeURI(`https://dev.farizdotid.com/api/daerahindonesia/provinsi`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 status: true,
+                 creator: `${creator}`,
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
+router.get('/infoloker', async (req, res, next) => {
+        var apikeyInput = req.query.apikey
+            
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+    
+
+       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/info-loker?apikey=SayaHafiz`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+
 })
 
 router.get('/gempa', async (req, res, next) => {
@@ -2291,71 +2333,6 @@ router.get('/serstik', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
-})
-
-router.get('/faktaunik', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
-            
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
-    
-
-       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/fakta?apikey=SayaHafiz`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
-
-router.get('/kubik', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
-            q = req.query.q
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
-    if (!q) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter query"})
-
-       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/bdr/kubik?q=${q}&apikey=SayaHafiz`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-
-})
-
-router.get('/kuadrat', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
-            q = req.query.q
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
-    if (!q) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter query"})
-
-       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/bdr/kuadrat?q=${q}&apikey=SayaHafiz`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-
 })
 
 router.get('/wikipedia', async (req, res, next) => {
