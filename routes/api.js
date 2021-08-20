@@ -3029,6 +3029,28 @@ router.get('/anime/animeindo', async (req, res, next) => {
 })
 })
 
+router.get('/manga', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            judul = req.query.judul
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+    if (!judul) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter judul"})
+
+       fetch(encodeURI(`https://api.lolhuman.xyz/api/manga?apikey=sayahafiz&query=${judul}`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+             	creator: 'Hafidz Abdillah',
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
 router.get('/anime/kusonime', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
 	    search = req.query.search
