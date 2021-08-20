@@ -314,9 +314,9 @@ router.get('/ssweb', async (req, res, next) => {
     if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
 
      var hasil = await getBuffer(`http://nurutomo.herokuapp.com/api/ssweb?url=${url}`)
-       await fs.writeFileSync(__path + '/tmp/screenshot.png', hasil)
+          res.sendFile(hasil)
 
-         res.sendFile(__path + '/tmp/screenshot.png')
+         
          .catch(e => {
          	res.json(loghandler.error)
 })
