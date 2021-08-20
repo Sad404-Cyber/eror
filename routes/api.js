@@ -3,9 +3,9 @@ __path = process.cwd()
 var express = require('express');
 var db = require(__path + '/database/db');
 try {
-var kuhong = db.get('ojan'); // jan diubah
+var zahirr = db.get("zahirr");
 } catch (e) {
-	console.log('WELCOME TO GX API!') // boleh diubah
+	console.log('')
 }
 
 var creatorList = ['Hafidz Abdillah', 'Hafidz Abdillah.'];
@@ -307,21 +307,19 @@ router.get('/tiktod', async (req, res, next) => {
 router.get('/ssweb', async (req, res, next) => {
 
         var apikeyInput = req.query.apikey,
+	       url = req.query.url
 
-	    url = req.query.url;
-
-try {
-  if(!apikeyInput) return res.json(loghandler.notparam)
-  if(apikeyInput !== `${key}`) return res.sendFile(invalidKey)
-  if (!url) return res.json(loghandler.noturl)
-  if (!url.startsWith('http')) return res.json(loghandler.invalidLink)
+   if(!apikeyInput) return res.json(loghandler.notparam)
+  	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+    if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
 
      var hasil = await getBuffer(`http://nurutomo.herokuapp.com/api/ssweb?url=${url}`)
        await fs.writeFileSync(__path + '/tmp/screenshot.png', hasil)
 
          res.sendFile(__path + '/tmp/screenshot.png')
-}          .catch(e => {
+         .catch(e => {
          	res.json(loghandler.error)
+})
 })
 
 router.get('/store', async (req, res, next) => {
