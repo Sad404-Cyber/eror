@@ -372,12 +372,12 @@ router.get('/covid', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
 
-       fetch(encodeURI(`https://api.lolhuman.xyz/api/corona/indonesia?apikey=sayahafiz`))
+       fetch(encodeURI(`https://api.lolhuman.xyz/api/corona/global?apikey=sayahafiz`))
         .then(response => response.json())
         .then(data => {
-        var result = data;
+        var data = data;
              res.json({
-                 result
+                 data
              })
          })
          .catch(e => {
@@ -385,26 +385,6 @@ router.get('/covid', async (req, res, next) => {
 })
 })
 
-router.get('/styext', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
-            text = req.query.text
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
-        if(!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter text"})
-
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/others/styext?text=${text}&apikey=tvT241pY5rPDYQW`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
 
 router.get('/tv', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
