@@ -372,12 +372,11 @@ router.get('/covid', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
 
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/others/corona?negara=indonesia&apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://api.lolhuman.xyz/api/corona/indonesia?apikey=sayahafiz`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
-               author: 'Hafidz Abdillah',
                  result
              })
          })
