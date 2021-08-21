@@ -179,11 +179,11 @@ router.get('/find', async (req, res, next) => {
 
     try {
         zahirr.find()
-            .then(data => {
+            .then(result => {
                 res.json({
                     status: true,
                     creator: `${creator}`,
-                    data
+                    result
                 })
         })
     } catch (e) {
@@ -202,10 +202,10 @@ router.get('/truth', async (req, res, next) => {
        fetch(encodeURI(`https://alpin-api-2021.herokuapp.com/api/truth?apikey=alpin1`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	author: 'Hafidz Abdillah',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -223,10 +223,10 @@ router.get('/dare', async (req, res, next) => {
        fetch(encodeURI(`https://alpin-api-2021.herokuapp.com/api/dare?apikey=alpin1`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	creator: 'Hafidz Abdillah',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -245,9 +245,9 @@ router.get('/resep', async (req, res, next) => {
        fetch(encodeURI(`https://masak-apa-tomorisakura.vercel.app/api/search/?q=${makanan}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -333,10 +333,10 @@ router.get('/store', async (req, res, next) => {
        fetch(encodeURI(`https://api.lolhuman.xyz/api/playstore?apikey=sayahafiz&query=${search}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	author: 'Hafidz Abdillah',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -355,10 +355,10 @@ router.get('/mediafire', async (req, res, next) => {
        fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/mediafire?url=${url}&apikey=SayaHafiz`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	creator: 'Hafidz Abdillah',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -397,10 +397,10 @@ router.get('/tv', async (req, res, next) => {
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/others/jadwaltv?channel=${chanel}&apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
                author: 'Hafidz Abdillah',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -419,9 +419,9 @@ router.get('/storeinfo', async (req, res, next) => {
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/search/playstore-info?id=${nama}&apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -440,9 +440,9 @@ router.get('/google', async (req, res, next) => {
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/search/googlesearch?query=${search}&apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -459,10 +459,10 @@ router.get('/gempa', async (req, res, next) => {
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/others/infogempa?apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
                  author: 'Hafidz Abdillah',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -479,10 +479,10 @@ router.get('/heroml', async (req, res, next) => {
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/others/listheroml?apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	author: 'Hafidz Abdillah',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -501,9 +501,9 @@ router.get('/ytmp3', async (req, res, next) => {
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/socialmedia/ytmp3?url=${url}&apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -522,9 +522,9 @@ router.get('/playmp3', async (req, res, next) => {
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/socialmedia/ytplaymp3?query=${judul}&apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -543,9 +543,9 @@ router.get('/playmp4', async (req, res, next) => {
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/socialmedia/ytplaymp4?query=${judul}&apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -564,9 +564,9 @@ router.get('/ytmp4', async (req, res, next) => {
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/socialmedia/ytmp4?url=${url}&apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -618,7 +618,7 @@ router.get('/ucapan', async (req, res) => {
         status: true,
         creator: `Hafidz Abdillah`,
         message: `Jangan Lupa Follow Ig @hafidzabdillh_`,
-        data : tamHari(WaktuJKt)
+        result : tamHari(WaktuJKt)
     })
     } catch (e) {
         console.log(e)
@@ -653,7 +653,7 @@ router.get('/hitungmundur', async (req, res) => {
         status: true,
         creator: `Hafidz Abdillah`,
         message: `Jangan Lupa Follow Ig @hafidzabdillh_`,
-        data : kurangwaktu(countDownDate, now)
+        result : kurangwaktu(countDownDate, now)
     })
     } catch (e) {
         console.log(e)
@@ -675,10 +675,10 @@ router.get('/jarak', async (req, res, next) => {
        fetch(encodeURI(`https://api.lolhuman.xyz/api/jaraktempuh?apikey=sayahafiz&kota1=${asal}&kota2=${tujuan}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	creator: 'Hafidz Abdillah',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -698,10 +698,10 @@ router.get('/nsfwcek', async (req, res, next) => {
        fetch(encodeURI(`https://api.lolhuman.xyz/api/nsfwcheck?apikey=sayahafiz&img=${url}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	creator: 'Hafidz Abdillah',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -723,10 +723,10 @@ router.get('/rscovid', async (req, res, next) => {
        fetch(encodeURI(`https://alpin-api-2021.herokuapp.com/api/covid19?apikey=alpin1`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	author: 'Hafidz Abdillah',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -745,10 +745,10 @@ router.get('/sekolah', async (req, res, next) => {
        fetch(encodeURI(`https://alpin-api-2021.herokuapp.com/api/sekolah?apikey=alpin1`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	author: 'Hafidz Abdillah',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -768,10 +768,10 @@ router.get('/stalkgh', async (req, res, next) => {
        fetch(encodeURI(`https://alpin-api-2021.herokuapp.com/api/stalk/github?username=${username}&apikey=alpin1`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	author: 'Hafidz Abdillah',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -791,10 +791,10 @@ router.get('/joox', async (req, res, next) => {
        fetch(encodeURI(`https://api.lolhuman.xyz/api/joox/${url}?apikey=sayahafiz`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	creator: 'Hafidz Abdillah',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -814,10 +814,10 @@ router.get('/igvidio', async (req, res, next) => {
        fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/instagram/video?url=${url}&apikey=SayaHafiz`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	creator: 'Hafidz Abdillah',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -837,10 +837,10 @@ router.get('/ig', async (req, res, next) => {
        fetch(encodeURI(`http://fdz-app.herokuapp.com/api/stalkig?username=${username}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	author: 'Hafidz Abdillah',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -863,7 +863,7 @@ router.get('/tiktod/stalk', async (req, res, next) => {
             res.json({
                 status : true,
                 creator : `${creator}`,
-                data : user
+                result : user
             })
         })
         .catch(e => {
@@ -885,10 +885,10 @@ router.get('/lucu', async (req, res, next) => {
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/quoteslucu?apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
                  author: 'Hafidz Abdillah',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -928,7 +928,7 @@ router.get('/addapikey', (req, res, next) => {
               res.json({
                   status: true,
                   creator: `${creator}`,
-                  data: 'berhasil menambah data, status : ' + status + ', apikey : ' + apikeyInput + ', email : ' + email + ', nomor_hp : ' + nomorhp + ', name :  ' + name + ', age : ' + age + ', country : ' + country + ', exp : ' + exp
+                  result: 'berhasil menambah data, status : ' + status + ', apikey : ' + apikeyInput + ', email : ' + email + ', nomor_hp : ' + nomorhp + ', name :  ' + name + ', age : ' + age + ', country : ' + country + ', exp : ' + exp
               })
         })
     } catch (e) {
@@ -967,7 +967,7 @@ router.get('/remove', (req, res, next) => {
              res.json({
                   status: true,
                   creator: `${creator}`,
-                  data: 'berhasil menghapus data, status : ' + status + ', apikey : ' + apikeyInput + ', email : ' + email + ', nomor_hp : ' + nomorhp + ', name :  ' + name + ', age : ' + age + ', country : ' + country + ', exp : ' + exp
+                  result: 'berhasil menghapus data, status : ' + status + ', apikey : ' + apikeyInput + ', email : ' + email + ', nomor_hp : ' + nomorhp + ', name :  ' + name + ', age : ' + age + ', country : ' + country + ', exp : ' + exp
               })
         })
     } catch (e) {
@@ -988,9 +988,9 @@ router.get('/nama', async (req, res, next) => {
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/artinama?nama=${nama}&apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -1009,10 +1009,10 @@ router.get('/nomorhoki', async (req, res, next) => {
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/nomorhoki?nomer=${nomor}&apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
                author : 'Hafidz Abdillah',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -1031,9 +1031,9 @@ router.get('/mimpi', async (req, res, next) => {
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/artimimpi?mimpi=${mimpi}&apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -1054,9 +1054,9 @@ router.get('/ramal', async (req, res, next) => {
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/ramaljodoh?nama1=${pasangan1}&nama2=${pasangan2}&apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -1073,10 +1073,10 @@ router.get('/cerpen', async (req, res, next) => {
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/cerpen?apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
                  author: 'Hafidz Abdillah',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -1094,10 +1094,10 @@ router.get('/coming', async (req, res, next) => {
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/movie/comingsoon?apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
                author: 'Hafidz Abdillah',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -1115,10 +1115,10 @@ router.get('/oskop', async (req, res, next) => {
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/movie/jadwalbioskop?apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
                author: 'Hafidz Abdillah',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -1135,10 +1135,10 @@ router.get('/randomquote', async (req, res, next) => {
        fetch(encodeURI(`https://python-api-zhirrr.herokuapp.com/api/random/quotes`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
                  creator : `${creator}`,
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -1158,11 +1158,11 @@ router.get('/infonpm', async (req, res, next) => {
        fetch(encodeURI(`https://registry.npmjs.org/${query}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
                  status : true,
                  creator : `${creator}`,
-                 data,
+                 result,
                  message : `Semoga Kalian Senang:)`
              })
          })
@@ -1182,9 +1182,9 @@ router.get('/cuttly', async (req, res, next) => {
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/others/cuttly?url=${url}&apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -1205,7 +1205,7 @@ router.get('/tiny', async (req, res, next) => {
              res.json({
                  status : true,
                  creator : `${creator}`,
-                 data : {
+                 result : {
                      link : `${body}`,
                  },
                  message : `Semoga Kalian Senang:)`
@@ -1228,10 +1228,10 @@ router.get('/string', async (req, res, next) => {
        fetch(encodeURI(`https://api.lolhuman.xyz/api/convert/strtohex?apikey=sayahafiz&text=${text}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	creator: 'Hafidz Abdillah',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -1251,10 +1251,10 @@ router.get('/hex', async (req, res, next) => {
        fetch(encodeURI(`https://api.lolhuman.xyz/api/convert/hextostr?apikey=sayahafiz&hex=${code}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	creator: 'Hafidz Abdillah',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -1273,38 +1273,38 @@ router.get('/base', async (req, res, next) => {
 		if (!type) return res.json({status: false, creator, code: 404, message: 'masukan parameter type, type yang tersedia : base64 , base32'})
 		if (type == 'base64' && encode){
 				Base("b64enc", encode)
-				.then(data => {
+				.then(result => {
 					res.json({
 						status:true,
 						creator: `${creator}`,
-						data
+						result
 					})
 				})
 			} else if (type == 'base64' && decode){
 				Base("b64dec", decode)
-				.then(data => {
+				.then(result => {
 					res.json({
 						status: true,
 						creator: `${creator}`,
-						data
+						result
 					})
 				})
 			} else if (type == 'base32' && encode){
 				Base('b32enc', encode)
-				.then(data => {
+				.then(result => {
 					res.json({
 						status:true,
 						creator: `${creator}`,
-						data
+						result
 					})
 				})
 			} else if (type == 'base32' && decode){
 				Base('b32dec', decode)
-				.then(data => {
+				.then(result => {
 					res.json({
 						status:true,
 						creator: `${creator}`,
-						data
+						result
 					})
 				})
 			} else if(!(encode || decode)){
@@ -1345,8 +1345,8 @@ router.get('/textmaker', async (req, res, next) => {
                         $ = cheerio.load(b)
                         $(".thumbnail").find("img").each(function() {
                             h = $(this).attr("src")
-                            var data = "https://photooxy.com/"+h
-                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${data}&name=${randomTextNumber}`))
+                            var result = "https://photooxy.com/"+h
+                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${result}&name=${randomTextNumber}`))
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
@@ -1355,7 +1355,7 @@ router.get('/textmaker', async (req, res, next) => {
                                             status : true,
                                             creator : `${creator}`,
                                             message : `Semoga Kalian Senang:)`,
-                                            data:{
+                                            result:{
                                                 url:urlnya,
                                                 dee_url: dee_url,
                                                 info: 'url akan hilang setelah 2 menit'
@@ -1383,8 +1383,8 @@ router.get('/textmaker', async (req, res, next) => {
                         $ = cheerio.load(b)
                         $(".thumbnail").find("img").each(function() {
                             h = $(this).attr("src")
-                            var data = "https://photooxy.com/"+h
-                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${data}&name=${randomTextNumber}`))
+                            var result = "https://photooxy.com/"+h
+                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${result}&name=${randomTextNumber}`))
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
@@ -1393,7 +1393,7 @@ router.get('/textmaker', async (req, res, next) => {
                                             status : true,
                                             creator : `${creator}`,
                                             message : `Semoga Kalian Senang:)`,
-                                            data:{
+                                            result:{
                                                 url:urlnya,
                                                 dee_url: dee_url,
                                                 info: 'url akan hilang setelah 2 menit'
@@ -1435,8 +1435,8 @@ router.get('/textmaker/game', async (req, res, next) => {
                         $ = cheerio.load(b)
                         $(".thumbnail").find("img").each(function() {
                             h = $(this).attr("src")
-                            var data = "https://photooxy.com/"+h
-                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${data}&name=${randomTextNumber}`))
+                            var result = "https://photooxy.com/"+h
+                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${result}&name=${randomTextNumber}`))
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
@@ -1445,7 +1445,7 @@ router.get('/textmaker/game', async (req, res, next) => {
                                             status : true,
                                             creator : `${creator}`,
                                             message : `Semoga Kalian Senang:)`,
-                                            data:{
+                                            result:{
                                                 url:urlnya,
                                                 dee_url: dee_url,
                                                 info: 'url akan hilang setelah 2 menit'
@@ -1472,8 +1472,8 @@ router.get('/textmaker/game', async (req, res, next) => {
                         $ = cheerio.load(b)
                         $(".thumbnail").find("img").each(function() {
                             h = $(this).attr("src")
-                            var data = "https://photooxy.com/"+h
-                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${data}&name=${randomTextNumber}`))
+                            var result = "https://photooxy.com/"+h
+                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${result}&name=${randomTextNumber}`))
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
@@ -1482,7 +1482,7 @@ router.get('/textmaker/game', async (req, res, next) => {
                                             status : true,
                                             creator : `${creator}`,
                                             message : `Semoga Kalian Senang:)`,
-                                            data:{
+                                            result:{
                                                 url:urlnya,
                                                 dee_url: dee_url,
                                                 info: 'url akan hilang setelah 2 menit'
@@ -1523,8 +1523,8 @@ router.get('/textmaker/senja', async (req, res, next) => {
                         $ = cheerio.load(b)
                         $(".thumbnail").find("img").each(function() {
                             h = $(this).attr("src")
-                            var data = "https://photooxy.com/"+h
-                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${data}&name=${randomTextNumber}`))
+                            var result = "https://photooxy.com/"+h
+                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${result}&name=${randomTextNumber}`))
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
@@ -1533,7 +1533,7 @@ router.get('/textmaker/senja', async (req, res, next) => {
                                             status : true,
                                             creator : `${creator}`,
                                             message : `Semoga Kalian Senang:)`,
-                                            data:{
+                                            result:{
                                                 url:urlnya,
                                                 dee_url: dee_url,
                                                 info: 'url akan hilang setelah 2 menit'
@@ -1559,8 +1559,8 @@ router.get('/textmaker/senja', async (req, res, next) => {
                         $ = cheerio.load(b)
                         $(".thumbnail").find("img").each(function() {
                             h = $(this).attr("src")
-                            var data = "https://photooxy.com/"+h
-                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${data}&name=${randomTextNumber}`))
+                            var result = "https://photooxy.com/"+h
+                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${result}&name=${randomTextNumber}`))
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
@@ -1569,7 +1569,7 @@ router.get('/textmaker/senja', async (req, res, next) => {
                                             status : true,
                                             creator : `${creator}`,
                                             message : `Semoga Kalian Senang:)`,
-                                            data:{
+                                            result:{
                                                 url:urlnya,
                                                 dee_url: dee_url,
                                                 info: 'url akan hilang setelah 2 menit'
@@ -1591,10 +1591,10 @@ router.get('/kisahnabi', async (req, res, next) => {
 		if (!apikeyInput) return res.json(loghandler.notparam)
 		if (apikeyInput != 'freeapi') return res.sendFile(invalidKey)
 		Searchnabi(nabi)
-		.then(data => {
+		.then(result => {
 			res.json({
 				creator: creator,
-				data
+				result
 			})
 		})
 		.catch(e => {
@@ -1609,10 +1609,10 @@ router.get('/infogempa', async (req, res, next) => {
 		if (!apikeyInput) return res.json(loghandler.notparam)
 		if (apikeyInput != 'freeapi') return res.sendFile(invalidKey)
 		Gempa()
-		.then(data => {
+		.then(result => {
 			res.json({
 				creator: creator,
-				data
+				result
 			})
 		})
 		.catch(e => {
@@ -1634,9 +1634,9 @@ router.get('/hadits', async (req, res, next) => {
        fetch(encodeURI(`https://hadits-api-zhirrr.vercel.app/books/${kitab}/${nomor}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -1658,9 +1658,9 @@ router.get('/quran', async (req, res, next) => {
        fetch(encodeURI(`https://alquran-apiii.vercel.app/surah/${surah}/${ayat}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -1680,9 +1680,9 @@ router.get('/fbdown', async (req, res, next) => {
        fetch(encodeURI(`https://fb-api-zhirrr.vercel.app/?url=${url}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -1717,8 +1717,8 @@ router.get('/textmaker/metallic', async (req, res, next) => {
                         $ = cheerio.load(b)
                         $(".thumbnail").find("img").each(function() {
                             h = $(this).attr("src")
-                            var data = "https://photooxy.com/"+h
-                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${data}&name=${randomTextNumber}`))
+                            var result = "https://photooxy.com/"+h
+                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${result}&name=${randomTextNumber}`))
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
@@ -1727,7 +1727,7 @@ router.get('/textmaker/metallic', async (req, res, next) => {
                                             status : true,
                                             creator : `${creator}`,
                                             message : `Semoga Kalian Senang:)`,
-                                            data:{
+                                            result:{
                                                 url:urlnya,
                                                 dee_url: dee_url,
                                                 info: 'url akan hilang setelah 2 menit'
@@ -1753,8 +1753,8 @@ router.get('/textmaker/metallic', async (req, res, next) => {
                         $ = cheerio.load(b)
                         $(".thumbnail").find("img").each(function() {
                             h = $(this).attr("src")
-                            var data = "https://photooxy.com/"+h
-                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${data}&name=${randomTextNumber}`))
+                            var result = "https://photooxy.com/"+h
+                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${result}&name=${randomTextNumber}`))
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
@@ -1763,7 +1763,7 @@ router.get('/textmaker/metallic', async (req, res, next) => {
                                             status : true,
                                             creator : `${creator}`,
                                             message : `Semoga Kalian Senang:)`,
-                                            data:{
+                                            result:{
                                                 url:urlnya,
                                                 dee_url: dee_url,
                                                 info: 'url akan hilang setelah 2 menit'
@@ -1804,8 +1804,8 @@ router.get('/textmaker/alam', async (req, res, next) => {
                         $ = cheerio.load(b)
                         $(".thumbnail").find("img").each(function() {
                             h = $(this).attr("src")
-                            var data = "https://photooxy.com/"+h
-                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${data}&name=${randomTextNumber}`))
+                            var result = "https://photooxy.com/"+h
+                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${result}&name=${randomTextNumber}`))
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
@@ -1814,7 +1814,7 @@ router.get('/textmaker/alam', async (req, res, next) => {
                                             status : true,
                                             creator : `${creator}`,
                                             message : `Semoga Kalian Senang:)`,
-                                            data:{
+                                            result:{
                                                 url:urlnya,
                                                 dee_url: dee_url,
                                                 info: 'url akan hilang setelah 2 menit'
@@ -1840,8 +1840,8 @@ router.get('/textmaker/alam', async (req, res, next) => {
                         $ = cheerio.load(b)
                         $(".thumbnail").find("img").each(function() {
                             h = $(this).attr("src")
-                            var data = "https://photooxy.com/"+h
-                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${data}&name=${randomTextNumber}`))
+                            var result = "https://photooxy.com/"+h
+                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${result}&name=${randomTextNumber}`))
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
@@ -1850,7 +1850,7 @@ router.get('/textmaker/alam', async (req, res, next) => {
                                             status : true,
                                             creator : `${creator}`,
                                             message : `Semoga Kalian Senang:)`,
-                                            data:{
+                                            result:{
                                                 url:urlnya,
                                                 dee_url: dee_url,
                                                 info: 'url akan hilang setelah 2 menit'
@@ -1871,12 +1871,12 @@ router.get('/muslim/tahlil', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-datas/main/data/dataTahlil.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/dataTahlil.json`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -1891,12 +1891,12 @@ router.get('/muslim/wirid', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-datas/main/data/dataWirid.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/dataWirid.json`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -1911,12 +1911,12 @@ router.get('/muslim/ayatkursi', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-datas/main/data/dataAyatKursi.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/dataAyatKursi.json`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -1931,12 +1931,12 @@ router.get('/muslim/doaharian', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-datas/main/data/dataDoaHarian.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/dataDoaHarian.json`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -1951,12 +1951,12 @@ router.get('/muslim/bacaanshalat', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-datas/main/data/dataBacaanShalat.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/dataBacaanShalat.json`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -1971,12 +1971,12 @@ router.get('/muslim/niatshalat', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-datas/main/data/dataNiatShalat.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/dataNiatShalat.json`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -1991,12 +1991,12 @@ router.get('/muslim/kisahnabi', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-datas/main/data/dataKisahNabi.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/dataKisahNabi.json`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2011,12 +2011,12 @@ router.get('/muslim/asmaulhusna', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-datas/main/data/dataAsmaulHusna.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/dataAsmaulHusna.json`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2031,12 +2031,12 @@ router.get('/muslim/niatshubuh', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-datas/main/data/NiatShubuh.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/NiatShubuh.json`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2051,12 +2051,12 @@ router.get('/muslim/niatdzuhur', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-datas/main/data/NiatDzuhur.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/NiatDzuhur.json`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2071,12 +2071,12 @@ router.get('/muslim/niatmaghrib', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-datas/main/data/NiatMaghrib.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/NiatMaghrib.json`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2091,12 +2091,12 @@ router.get('/muslim/niatisya', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-datas/main/data/NiatIsya.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/NiatIsya.json`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2111,12 +2111,12 @@ router.get('/muslim/niatashar', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-datas/main/data/NiatAshar.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/NiatAshar.json`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2131,12 +2131,12 @@ router.get('/wallpaper/cyberspace', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-datas/main/CyberSpace.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/CyberSpace.json`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2151,12 +2151,12 @@ router.get('/wallpaper/teknologi', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-datas/main/Technology.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/Technology.json`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2171,12 +2171,12 @@ router.get('/wallpaper/muslim', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-datas/main/Islamic.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/Islamic.json`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2191,12 +2191,12 @@ router.get('/wallpaper/programming', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-datas/main/Programming.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/Programming.json`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2211,12 +2211,12 @@ router.get('/wallpaper/pegunungan', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-datas/main/Mountain.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/Mountain.json`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2235,10 +2235,10 @@ router.get('/grupwa', async (req, res, next) => {
        fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/whatsapp-group?q=${search}&apikey=SayaHafiz`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	creator: 'Hafidz Abdillah',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2258,9 +2258,9 @@ router.get('/pinser', async (req, res, next) => {
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/search/pinterest?query=${search}&apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2279,9 +2279,9 @@ router.get('/serstik', async (req, res, next) => {
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/search/searchsticker?query=${nama}&apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2300,10 +2300,10 @@ router.get('/wikipedia', async (req, res, next) => {
        fetch(encodeURI(`https://api.lolhuman.xyz/api/wiki?apikey=sayahafiz&query=${search}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
                  creator: `Hafidz Abdillah`,
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2322,10 +2322,10 @@ router.get('/tebakanime', async (req, res, next) => {
        fetch(encodeURI(`https://api.lolhuman.xyz/api/tebakchara?apikey=sayahafiz`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	creator: 'Hafidz Abdillah',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2345,10 +2345,10 @@ router.get('/stalkyt', async (req, res, next) => {
        fetch(encodeURI(`https://api.lolhuman.xyz/api/ytchannel?apikey=sayahafiz&query=${user}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	creator: 'Hafidz Abdillah',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2367,10 +2367,10 @@ router.get('/katadilan', async (req, res, next) => {
        fetch(encodeURI(`https://api.lolhuman.xyz/api/quotes/dilan?apikey=sayahafiz`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	creator: 'Hafidz Abdillah',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2389,10 +2389,10 @@ router.get('/ceritahoror', async (req, res, next) => {
        fetch(encodeURI(`https://api.lolhuman.xyz/api/ceritahoror?apikey=sayahafiz`))
         .then(response => response.json())
         .then(falsedata => {
-        var data = data;
+        var result = data;
              res.json({
                  creator: `Hafidz Abdillah`,
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2409,9 +2409,9 @@ router.get('/randomquote/muslim', async (req, res, next) => {
        fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/quote?type=agamis`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2431,9 +2431,9 @@ router.get('/drakorasia', async (req, res, next) => {
        fetch(encodeURI(`http://docs-api-zahirrr.herokuapp.com/api/drakorasia?search=${search}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2452,9 +2452,9 @@ router.get('/cersex', async (req, res, next) => {
        fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/cersex-search?q=${jenis}&apikey=SayaHafiz`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2474,10 +2474,10 @@ router.get('/shope', async (req, res, next) => {
        fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/shopee?q=${produk}&apikey=SayaHafiz`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	creator: 'Hafidz Abdillah',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2497,9 +2497,9 @@ router.get('/jadwalshalat', async (req, res, next) => {
        fetch(encodeURI(`https://api.lolhuman.xyz/api/sholat/${kota}?apikey=sayahafiz`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2519,9 +2519,9 @@ router.get('/fakedata', async (req, res, next) => {
        fetch(encodeURI(`https://fakename-api-zhirrr.vercel.app/api/fakename?country=${country}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2541,9 +2541,9 @@ router.get('/hilih', async (req, res, next) => {
        fetch(encodeURI(`https://hilih-api-zhirrr.vercel.app/api/hilih?kata=${kata}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2562,9 +2562,9 @@ router.get('/holoh', async (req, res, next) => {
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/vokal/holoh?kata=${kata}&apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2583,9 +2583,9 @@ router.get('/heleh', async (req, res, next) => {
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/vokal/heleh?kata=${kata}&apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2605,9 +2605,9 @@ router.get('/huluh', async (req, res, next) => {
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/vokal/huluh?kata=${kata}&apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2626,9 +2626,9 @@ router.get('/liriklagu', async (req, res, next) => {
        fetch(encodeURI(`https://api.lolhuman.xyz/api/lirik?apikey=sayahafiz&query=${lagu}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2647,10 +2647,10 @@ router.get('/artikata', async (req, res, next) => {
        fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/arti-kata?q=${kata}&apikey=SayaHafiz`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	creator: 'Hafidz Abdillah',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2670,9 +2670,9 @@ router.get('/chordlagu', async (req, res, next) => {
        fetch(encodeURI(`https://python-api-zhirrr.herokuapp.com/api/chord?q=${lagu}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2690,9 +2690,9 @@ router.get('/random/asmaulhusna', async (req, res, next) => {
        fetch(encodeURI(`https://python-api-zhirrr.herokuapp.com/api/random/asmaulhusna`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2712,9 +2712,9 @@ router.get('/kbbi', async (req, res, next) => {
        fetch(encodeURI(`https://kbbi-api-zhirrr.vercel.app/api/kbbi?text=${kata}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2732,9 +2732,9 @@ router.get('/covidindo', async (req, res, next) => {
        fetch(encodeURI(`https://covid19-api-zhirrr.vercel.app/api/covid-indonesia`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2752,9 +2752,9 @@ router.get('/covidworld', async (req, res, next) => {
        fetch(encodeURI(`https://covid19-api-zhirrr.vercel.app/api/world`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2774,9 +2774,9 @@ router.get('/kodepos', async (req, res, next) => {
        fetch(encodeURI(`https://kodepos-api-zhirrr.vercel.app/?q=${kota}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2796,10 +2796,10 @@ router.get('/cuaca', async (req, res, next) => {
        fetch(encodeURI(`https://api.lolhuman.xyz/api/cuaca/${kota}?apikey=sayahafiz`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	creator: 'Hafidz Abdillah',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2815,9 +2815,9 @@ router.get('/infocuaca/bandara', async (req, res, next) => {
        fetch(encodeURI(`https://bmkg-api-zahirr.herokuapp.com/api/cuaca/bandara`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2834,9 +2834,9 @@ router.get('/infocuaca/dunia', async (req, res, next) => {
        fetch(encodeURI(`https://bmkg-api-zahirr.herokuapp.com/api/cuaca/dunia`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2853,9 +2853,9 @@ router.get('/infotsunami', async (req, res, next) => {
        fetch(encodeURI(`https://bmkg-api-zahirr.herokuapp.com/api/tsunami`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2875,9 +2875,9 @@ router.get('/random/meme', async (req, res, next) => {
        fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/meme`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2895,9 +2895,9 @@ router.get('/quotes/kanye', async (req, res, next) => {
        fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/quote?type=kanye`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2916,9 +2916,9 @@ router.get('/translate', async (req, res, next) => {
        fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/translate?text=${kata}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2937,10 +2937,10 @@ router.get('/jurnal', async (req, res, next) => {
        fetch(encodeURI(`https://alpin-api-2021.herokuapp.com/api/jurnalotaku?apikey=alpin1`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	author: 'Hafidz Abdillah',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2958,9 +2958,9 @@ router.get('/anime/listnom', async (req, res, next) => {
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/anime/mal-nomer?nomer=${nomor}&apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2978,9 +2978,9 @@ router.get('/anime/nameanime', async (req, res, next) => {
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/anime/mal-name?name=${search}&apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2998,9 +2998,9 @@ router.get('/anime/animeindo', async (req, res, next) => {
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/anime/animeindo?query=${search}&apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -3019,10 +3019,10 @@ router.get('/manga', async (req, res, next) => {
        fetch(encodeURI(`https://api.lolhuman.xyz/api/manga?apikey=sayahafiz&query=${judul}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	creator: 'Hafidz Abdillah',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -3040,9 +3040,9 @@ router.get('/anime/kusonime', async (req, res, next) => {
        fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/kusonime?search=${search}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -3060,9 +3060,9 @@ router.get('/gabut', async (req, res, next) => {
        fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/bosan`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -3081,9 +3081,9 @@ router.get('/manga', async (req, res, next) => {
        fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/manga?keyword=${search}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -3101,9 +3101,9 @@ router.get('/random/wallpaper', async (req, res, next) => {
        fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/random/wallpaper?genre=acak`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -3121,9 +3121,9 @@ router.get('/kuis/caklontong', async (req, res, next) => {
        fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/quote?type=caklontong`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -3142,9 +3142,9 @@ router.get('/jago', async (req, res, next) => {
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/jagokata?query=${kata}&apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -3161,9 +3161,9 @@ router.get('/asah', async (req, res, next) => {
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/asahotak?apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -3182,11 +3182,11 @@ router.get('/tebakangka', async (req, res, next) => {
        fetch(encodeURI(`https://alpin-api-2021.herokuapp.com/api/angka?nomor=${nomor}&apikey=alpin1`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
               author: 'Hafidz Abdillah', 
               message : `Semoga Kalian Senang:)`,
-              data
+              result
              })
          })
          .catch(e => {
@@ -3203,9 +3203,9 @@ router.get('/nebak', async (req, res, next) => {
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/tebakgambar?apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -3222,9 +3222,9 @@ router.get('/famely', async (req, res, next) => {
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/family100?apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -3241,9 +3241,9 @@ router.get('/lontong', async (req, res, next) => {
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/caklontong?apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -3262,10 +3262,10 @@ router.get('/news/cnn', async (req, res, next) => {
        fetch(encodeURI(`https://news-api-zhirrr.vercel.app/v1/cnn-news/${type}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	author: 'Zhirrr',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -3285,10 +3285,10 @@ router.get('/news/cnbc', async (req, res, next) => {
        fetch(encodeURI(`https://news-api-zhirrr.vercel.app/v1/cnbc-news/${type}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	author: 'Zhirrr',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -3308,10 +3308,10 @@ router.get('/news/republika', async (req, res, next) => {
        fetch(encodeURI(`https://news-api-zhirrr.vercel.app/v1/republika-news/${type}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	author: 'Zhirrr',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -3331,10 +3331,10 @@ router.get('/news/tempo', async (req, res, next) => {
        fetch(encodeURI(`https://news-api-zhirrr.vercel.app/v1/tempo-news/${type}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	author: 'Zhirrr',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -3354,10 +3354,10 @@ router.get('/news/antara', async (req, res, next) => {
        fetch(encodeURI(`https://news-api-zhirrr.vercel.app/v1/antara-news/${type}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	author: 'Zhirrr',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -3375,10 +3375,10 @@ router.get('/news/kumparan', async (req, res, next) => {
        fetch(encodeURI(`https://news-api-zhirrr.vercel.app/v1/kumparan-news`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	author: 'Zhirrr',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -3398,10 +3398,10 @@ router.get('/filmapik/search', async (req, res, next) => {
        fetch(encodeURI(`https://filmapik-api-zahirr.herokuapp.com/search?q=${film}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	author: 'Zhirrr',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -3421,10 +3421,10 @@ router.get('/filmapik/kategori', async (req, res, next) => {
        fetch(encodeURI(`https://filmapik-api-zahirr.herokuapp.com/category?search=${film}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	author: 'Zhirrr',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -3444,10 +3444,10 @@ router.get('/filmapik/play', async (req, res, next) => {
        fetch(encodeURI(`https://filmapik-api-zahirr.herokuapp.com/play?id=${id}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	author: 'Zhirrr',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -3465,10 +3465,10 @@ router.get('/filmapik/terbaru', async (req, res, next) => {
        fetch(encodeURI(`https://filmapik-api-zahirr.herokuapp.com/latest`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	author: 'Zhirrr',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -3488,10 +3488,10 @@ router.get('/lk21/search', async (req, res, next) => {
        fetch(encodeURI(`https://lk21-api-zahirr.herokuapp.com/search?query=${film}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	author: 'Zhirrr',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -3509,10 +3509,10 @@ router.get('/lk21/terbaru', async (req, res, next) => {
        fetch(encodeURI(`https://lk21-api-zahirr.herokuapp.com/newupload`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	author: 'Zhirrr',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -3530,10 +3530,10 @@ router.get('/lk21/comingsoon', async (req, res, next) => {
        fetch(encodeURI(`https://lk21-api-zahirr.herokuapp.com/comingsoon`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	author: 'Zhirrr',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -3551,10 +3551,10 @@ router.get('/lk21/tvseries', async (req, res, next) => {
        fetch(encodeURI(`https://lk21-api-zahirr.herokuapp.com/tv`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	author: 'Zhirrr',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -3574,10 +3574,10 @@ router.get('/lk21/year', async (req, res, next) => {
        fetch(encodeURI(`https://lk21-api-zahirr.herokuapp.com/year?year=${tahun}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	author: 'Zhirrr',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -3597,10 +3597,10 @@ router.get('/lk21/country', async (req, res, next) => {
        fetch(encodeURI(`https://lk21-api-zahirr.herokuapp.com/country?country=${negara}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	author: 'Zhirrr',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -3620,10 +3620,10 @@ router.get('/lk21/genre', async (req, res, next) => {
        fetch(encodeURI(`https://lk21-api-zahirr.herokuapp.com/genre?genre=${tipe}`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
              	author: 'Zhirrr',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -3658,8 +3658,8 @@ router.get('/textmaker/random', async (req, res, next) => {
                         $ = cheerio.load(b)
                         $(".thumbnail").find("img").each(function() {
                             h = $(this).attr("src")
-                            var data = "https://photooxy.com/"+h
-                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${data}&name=${randomTextNumber}`))
+                            var result = "https://photooxy.com/"+h
+                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${result}&name=${randomTextNumber}`))
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
@@ -3668,7 +3668,7 @@ router.get('/textmaker/random', async (req, res, next) => {
                                             status : true,
                                             creator : `${creator}`,
                                             message : `Semoga Kalian Senang:)`,
-                                            data:{
+                                            result:{
                                                 url:urlnya,
                                                 dee_url: dee_url,
                                                 info: 'url akan hilang setelah 2 menit'
@@ -3694,8 +3694,8 @@ router.get('/textmaker/random', async (req, res, next) => {
                         $ = cheerio.load(b)
                         $(".thumbnail").find("img").each(function() {
                             h = $(this).attr("src")
-                            var data = "https://photooxy.com/"+h
-                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${data}&name=${randomTextNumber}`))
+                            var result = "https://photooxy.com/"+h
+                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${result}&name=${randomTextNumber}`))
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
@@ -3704,7 +3704,7 @@ router.get('/textmaker/random', async (req, res, next) => {
                                             status : true,
                                             creator : `${creator}`,
                                             message : `Semoga Kalian Senang:)`,
-                                            data:{
+                                            result:{
                                                 url:urlnya,
                                                 dee_url: dee_url,
                                                 info: 'url akan hilang setelah 2 menit'
@@ -3745,8 +3745,8 @@ router.get('/textmaker/roses', async (req, res, next) => {
                         $ = cheerio.load(b)
                         $(".thumbnail").find("img").each(function() {
                             h = $(this).attr("src")
-                            var data = "https://photooxy.com/"+h
-                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${data}&name=${randomTextNumber}`))
+                            var result = "https://photooxy.com/"+h
+                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${result}&name=${randomTextNumber}`))
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
@@ -3755,7 +3755,7 @@ router.get('/textmaker/roses', async (req, res, next) => {
                                             status : true,
                                             creator : `${creator}`,
                                             message : `Semoga Kalian Senang:)`,
-                                            data:{
+                                            result:{
                                                 url:urlnya,
                                                 dee_url: dee_url,
                                                 info: 'url akan hilang setelah 2 menit'
@@ -3781,8 +3781,8 @@ router.get('/textmaker/roses', async (req, res, next) => {
                         $ = cheerio.load(b)
                         $(".thumbnail").find("img").each(function() {
                             h = $(this).attr("src")
-                            var data = "https://photooxy.com/"+h
-                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${data}&name=${randomTextNumber}`))
+                            var result = "https://photooxy.com/"+h
+                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${result}&name=${randomTextNumber}`))
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
@@ -3791,7 +3791,7 @@ router.get('/textmaker/roses', async (req, res, next) => {
                                             status : true,
                                             creator : `${creator}`,
                                             message : `Semoga Kalian Senang:)`,
-                                            data:{
+                                            result:{
                                                 url:urlnya,
                                                 dee_url: dee_url,
                                                 info: 'url akan hilang setelah 2 menit'
