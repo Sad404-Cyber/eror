@@ -330,7 +330,7 @@ router.get('/store', async (req, res, next) => {
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
     if (!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
 
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/search/playstore?query=${search}&apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://api.lolhuman.xyz/api/playstore?apikey=sayahafiz&query=${search}`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -352,12 +352,12 @@ router.get('/mediafire', async (req, res, next) => {
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
     if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
 
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/socialmedia/mediafire?url=${url}&apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/mediafire?url=${url}&apikey=SayaHafiz`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Hafidz Abdillah',
+             	creator: 'Hafidz Abdillah',
                  result
              })
          })
