@@ -1310,7 +1310,8 @@ router.get('/textmaker', async (req, res, next) => {
              text2 = req.query.text2,
              text3 = req.query.text3,
              apikey = req.query.apikey;
-        
+   
+   if(apikey != 'freeapi') return res.sendFile(invalidKey)     
 	if(!apikey) return res.json(loghandler.notparam)
         if (!theme) return res.json(loghandler.nottheme)
         if (theme != 'glitch' && theme != 'google-suggestion') return res.json(loghandler.notheme)
