@@ -2237,12 +2237,13 @@ router.get('/serstik', async (req, res, next) => {
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
     if (!nama) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter nama"})
 
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/search/searchsticker?query=${nama}&apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://api.lolhuman.xyz/api/stickerwa?apikey=sayahafiz&query=${nama}`))
         .then(response => response.json())
         .then(data => {
-        var result = data;
+        var data = data;
              res.json({
-                 result
+                 creator : `${creator}`
+                 data
              })
          })
          .catch(e => {
