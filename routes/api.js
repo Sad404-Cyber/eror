@@ -809,7 +809,7 @@ router.get('/igvidio', async (req, res, next) => {
 
 router.get('/ig', async (req, res, next) => {
         const apikey = req.query.apikey;
-            username = req.query.username
+            username = req.query.username;
             
 	if(!apikey) return res.json(loghandler.notparam)
     if (!username) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter username"})
