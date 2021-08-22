@@ -386,21 +386,21 @@ router.get('/covid', async (req, res, next) => {
 })
 
 
-router.get('/tv', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
-            chanel = req.query.chanel
+router.get('/jadwalbola', async (req, res, next) => {
+        var apikeyInput = req.query.apikey
+           
             
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
-        if(!chanel) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter chanel"})
+        
 
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/others/jadwaltv?channel=${chanel}&apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/jadwalbola?apikey=SayaHafiz`))
         .then(response => response.json())
         .then(data => {
-        var result = data;
+        var data = data;
              res.json({
-               author: 'Hafidz Abdillah',
-                 result
+               creator: 'Hafidz Abdillah',
+                 data
              })
          })
          .catch(e => {
@@ -437,12 +437,13 @@ router.get('/google', async (req, res, next) => {
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
     if (!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
 
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/search/googlesearch?query=${search}&apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://api.lolhuman.xyz/api/gsearch?apikey=sayahafiz&query=${search}`))
         .then(response => response.json())
         .then(data => {
-        var result = data;
+        var data = data;
              res.json({
-                 result
+                 creator : 'Hafidz Abdillah'
+                 data
              })
          })
          .catch(e => {
