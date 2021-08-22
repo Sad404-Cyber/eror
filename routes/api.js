@@ -1143,7 +1143,7 @@ router.get('/infonpm', async (req, res, next) => {
                  status : true,
                  creator : `${creator}`,
                  result,
-                 message : `Semoga Kalian Senang:)`
+                 message : `succes`
              })
          })
          .catch(e => {
@@ -1168,7 +1168,7 @@ router.get('/tiny', async (req, res, next) => {
                  result : {
                      link : `${body}`,
                  },
-                 message : `Semoga Kalian Senang:)`
+                 message : `succes`
              })
          } catch (e) {
              console.log('Error :', color(e,'red'))
@@ -1314,7 +1314,7 @@ router.get('/textmaker', async (req, res, next) => {
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
-                                            message : `Semoga Kalian Senang:)`,
+                                            message : `succes`,
                                             result:{
                                                 url:urlnya,
                                                 dee_url: dee_url,
@@ -1352,7 +1352,7 @@ router.get('/textmaker', async (req, res, next) => {
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
-                                            message : `Semoga Kalian Senang:)`,
+                                            message : `succes`,
                                             result:{
                                                 url:urlnya,
                                                 dee_url: dee_url,
@@ -1404,7 +1404,7 @@ router.get('/textmaker/game', async (req, res, next) => {
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
-                                            message : `Semoga Kalian Senang:)`,
+                                            message : `succes`,
                                             result:{
                                                 url:urlnya,
                                                 dee_url: dee_url,
@@ -1441,7 +1441,7 @@ router.get('/textmaker/game', async (req, res, next) => {
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
-                                            message : `Semoga Kalian Senang:)`,
+                                            message : `succes`,
                                             result:{
                                                 url:urlnya,
                                                 dee_url: dee_url,
@@ -1492,7 +1492,7 @@ router.get('/textmaker/senja', async (req, res, next) => {
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
-                                            message : `Semoga Kalian Senang:)`,
+                                            message : `succes`,
                                             result:{
                                                 url:urlnya,
                                                 dee_url: dee_url,
@@ -1528,7 +1528,7 @@ router.get('/textmaker/senja', async (req, res, next) => {
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
-                                            message : `Semoga Kalian Senang:)`,
+                                            message : `succes`,
                                             result:{
                                                 url:urlnya,
                                                 dee_url: dee_url,
@@ -1686,7 +1686,7 @@ router.get('/textmaker/metallic', async (req, res, next) => {
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
-                                            message : `Semoga Kalian Senang:)`,
+                                            message : `succes`,
                                             result:{
                                                 url:urlnya,
                                                 dee_url: dee_url,
@@ -1722,7 +1722,7 @@ router.get('/textmaker/metallic', async (req, res, next) => {
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
-                                            message : `Semoga Kalian Senang:)`,
+                                            message : `succes`,
                                             result:{
                                                 url:urlnya,
                                                 dee_url: dee_url,
@@ -1773,7 +1773,7 @@ router.get('/textmaker/alam', async (req, res, next) => {
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
-                                            message : `Semoga Kalian Senang:)`,
+                                            message : `succes`,
                                             result:{
                                                 url:urlnya,
                                                 dee_url: dee_url,
@@ -1809,7 +1809,7 @@ router.get('/textmaker/alam', async (req, res, next) => {
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
-                                            message : `Semoga Kalian Senang:)`,
+                                            message : `succes`,
                                             result:{
                                                 url:urlnya,
                                                 dee_url: dee_url,
@@ -3147,7 +3147,7 @@ router.get('/tebakangka', async (req, res, next) => {
         var result = data;
              res.json({
               author: 'Hafidz Abdillah', 
-              message : `Semoga Kalian Senang:)`,
+              message : `succes`,
               result
              })
          })
@@ -3628,7 +3628,7 @@ router.get('/textmaker/random', async (req, res, next) => {
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
-                                            message : `Semoga Kalian Senang:)`,
+                                            message : `succes`,
                                             result:{
                                                 url:urlnya,
                                                 dee_url: dee_url,
@@ -3664,7 +3664,7 @@ router.get('/textmaker/random', async (req, res, next) => {
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
-                                            message : `Semoga Kalian Senang:)`,
+                                            message : `succes`,
                                             result:{
                                                 url:urlnya,
                                                 dee_url: dee_url,
@@ -3715,7 +3715,7 @@ router.get('/textmaker/roses', async (req, res, next) => {
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
-                                            message : `Semoga Kalian Senang:)`,
+                                            message : `succes`,
                                             result:{
                                                 url:urlnya,
                                                 dee_url: dee_url,
@@ -3751,7 +3751,7 @@ router.get('/textmaker/roses', async (req, res, next) => {
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
-                                            message : `Semoga Kalian Senang:)`,
+                                            message : `succes`,
                                             result:{
                                                 url:urlnya,
                                                 dee_url: dee_url,
