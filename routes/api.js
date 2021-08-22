@@ -2225,9 +2225,9 @@ router.get('/wikipedia', async (req, res, next) => {
             search = req.query.search
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
         if(!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
 
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://api.lolhuman.xyz/api/wiki?apikey=sayahafiz&query=${search}`))
         .then(response => response.json())
         .then(data => {
@@ -2240,6 +2240,9 @@ router.get('/wikipedia', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 router.get('/tebakanime', async (req, res, next) => {
@@ -2430,6 +2433,31 @@ router.get('/jadwalshalat', async (req, res, next) => {
 
        if(listkey.includes(apikey)){
        fetch(encodeURI(`https://api.lolhuman.xyz/api/sholat/${kota}?apikey=sayahafiz`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 creator : 'Hafidz Abdillah',
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+  res.sendFile(invalidKey)
+}
+})
+
+router.get('/faktaunik', async (req, res, next) => {
+        var apikey = req.query.apikey
+           
+            
+	if(!apikey) return res.json(loghandler.notparam)
+        
+
+       if(listkey.includes(apikey)){
+       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/fakta?apikey=SayaHafiz`))
         .then(response => response.json())
         .then(data => {
         var result = data;
