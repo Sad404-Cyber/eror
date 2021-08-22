@@ -3136,8 +3136,7 @@ router.get('/asah', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-                 creator : 'Hafidz Abdillah',
-                 message : 'succes',
+                 creator : 'Hafidz Abdillah','
                  result
              })
          })
@@ -3163,7 +3162,6 @@ router.get('/tebakangka', async (req, res, next) => {
         var result = data;
              res.json({
               author: 'Hafidz Abdillah', 
-              message : `succes`,
               result
              })
          })
@@ -3187,7 +3185,6 @@ router.get('/nebak', async (req, res, next) => {
         var result = data;
              res.json({
                  creator : 'Hafidz Abdillah',
-                 message : 'succes',
                  result
              })
          })
