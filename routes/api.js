@@ -375,9 +375,9 @@ router.get('/covid', async (req, res, next) => {
        fetch(encodeURI(`https://api.lolhuman.xyz/api/corona/global?apikey=sayahafiz`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -397,10 +397,10 @@ router.get('/jadwalbola', async (req, res, next) => {
        fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/jadwalbola?apikey=SayaHafiz`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
-               creator: 'Hafidz Abdillah',
-                 data
+               creator : 'Hafidz Abdillah',
+                 result
              })
          })
          .catch(e => {
@@ -442,7 +442,7 @@ router.get('/google', async (req, res, next) => {
         .then(data => {
         var data = data;
              res.json({
-                 creator : 'Hafidz Abdillah'
+                 creator : 'Hafidz Abdillah',
                  data
              })
          })
