@@ -3242,29 +3242,6 @@ router.get('/gabut', async (req, res, next) => {
 })
 
 
-router.get('/manga', async (req, res, next) => {
-        var apikey = req.query.apikey,
-	    search = req.query.search
-            
-	if(!apikey) return res.json(loghandler.notparam)
-	if(!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
-	
-	     if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/manga?keyword=${search}`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-} else {
-  res.sendFile(invalidKey)
-}
-})
 
 
 router.get('/random/wallpaper', async (req, res, next) => {
@@ -3287,24 +3264,6 @@ router.get('/random/wallpaper', async (req, res, next) => {
 })
 
 
-router.get('/kuis/caklontong', async (req, res, next) => {
-        var apikey = req.query.apikey
-            
-	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
-
-       fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/quote?type=caklontong`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
 
 router.get('/jago', async (req, res, next) => {
         var apikey = req.query.apikey,
