@@ -1085,8 +1085,9 @@ router.get('/coming', async (req, res, next) => {
             
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
+	
 
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/movie/comingsoon?apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
@@ -1099,6 +1100,9 @@ router.get('/coming', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 router.get('/oskop', async (req, res, next) => {
@@ -1106,8 +1110,8 @@ router.get('/oskop', async (req, res, next) => {
             
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
-
+	
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/movie/jadwalbioskop?apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
@@ -1120,6 +1124,9 @@ router.get('/oskop', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 router.get('/randomquote', async (req, res, next) => {
@@ -2222,9 +2229,9 @@ router.get('/pinser', async (req, res, next) => {
             search = req.query.search
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
 
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://api.lolhuman.xyz/api/pinterest?apikey=sayahafiz&query=${search}`))
         .then(response => response.json())
         .then(data => {
@@ -2237,6 +2244,9 @@ router.get('/pinser', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 router.get('/serstik', async (req, res, next) => {
@@ -2244,9 +2254,9 @@ router.get('/serstik', async (req, res, next) => {
             nama = req.query.nama
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!nama) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter nama"})
 
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://api.lolhuman.xyz/api/stickerwa?apikey=sayahafiz&query=${nama}`))
         .then(response => response.json())
         .then(data => {
@@ -2259,6 +2269,9 @@ router.get('/serstik', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 router.get('/wikipedia', async (req, res, next) => {
@@ -3234,8 +3247,9 @@ router.get('/manga', async (req, res, next) => {
 	    search = req.query.search
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 	if(!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
+	
+	     if(listkey.includes(apikey)){
        fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/manga?keyword=${search}`))
         .then(response => response.json())
         .then(data => {
@@ -3247,6 +3261,9 @@ router.get('/manga', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
