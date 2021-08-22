@@ -663,10 +663,10 @@ router.get('/jarak', async (req, res, next) => {
             tujuan = req.query.tujuan
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!asal) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter asal"})
     if (!tujuan) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter tujuan"})
 
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://api.lolhuman.xyz/api/jaraktempuh?apikey=sayahafiz&kota1=${asal}&kota2=${tujuan}`))
         .then(response => response.json())
         .then(data => {
@@ -679,7 +679,9 @@ router.get('/jarak', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
-
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 router.get('/nsfwcek', async (req, res, next) => {
@@ -1436,7 +1438,8 @@ router.get('/kisahnabi', async (req, res, next) => {
 		apikey = req.query.apikey;
 
 		if (!apikey) return res.json(loghandler.notparam)
-		if (apikey != 'freeapi') return res.sendFile(invalidKey)
+		
+		if(listkey.includes(apikey)){
 		Searchnabi(nabi)
 		.then(result => {
 			res.json({
@@ -1448,6 +1451,9 @@ router.get('/kisahnabi', async (req, res, next) => {
 			console.log('Error :', color(e, 'red'))
 			res.json(loghandler.error)
 		})
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 router.get('/infogempa', async (req, res, next) => {
@@ -2687,9 +2693,9 @@ router.get('/kodepos', async (req, res, next) => {
 	    kota = req.query.kota
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 	if(!kota) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kota"})
 
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://kodepos-api-zhirrr.vercel.app/?q=${kota}`))
         .then(response => response.json())
         .then(data => {
@@ -2701,6 +2707,9 @@ router.get('/kodepos', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
