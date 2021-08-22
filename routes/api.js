@@ -3216,6 +3216,9 @@ router.get('/famely', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 router.get('/lontong', async (req, res, next) => {
