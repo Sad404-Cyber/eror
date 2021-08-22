@@ -2962,19 +2962,24 @@ router.get('/anime/animeindo', async (req, res, next) => {
 	      search = req.query.search
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 	if(!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
+	
+	     if(listkey.includes(apikey)){
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/anime/animeindo?query=${search}&apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
+                 creator : 'Hafidz Abdillah',
                  result
              })
          })
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 router.get('/manga', async (req, res, next) => {
@@ -2982,9 +2987,9 @@ router.get('/manga', async (req, res, next) => {
             judul = req.query.judul
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!judul) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter judul"})
 
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://api.lolhuman.xyz/api/manga?apikey=sayahafiz&query=${judul}`))
         .then(response => response.json())
         .then(data => {
@@ -2997,15 +3002,19 @@ router.get('/manga', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 router.get('/anime/kusonime', async (req, res, next) => {
         var apikey = req.query.apikey,
-	    search = req.query.search
+	      search = req.query.search
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 	if(!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
+	     
+	     if(listkey.includes(apikey)){
        fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/kusonime?search=${search}`))
         .then(response => response.json())
         .then(data => {
@@ -3017,6 +3026,9 @@ router.get('/anime/kusonime', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
