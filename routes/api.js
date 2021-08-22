@@ -755,22 +755,24 @@ router.get('/stalkgh', async (req, res, next) => {
             username = req.query.username
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!username) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter username"})
-
+       
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://alpin-api-2021.herokuapp.com/api/stalk/github?username=${username}&apikey=alpin1`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Hafidz Abdillah',
+             	creator: 'Hafidz Abdillah',
                  result
              })
          })
          .catch(e => {
          	res.json(loghandler.error)
 })
-
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 router.get('/joox', async (req, res, next) => {
@@ -851,10 +853,9 @@ router.get('/tiktod/stalk', async (req, res, next) => {
         username = req.query.username
 
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!username) return res.json(loghandler.notusername)
 
-
+    if(listkey.includes(apikey)){
     TikTokScraper.getUserProfileInfo(username)
         .then(user => {
             res.json({
@@ -867,9 +868,12 @@ router.get('/tiktod/stalk', async (req, res, next) => {
              res.json({
                  status : false,
                  creator : `${creator}`,
-                 message : "error, mungkin username anda tidak valid"
+                 message : "e rror, mungkin username anda tidak valid"
              })
          })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -2380,9 +2384,9 @@ router.get('/stalkyt', async (req, res, next) => {
             user = req.query.user
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!user) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter user"})
 
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://api.lolhuman.xyz/api/ytchannel?apikey=sayahafiz&query=${user}`))
         .then(response => response.json())
         .then(data => {
@@ -2395,7 +2399,9 @@ router.get('/stalkyt', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
-
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 router.get('/katadilan', async (req, res, next) => {
