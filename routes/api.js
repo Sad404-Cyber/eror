@@ -457,13 +457,13 @@ router.get('/gempa', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
 
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/others/infogempa?apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://api.lolhuman.xyz/api/infogempa?apikey=sayahafiz`))
         .then(response => response.json())
         .then(data => {
-        var result = data;
+        var data = data;
              res.json({
-                 author: 'Hafidz Abdillah',
-                 result
+                 creator: 'Hafidz Abdillah',
+                 data
              })
          })
          .catch(e => {
