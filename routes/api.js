@@ -1352,6 +1352,7 @@ router.get('/textmaker', async (req, res, next) => {
         } else if (theme == 'google-suggestion') {
         	if (!text2) return res.json(loghandler.nottext2)
         if (!text3) return res.json(loghandler.nottext3)
+        if(listkey.includes(apikey)){
             request.post({
                 url: "https://photooxy.com/other-design/make-google-suggestion-photos-238.html",
                 headers: {
@@ -1384,6 +1385,7 @@ router.get('/textmaker', async (req, res, next) => {
                     }
                 }) 
         }
+   }
 } else {
   res.sendFile(invalidKey)
 }
