@@ -1603,21 +1603,25 @@ router.get('/hadits', async (req, res, next) => {
             nomor = req.query.nomor
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!kitab) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kitab"})
     if (!nomor) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter nomor"})
-
+       
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://hadits-api-zhirrr.vercel.app/books/${kitab}/${nomor}`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
+                 creator : 'Hafidz Abdillah',
                  result
              })
          })
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -3237,8 +3241,8 @@ router.get('/news/cnn', async (req, res, next) => {
             
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
-    
+       
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/berita/cnn?apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
@@ -3251,6 +3255,9 @@ router.get('/news/cnn', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -3259,9 +3266,8 @@ router.get('/news/cnbc', async (req, res, next) => {
             
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     
-
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/berita/bcc?apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
@@ -3274,6 +3280,9 @@ router.get('/news/cnbc', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -3282,9 +3291,9 @@ router.get('/news/republika', async (req, res, next) => {
             
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
+	
     
-
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/berita/republika?apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
@@ -3297,6 +3306,9 @@ router.get('/news/republika', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -3305,9 +3317,9 @@ router.get('/news/tempo', async (req, res, next) => {
             
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
+	
     
-
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/berita/tempo?apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
@@ -3320,6 +3332,9 @@ router.get('/news/tempo', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -3328,9 +3343,9 @@ router.get('/news/antara', async (req, res, next) => {
             
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
+	
     
-
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/berita/antara?apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
@@ -3343,6 +3358,9 @@ router.get('/news/antara', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -3350,8 +3368,8 @@ router.get('/news/okezone', async (req, res, next) => {
         var apikey = req.query.apikey
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
-
+	
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/berita/okezone?apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
@@ -3364,6 +3382,9 @@ router.get('/news/okezone', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
