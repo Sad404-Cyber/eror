@@ -263,24 +263,21 @@ router.get('/resep', async (req, res, next) => {
 
 
 
-router.get('/cekapikey', async (req, res, next) => {
-    var apikey = req.query.apikey;
-
-	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey !== 'freeapi') return res.sendFile(invalidKey)
-	var limit = 'undefined'
-        if (apikey == 'freeapi') { limit = 'UNLIMITED' }
-
-try {
-	res.json({
-               status : `VALID`,
-                apikey : apikey,
-                limit : limit
-            })
- 
-} catch (e) {
-	res.sendFile(error)
-   }
+router.get('/cekapikey', async(req, res, next) => {
+  var apikey = req.query.apikey;
+  
+  if(!apikey) return res.json(loghandler.notparam)
+  if(listkey.includes(apikey)) {
+    res.json({
+      creator: 'Hafidz Abdillah',
+      status: 'true',
+      result: 
+      apikey: `${apikey}`,
+      message: 'APIKEY ACTIVE'
+    })
+  } else {
+    res.sendFile(invalidKey)
+  }
 })
 
 
