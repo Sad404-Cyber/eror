@@ -808,7 +808,7 @@ router.get('/igvidio', async (req, res, next) => {
 })
 
 router.get('/ig', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikeyInput = req.query.apikey,
             username = req.query.username
             
 	if(!apikeyInput) return res.json(loghandler.notparam)
