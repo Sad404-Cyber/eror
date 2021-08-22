@@ -812,9 +812,8 @@ router.get('/ig', async (req, res, next) => {
             username = req.query.username
             
 	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
     if (!username) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter username"})
-
+      if(listkey.includes(apikeyInput)){
        fetch(encodeURI(`http://fdz-app.herokuapp.com/api/stalkig?username=${username}`))
         .then(response => response.json())
         .then(data => {
@@ -827,7 +826,9 @@ router.get('/ig', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
-
+} else {
+  res.json(loghandler.invalidKey)
+}
 })
 
 router.get('/tiktod/stalk', async (req, res, next) => {
