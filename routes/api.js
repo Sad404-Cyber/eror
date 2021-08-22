@@ -11,7 +11,7 @@ var zahirr = db.get("zahirr");
 var creatorList = ['Hafidz Abdillah', 'Hafidz Abdillah.'];
 var creator = creatorList[Math.floor(Math.random() * creatorList.length)];
 
-const apikey =  ['freeapi', 'sayahafiz'];
+
 var key = 'EkakeY' // Apikey Lu Ngab
 
 var ffmpeg = require('fluent-ffmpeg');
@@ -813,6 +813,7 @@ router.get('/ig', async (req, res, next) => {
             
 	if(!apikeyInput) return res.json(loghandler.notparam)
     if (!username) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter username"})
+    
       if(listkey.includes(apikey)){
        fetch(encodeURI(`http://fdz-app.herokuapp.com/api/stalkig?username=${username}`))
         .then(response => response.json())
