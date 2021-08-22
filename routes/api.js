@@ -1306,11 +1306,11 @@ router.get('/textmaker', async (req, res, next) => {
              apikey = req.query.apikey;
         
 	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
         if (!theme) return res.json(loghandler.nottheme)
         if (theme != 'glitch' && theme != 'google-suggestion') return res.json(loghandler.notheme)
         if (!text) return res.json(loghandler.nottext)
-        
-        if(listkey.includes(apikey)){
+
         if (theme == 'glitch') {
         	if (!text2) return res.json(loghandler.nottext2)
             try {
@@ -1349,9 +1349,7 @@ router.get('/textmaker', async (req, res, next) => {
                 	console.log(e);
                 res.json(loghandler.error)
                 }
-        } else 
-        if(listkey.includes(apikey)){
-          if(theme == 'google-suggestion') {
+        } else if (theme == 'google-suggestion') {
         	if (!text2) return res.json(loghandler.nottext2)
         if (!text3) return res.json(loghandler.nottext3)
             request.post({
@@ -1385,11 +1383,9 @@ router.get('/textmaker', async (req, res, next) => {
                         })
                     }
                 }) 
-}
-} else {
-  res.sendFile(invalidKey)
-}
-
+        } else {
+            res.json(loghandler.error)
+        }
 })
 
 router.get('/textmaker/game', async (req, res, next) => {
