@@ -842,7 +842,7 @@ router.get('/ig', async (req, res, next) => {
          	res.json(loghandler.error)
 })
 } else {
-  res.sendFile(invalidKey)
+  res.json(loghandler.invalidKey)
 }
 })
 
