@@ -2562,13 +2562,13 @@ router.get('/faktaunik', async (req, res, next) => {
 
 router.get('/kubik', async (req, res, next) => {
         var apikey = req.query.apikey,
-            q = req.query.q
+            angka = req.query.angka
             
 	if(!apikey) return res.json(loghandler.notparam)
-        if(!q) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter q"})
+        if(!angka) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter angka"})
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/bdr/kubik?q=${q}&apikey=SayaHafiz`))
+       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/bdr/kubik?q=${angka}&apikey=SayaHafiz`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -2586,13 +2586,13 @@ router.get('/kubik', async (req, res, next) => {
 
 router.get('/kuadrat', async (req, res, next) => {
         var apikey = req.query.apikey,
-            q = req.query.q
+            angka = req.query.angka
             
 	if(!apikey) return res.json(loghandler.notparam)
-        if(!q) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter q"})
+        if(!q) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter angka"})
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/bdr/kuadrat?q=${q}&apikey=SayaHafiz`))
+       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/bdr/kuadrat?q=${angka}&apikey=SayaHafiz`))
         .then(response => response.json())
         .then(data => {
         var result = data;
