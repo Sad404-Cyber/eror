@@ -1392,7 +1392,6 @@ router.get('/textmaker', async (req, res, next) => {
                     }
                 }) 
         }
-   }
 } else {
   res.sendFile(invalidKey)
 }
