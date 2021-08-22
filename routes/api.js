@@ -902,46 +902,21 @@ router.get('/katailham', async (req, res, next) => {
 })
 })
 
-router.get('/addapikey', (req, res, next) => {
+router.get("/apikey", async (req, res, next) => {
 
-    var apikey = req.query.apikey,
+  const key = req.query.key;
 
-        status = req.query.status,
-        apikey  = req.query.apikey,
-        email = req.query.email,
-        nomorhp = req.query.nomorhp
-        name = req.query.name,
-        age = req.query.age,
-        country = req.query.country;
-        exp = req.query.exp;
-
-    if (!apikey) return res.json(loghandler.notparam)
-    if (!(status && apikey && email && nomorhp && name && age && country && exp)) return res.json(loghandler.notAddApiKey)
-    if (apikey != 'FREEAPIKEY') return res.sendFile(invalidKey)
-
-    try {
-        zahirr.insert({
-        	status: status,
-            apikey: apikey,
-            email: email,
-            nomor_hp: nomorhp,
-            name: name,
-            age: age,
-            country: country,
-            exp: exp
-        })
-        .then(() => {
-              res.json({
-                  status: true,
-                  creator: `${creator}`,
-                  result: 'berhasil menambah data, status : ' + status + ', apikey : ' + apikey + ', email : ' + email + ', nomor_hp : ' + nomorhp + ', name :  ' + name + ', age : ' + age + ', country : ' + country + ', exp : ' + exp
-              })
-        })
-    } catch (e) {
-        console.log(e)
-        res.json(loghandler.error)
-    }
-})
+  if(listkey.includes(key)) {
+    res.json({
+      message: 'apikey sudah terdaftar'
+    });
+  } else {
+    listkey.push(key);
+    res.json({
+      message: `berhasil mendaftarkan ${key} Kedatabase apikey`
+    });
+  }
+});
 
 router.get('/remove', (req, res, next) => {
     var apikey = req.query.apikey,
