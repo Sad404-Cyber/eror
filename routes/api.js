@@ -499,7 +499,7 @@ router.get('/ytmp3', async (req, res, next) => {
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
     if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
 
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/socialmedia/ytmp3?url=${url}&apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/ytdl?url=${url}&apikey=SayaHafiz`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -562,7 +562,7 @@ router.get('/ytmp4', async (req, res, next) => {
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
     if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
 
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/socialmedia/ytmp4?url=${url}&apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/ytdl?url=${url}&apikey=SayaHafiz`))
         .then(response => response.json())
         .then(data => {
         var result = data;
