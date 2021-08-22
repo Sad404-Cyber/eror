@@ -3259,19 +3259,19 @@ router.get('/news/cnbc', async (req, res, next) => {
 
 
 router.get('/news/republika', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
-            type = req.query.type
+        var apikeyInput = req.query.apikey
+            
             
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
-    if (!type) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter type"})
+    
 
-       fetch(encodeURI(`https://news-api-zhirrr.vercel.app/v1/republika-news/${type}`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/berita/republika?apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zhirrr',
+             	creator: 'Hafidz Abdillah',
                  result
              })
          })
@@ -3282,19 +3282,19 @@ router.get('/news/republika', async (req, res, next) => {
 
 
 router.get('/news/tempo', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
-            type = req.query.type
+        var apikeyInput = req.query.apikey
+            
             
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
-    if (!type) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter type"})
+    
 
-       fetch(encodeURI(`https://news-api-zhirrr.vercel.app/v1/tempo-news/${type}`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/berita/tempo?apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zhirrr',
+             	creator: 'Hafidz Abdillah',
                  result
              })
          })
