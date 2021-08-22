@@ -857,18 +857,17 @@ router.get('/tiktod/stalk', async (req, res, next) => {
 })
 
 
-router.get('/lucu', async (req, res, next) => {
+router.get('/katailham', async (req, res, next) => {
         var apikeyInput = req.query.apikey
             
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
 
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/quoteslucu?apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/katailham?apikey=SayaHafiz`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
-                 author: 'Hafidz Abdillah',
                  result
              })
          })
@@ -1152,26 +1151,6 @@ router.get('/infonpm', async (req, res, next) => {
 })
 })
 
-router.get('/cuttly', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
-            url = req.query.url
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
-    if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
-
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/others/cuttly?url=${url}&apikey=tvT241pY5rPDYQW`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
 
 router.get('/tiny', async (req, res, next) => {
     var apikeyInput = req.query.apikey,
@@ -2236,12 +2215,13 @@ router.get('/pinser', async (req, res, next) => {
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
     if (!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
 
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/search/pinterest?query=${search}&apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://api.lolhuman.xyz/api/pinterest?apikey=sayahafiz&query=loli%20kawaii`))
         .then(response => response.json())
         .then(data => {
-        var result = data;
+        var data = data;
              res.json({
-                 result
+                 creator : 'Hafidz Abdillah'
+                 data
              })
          })
          .catch(e => {
