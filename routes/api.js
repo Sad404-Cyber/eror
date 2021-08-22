@@ -520,7 +520,7 @@ router.get('/playmp3', async (req, res, next) => {
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
     if (!judul) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter judul"})
 
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/socialmedia/ytplaymp3?query=${judul}&apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/playmp3?q=${judul}&apikey=SayaHafiz`))
         .then(response => response.json())
         .then(data => {
         var result = data;
