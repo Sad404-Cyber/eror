@@ -1631,10 +1631,10 @@ router.get('/quran', async (req, res, next) => {
             ayat = req.query.ayat
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!surah) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter surah"})
     if (!ayat) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter ayat"})
-
+       
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://alquran-apiii.vercel.app/surah/${surah}/${ayat}`))
         .then(response => response.json())
         .then(data => {
@@ -1646,6 +1646,9 @@ router.get('/quran', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -1852,19 +1855,23 @@ router.get('/muslim/tahlil', async (req, res, next) => {
         var apikey = req.query.apikey
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/dataTahlil.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
+                 creator : 'Hafidz Abdillah',
                  result
              })
          })
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -1872,19 +1879,23 @@ router.get('/muslim/wirid', async (req, res, next) => {
         var apikey = req.query.apikey
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
-
+	     
+        if(listkey.includes(apikey)){
        fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/dataWirid.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
+                 creator : 'Hafidz Abdillah',
                  result
              })
          })
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -1892,19 +1903,23 @@ router.get('/muslim/ayatkursi', async (req, res, next) => {
         var apikey = req.query.apikey
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/dataAyatKursi.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
+                 creator : 'Hafidz Abdillah',
                  result
              })
          })
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -1912,19 +1927,23 @@ router.get('/muslim/doaharian', async (req, res, next) => {
         var apikey = req.query.apikey
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
-
+	
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/dataDoaHarian.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
+                 creator : 'Hafidz Abdillah',
                  result
              })
          })
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -1932,19 +1951,24 @@ router.get('/muslim/bacaanshalat', async (req, res, next) => {
         var apikey = req.query.apikey
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
-
+	
+	
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/dataBacaanShalat.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
+                 creator : 'Hafidz Abdillah',
                  result
              })
          })
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -1952,19 +1976,23 @@ router.get('/muslim/niatshalat', async (req, res, next) => {
         var apikey = req.query.apikey
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
-
+	
+	     if(listkey.includes(apikey)){
        fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/dataNiatShalat.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
+                 creator : 'Hafidz Abdillah',
                  result
              })
          })
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -1972,19 +2000,23 @@ router.get('/muslim/kisahnabi', async (req, res, next) => {
         var apikey = req.query.apikey
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
-
+	
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/dataKisahNabi.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
+                 creator : 'Hafidz Abdillah',
                  result
              })
          })
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -1992,19 +2024,23 @@ router.get('/muslim/asmaulhusna', async (req, res, next) => {
         var apikey = req.query.apikey
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
-
+	
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/dataAsmaulHusna.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
+                 creator : 'Hafidz Abdillah',
                  result
              })
          })
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -2012,19 +2048,23 @@ router.get('/muslim/niatshubuh', async (req, res, next) => {
         var apikey = req.query.apikey
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/NiatShubuh.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
+                 creator : 'Hafidz Abdillah',
                  result
              })
          })
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -2032,19 +2072,23 @@ router.get('/muslim/niatdzuhur', async (req, res, next) => {
         var apikey = req.query.apikey
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
-
+	    
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/NiatDzuhur.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
+                 creator : 'Hafidz Abdillah',
                  result
              })
          })
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -2052,19 +2096,23 @@ router.get('/muslim/niatmaghrib', async (req, res, next) => {
         var apikey = req.query.apikey
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
-
+	
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/NiatMaghrib.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
+                 creator : 'Hafidz Abdillah',
                  result
              })
          })
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -2072,19 +2120,23 @@ router.get('/muslim/niatisya', async (req, res, next) => {
         var apikey = req.query.apikey
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
-
+	
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/NiatIsya.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
+                 creator : 'Hafidz Abdillah',
                  result
              })
          })
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -2092,8 +2144,9 @@ router.get('/muslim/niatashar', async (req, res, next) => {
         var apikey = req.query.apikey
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
-
+	
+	    
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/NiatAshar.json`))
         .then(response => response.json())
         .then(data => {
@@ -2105,6 +2158,9 @@ router.get('/muslim/niatashar', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
