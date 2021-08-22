@@ -2825,7 +2825,7 @@ router.get('/kbbi', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-                 creator : 'Hafidz
+                 creator : 'Hafidz',
                  result
              })
          })
