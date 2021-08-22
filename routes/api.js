@@ -2848,9 +2848,9 @@ router.get('/jurnal', async (req, res, next) => {
             
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
+	
   
-
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://alpin-api-2021.herokuapp.com/api/jurnalotaku?apikey=alpin1`))
         .then(response => response.json())
         .then(data => {
@@ -2863,6 +2863,9 @@ router.get('/jurnal', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 router.get('/anime/listnom', async (req, res, next) => {
@@ -2870,8 +2873,9 @@ router.get('/anime/listnom', async (req, res, next) => {
 	    nomor = req.query.nomor
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 	if(!nomor) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter nomor"})
+	
+	     if(listkey.includes(apikey)){
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/anime/mal-nomer?nomer=${nomor}&apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
@@ -2883,6 +2887,9 @@ router.get('/anime/listnom', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 router.get('/anime/nameanime', async (req, res, next) => {
@@ -2890,8 +2897,9 @@ router.get('/anime/nameanime', async (req, res, next) => {
 	      search = req.query.search
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 	if(!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
+	 
+	      if(listkey.includes(apikey)){
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/anime/mal-name?name=${search}&apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
@@ -2903,6 +2911,9 @@ router.get('/anime/nameanime', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 router.get('/anime/animeindo', async (req, res, next) => {
