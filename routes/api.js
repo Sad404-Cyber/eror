@@ -195,10 +195,8 @@ router.get('/find', async (req, res, next) => {
 router.get('/truth', async (req, res, next) => {
         var apikey = req.query.apikey
             
-            
 	if(!apikey) return res.json(loghandler.notparam)
 	
-
        if(listkey.includes(apikey)){
        fetch(encodeURI(`https://alpin-api-2021.herokuapp.com/api/truth?apikey=alpin1`))
         .then(response => response.json())
