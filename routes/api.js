@@ -813,7 +813,7 @@ router.get('/ig', async (req, res, next) => {
             
 	if(!apikeyInput) return res.json(loghandler.notparam)
     if (!username) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter username"})
-      if(listkey.includes(apikeyInput)){
+      if(listkey.includes(apikey)){
        fetch(encodeURI(`http://fdz-app.herokuapp.com/api/stalkig?username=${username}`))
         .then(response => response.json())
         .then(data => {
