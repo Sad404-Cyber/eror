@@ -365,7 +365,7 @@ router.get('/mediafire', async (req, res, next) => {
          	res.json(loghandler.error)
 })
 } else {
-  res.sendFile(invalidKey)
+  res.json(loghandler.invalidKey)
 }
 })
 
@@ -514,7 +514,7 @@ router.get('/ytmp3', async (req, res, next) => {
          	res.json(loghandler.error)
 })
 } else {
-  res.sendFile(invalidKey)
+  res.json(loghandler.invalidKey)
 }
 })
 
@@ -538,7 +538,7 @@ router.get('/playmp3', async (req, res, next) => {
          	res.json(loghandler.error)
 })
 } else {
-  res.sendFile(invalidKey)
+  res.json(loghandler.invalidKey)
 }
 })
 
@@ -563,7 +563,7 @@ router.get('/ytmp4', async (req, res, next) => {
          	res.json(loghandler.error)
 })
 } else {
-  res.sendFile(invalidKey)
+  res.json(loghandler.invalidKey)
 }
 })
 
@@ -794,7 +794,7 @@ router.get('/joox', async (req, res, next) => {
          	res.json(loghandler.error)
 })
 } else {
-  res.sendFile(invalidKey)
+  res.json(loghandler.invalidKey)
 }
 })
 
@@ -1665,7 +1665,7 @@ router.get('/fbdown', async (req, res, next) => {
          	res.json(loghandler.error)
 })
 } else {
-  res.sendFile(invalidKey)
+  res.json(loghandler.invalidKey)
 }
 })
 
