@@ -460,10 +460,10 @@ router.get('/gempa', async (req, res, next) => {
        fetch(encodeURI(`https://api.lolhuman.xyz/api/infogempa?apikey=sayahafiz`))
         .then(response => response.json())
         .then(data => {
-        var data = data;
+        var result = data;
              res.json({
                  creator: 'Hafidz Abdillah',
-                 data
+                 result
              })
          })
          .catch(e => {
@@ -2220,7 +2220,7 @@ router.get('/pinser', async (req, res, next) => {
         .then(data => {
         var data = data;
              res.json({
-                 creator : 'Hafidz Abdillah'
+                 creator : 'Hafidz Abdillah',
                  data
              })
          })
@@ -2242,7 +2242,7 @@ router.get('/serstik', async (req, res, next) => {
         .then(data => {
         var data = data;
              res.json({
-                 creator : `${creator}`
+                 creator : `${creator}`,
                  data
              })
          })
