@@ -375,8 +375,9 @@ router.get('/covid', async (req, res, next) => {
         var apikey = req.query.apikey
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
+
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://api.lolhuman.xyz/api/corona/global?apikey=sayahafiz`))
         .then(response => response.json())
         .then(data => {
@@ -388,6 +389,9 @@ router.get('/covid', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -396,9 +400,8 @@ router.get('/jadwalbola', async (req, res, next) => {
            
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
         
-
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/jadwalbola?apikey=SayaHafiz`))
         .then(response => response.json())
         .then(data => {
@@ -411,6 +414,9 @@ router.get('/jadwalbola', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 router.get('/storeinfo', async (req, res, next) => {
@@ -460,8 +466,8 @@ router.get('/gempa', async (req, res, next) => {
         var apikey = req.query.apikey
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://api.lolhuman.xyz/api/infogempa?apikey=sayahafiz`))
         .then(response => response.json())
         .then(data => {
@@ -474,6 +480,9 @@ router.get('/gempa', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 router.get('/heroml', async (req, res, next) => {
@@ -1111,9 +1120,9 @@ router.get('/infonpm', async (req, res, next) => {
             query = req.query.query
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!query) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter query"})
 
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://registry.npmjs.org/${query}`))
         .then(response => response.json())
         .then(data => {
@@ -1128,6 +1137,9 @@ router.get('/infonpm', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -2719,9 +2731,9 @@ router.get('/cuaca', async (req, res, next) => {
             kota = req.query.kota
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!kota) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kota"})
 
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://api.lolhuman.xyz/api/cuaca/${kota}?apikey=sayahafiz`))
         .then(response => response.json())
         .then(data => {
@@ -2734,6 +2746,33 @@ router.get('/cuaca', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
+})
+
+router.get('/hoax', async (req, res, next) => {
+        var apikey = req.query.apikey
+            
+            
+	if(!apikey) return res.json(loghandler.notparam)
+
+       if(listkey.includes(apikey)){
+       fetch(encodeURI(`https://api.lolhuman.xyz/api/turnbackhoax?apikey=sayahafiz`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+             	creator: 'Hafidz Abdillah',
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+sayahafiz} else {
+  res.sendFile(invalidKey)
+}
 })
 
 router.get('/infocuaca/bandara', async (req, res, next) => {
