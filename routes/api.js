@@ -365,7 +365,7 @@ router.get('/mediafire', async (req, res, next) => {
          	res.json(loghandler.error)
 })
 } else {
-  res.json(loghandler.invalidKey)
+  res.sendFile(invalidKey)
 }
 })
 
@@ -514,7 +514,7 @@ router.get('/ytmp3', async (req, res, next) => {
          	res.json(loghandler.error)
 })
 } else {
-  res.json(loghandler.invalidKey)
+  res.sendFile(invalidKey)
 }
 })
 
@@ -538,7 +538,7 @@ router.get('/playmp3', async (req, res, next) => {
          	res.json(loghandler.error)
 })
 } else {
-  res.json(loghandler.invalidKey)
+  res.sendFile(invalidKey)
 }
 })
 
@@ -563,7 +563,7 @@ router.get('/ytmp4', async (req, res, next) => {
          	res.json(loghandler.error)
 })
 } else {
-  res.json(loghandler.invalidKey)
+  res.sendFile(invalidKey)
 }
 })
 
@@ -794,7 +794,7 @@ router.get('/joox', async (req, res, next) => {
          	res.json(loghandler.error)
 })
 } else {
-  res.json(loghandler.invalidKey)
+  res.sendFile(invalidKey)
 }
 })
 
@@ -842,7 +842,7 @@ router.get('/ig', async (req, res, next) => {
          	res.json(loghandler.error)
 })
 } else {
-  res.json(loghandler.invalidKey)
+  res.sendFile(invalidKey)
 }
 })
 
@@ -907,7 +907,7 @@ router.get('/addapikey', (req, res, next) => {
 
     if (!apikey) return res.json(loghandler.notparam)
     if (!(status && apikey && email && nomorhp && name && age && country && exp)) return res.json(loghandler.notAddApiKey)
-    if (apikey != 'FREEAPIKEY') return res.json(loghandler.invalidKey)
+    if (apikey != 'FREEAPIKEY') return res.sendFile(invalidKey)
 
     try {
         zahirr.insert({
@@ -946,7 +946,7 @@ router.get('/remove', (req, res, next) => {
 
     if (!apikey) return res.json(loghandler.notparam)
     if (!(status && apikey && email && nomorhp && name && age && country && exp)) return res.json(loghandler.notAddApiKey)
-    if (apikey != 'FREEAPIKEY') return res.json(loghandler.invalidKey)
+    if (apikey != 'FREEAPIKEY') return res.sendFile(invalidKey)
 
     try {
         zahirr.remove({
@@ -1665,7 +1665,7 @@ router.get('/fbdown', async (req, res, next) => {
          	res.json(loghandler.error)
 })
 } else {
-  res.json(loghandler.invalidKey)
+  res.sendFile(invalidKey)
 }
 })
 
