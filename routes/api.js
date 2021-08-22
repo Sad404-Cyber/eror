@@ -2215,7 +2215,7 @@ router.get('/pinser', async (req, res, next) => {
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
     if (!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
 
-       fetch(encodeURI(`https://api.lolhuman.xyz/api/pinterest?apikey=sayahafiz&query=loli%20kawaii`))
+       fetch(encodeURI(`https://api.lolhuman.xyz/api/pinterest?apikey=sayahafiz&query=${search}`))
         .then(response => response.json())
         .then(data => {
         var data = data;
