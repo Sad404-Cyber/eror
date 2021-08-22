@@ -2804,9 +2804,9 @@ router.get('/kbbi', async (req, res, next) => {
             kata = req.query.kata
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
         if(!kata) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
 
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://kbbi-api-zhirrr.vercel.app/api/kbbi?text=${kata}`))
         .then(response => response.json())
         .then(data => {
@@ -2819,6 +2819,9 @@ router.get('/kbbi', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -2826,8 +2829,8 @@ router.get('/covidindo', async (req, res, next) => {
         var apikey = req.query.apikey
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
-
+	
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://covid19-api-zhirrr.vercel.app/api/covid-indonesia`))
         .then(response => response.json())
         .then(data => {
@@ -2839,6 +2842,9 @@ router.get('/covidindo', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -2931,7 +2937,7 @@ router.get('/hoax', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
-sayahafiz} else {
+} else {
   res.sendFile(invalidKey)
 }
 })
