@@ -492,8 +492,8 @@ router.get('/heroml', async (req, res, next) => {
         var apikey = req.query.apikey
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
-
+	
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/others/listheroml?apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
@@ -506,6 +506,9 @@ router.get('/heroml', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 router.get('/ytmp3', async (req, res, next) => {
@@ -1202,9 +1205,9 @@ router.get('/string', async (req, res, next) => {
             text = req.query.text
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter text"})
 
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://api.lolhuman.xyz/api/convert/strtohex?apikey=sayahafiz&text=${text}`))
         .then(response => response.json())
         .then(data => {
@@ -1217,7 +1220,9 @@ router.get('/string', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
-
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 router.get('/hex', async (req, res, next) => {
@@ -1225,9 +1230,9 @@ router.get('/hex', async (req, res, next) => {
             code = req.query.code
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!code) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter code"})
 
+       if(listkey.includes(apikey)){ 
        fetch(encodeURI(`https://api.lolhuman.xyz/api/convert/hextostr?apikey=sayahafiz&hex=${code}`))
         .then(response => response.json())
         .then(data => {
@@ -1240,7 +1245,9 @@ router.get('/hex', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
-
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 router.get('/base', async (req, res, next) => {
@@ -1249,8 +1256,8 @@ router.get('/base', async (req, res, next) => {
 		decode = req.query.decode,
 		apikey = req.query.apikey;
 		if (!apikey) return res.json(loghandler.notparam)
-		if (apikey != 'freeapi') return res.sendFile(invalidKey)
 		if (!type) return res.json({status: false, creator, code: 404, message: 'masukan parameter type, type yang tersedia : base64 , base32'})
+		if(listkey.includes(apikey)){
 		if (type == 'base64' && encode){
 				Base("b64enc", encode)
 				.then(result => {
@@ -1296,6 +1303,9 @@ router.get('/base', async (req, res, next) => {
 			} else {
 				res.json(loghandler.error)
 			}
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
