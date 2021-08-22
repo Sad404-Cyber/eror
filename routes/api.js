@@ -142,7 +142,7 @@ loghandler = {
         status: false,
         creator: `${creator}`,
         code: 406,
-        message: 'masukan parameter status, apikeyInput, email, nomorhp, name, age, country, exp'
+        message: 'masukan parameter status, apikey, email, nomorhp, name, age, country, exp'
     },
     error: {
         status: false,
@@ -173,7 +173,7 @@ var len = 15
         
  
 router.get('/find', async (req, res, next) => {
-    var apikey = req.query.apikey
+    const apikey = req.query.apikey
     if (!apikey) return res.json(loghandler.notparam)
     if (apikey != 'freeapi') return res.sendFile(invalidKey)
 
@@ -193,11 +193,11 @@ router.get('/find', async (req, res, next) => {
 })
 
 router.get('/truth', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://alpin-api-2021.herokuapp.com/api/truth?apikey=alpin1`))
         .then(response => response.json())
@@ -214,11 +214,11 @@ router.get('/truth', async (req, res, next) => {
 })
 
 router.get('/dare', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://alpin-api-2021.herokuapp.com/api/dare?apikey=alpin1`))
         .then(response => response.json())
@@ -235,11 +235,11 @@ router.get('/dare', async (req, res, next) => {
 })
 
 router.get('/resep', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             makanan = req.query.makanan
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!makanan) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter makanan"})
 
        fetch(encodeURI(`https://masak-apa-tomorisakura.vercel.app/api/search/?q=${makanan}`))
@@ -258,17 +258,17 @@ router.get('/resep', async (req, res, next) => {
 
 
 router.get('/cekapikey', async (req, res, next) => {
-    var apikeyInput = req.query.apikey;
+    const apikey = req.query.apikey;
 
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput !== 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey !== 'freeapi') return res.sendFile(invalidKey)
 	var limit = 'undefined'
-        if (apikeyInput == 'freeapi') { limit = 'UNLIMITED' }
+        if (apikey == 'freeapi') { limit = 'UNLIMITED' }
 
 try {
 	res.json({
                status : `VALID`,
-                apikey : apikeyInput,
+                apikey : apikey,
                 limit : limit
             })
  
@@ -282,12 +282,12 @@ try {
 const listkey = ["sayahafiz", "danugans"];
 
 router.get('/tiktod', async (req, res, next) => {
-    var apikeyInput = req.query.apikey,
+    const apikey = req.query.apikey,
         url = req.query.url
 
 
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput.includes(listkey)) return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey.includes(listkey)) return res.sendFile(invalidKey)
      if (!url) return res.json(loghandler.noturl)
 
      TikTokScraper.getVideoMeta(url, options)
@@ -306,11 +306,11 @@ router.get('/tiktod', async (req, res, next) => {
 
 router.get('/ssweb', async (req, res, next) => {
 
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
 	       url = req.query.url
 
-   if(!apikeyInput) return res.json(loghandler.notparam)
-  	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+   if(!apikey) return res.json(loghandler.notparam)
+  	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
 
      var hasil = await getBuffer(`http://nurutomo.herokuapp.com/api/ssweb?url=${url}`)
@@ -323,11 +323,11 @@ router.get('/ssweb', async (req, res, next) => {
 })
 
 router.get('/store', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             search = req.query.search
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
 
        fetch(encodeURI(`https://api.lolhuman.xyz/api/playstore?apikey=sayahafiz&query=${search}`))
@@ -345,13 +345,13 @@ router.get('/store', async (req, res, next) => {
 })
 
 router.get('/mediafire', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
-            url = req.query.url
+        const apikey = req.query.apikey;
+            url = req.query.url;
            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
     if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
-
+       
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/mediafire?url=${url}&apikey=SayaHafiz`))
         .then(response => response.json())
         .then(data => {
@@ -364,13 +364,16 @@ router.get('/mediafire', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 router.get('/covid', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://api.lolhuman.xyz/api/corona/global?apikey=sayahafiz`))
         .then(response => response.json())
@@ -387,11 +390,11 @@ router.get('/covid', async (req, res, next) => {
 
 
 router.get('/jadwalbola', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
            
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
         
 
        fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/jadwalbola?apikey=SayaHafiz`))
@@ -409,11 +412,11 @@ router.get('/jadwalbola', async (req, res, next) => {
 })
 
 router.get('/storeinfo', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             nama = req.query.nama
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!nama) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter nama"})
 
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/search/playstore-info?id=${nama}&apikey=tvT241pY5rPDYQW`))
@@ -430,11 +433,11 @@ router.get('/storeinfo', async (req, res, next) => {
 })
 
 router.get('/google', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             search = req.query.search
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
 
        fetch(encodeURI(`https://api.lolhuman.xyz/api/gsearch?apikey=sayahafiz&query=${search}`))
@@ -452,10 +455,10 @@ router.get('/google', async (req, res, next) => {
 })
 
 router.get('/gempa', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://api.lolhuman.xyz/api/infogempa?apikey=sayahafiz`))
         .then(response => response.json())
@@ -472,10 +475,10 @@ router.get('/gempa', async (req, res, next) => {
 })
 
 router.get('/heroml', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/others/listheroml?apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
@@ -492,13 +495,13 @@ router.get('/heroml', async (req, res, next) => {
 })
 
 router.get('/ytmp3', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
-            url = req.query.url
+          const apikey = req.query.apikey;
+            url = req.query.url;
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
     if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
-
+       
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/ytdl?url=${url}&apikey=SayaHafiz`))
         .then(response => response.json())
         .then(data => {
@@ -510,16 +513,19 @@ router.get('/ytmp3', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 router.get('/playmp3', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
-            judul = req.query.judul
+        const apikey = req.query.apikey;
+            judul = req.query.judul;
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
     if (!judul) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter judul"})
-
+       
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/playmp3?q=${judul}&apikey=SayaHafiz`))
         .then(response => response.json())
         .then(data => {
@@ -531,17 +537,20 @@ router.get('/playmp3', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
 router.get('/ytmp4', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
-            url = req.query.url
+        const apikey = req.query.apikey;
+            url = req.query.url;
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
     if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
 
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/ytdl?url=${url}&apikey=SayaHafiz`))
         .then(response => response.json())
         .then(data => {
@@ -553,6 +562,9 @@ router.get('/ytmp4', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 router.get('/ucapan', async (req, res) => {
@@ -644,12 +656,12 @@ router.get('/hitungmundur', async (req, res) => {
 })
 
 router.get('/jarak', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             asal = req.query.asal,
             tujuan = req.query.tujuan
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!asal) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter asal"})
     if (!tujuan) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter tujuan"})
 
@@ -669,11 +681,11 @@ router.get('/jarak', async (req, res, next) => {
 })
 
 router.get('/nsfwcek', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             url = req.query.url
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
 
        fetch(encodeURI(`https://api.lolhuman.xyz/api/nsfwcheck?apikey=sayahafiz&img=${url}`))
@@ -694,11 +706,11 @@ router.get('/nsfwcek', async (req, res, next) => {
 
 
 router.get('/rscovid', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     
 
        fetch(encodeURI(`https://alpin-api-2021.herokuapp.com/api/covid19?apikey=alpin1`))
@@ -717,11 +729,11 @@ router.get('/rscovid', async (req, res, next) => {
 })
 
 router.get('/sekolah', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
   
        fetch(encodeURI(`https://alpin-api-2021.herokuapp.com/api/sekolah?apikey=alpin1`))
         .then(response => response.json())
@@ -739,11 +751,11 @@ router.get('/sekolah', async (req, res, next) => {
 })
 
 router.get('/stalkgh', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             username = req.query.username
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!username) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter username"})
 
        fetch(encodeURI(`https://alpin-api-2021.herokuapp.com/api/stalk/github?username=${username}&apikey=alpin1`))
@@ -762,13 +774,13 @@ router.get('/stalkgh', async (req, res, next) => {
 })
 
 router.get('/joox', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
-            url = req.query.url
+        const apikey = req.query.apikey;
+            url = req.query.url;
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
     if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
-
+       
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://api.lolhuman.xyz/api/joox/${url}?apikey=sayahafiz`))
         .then(response => response.json())
         .then(data => {
@@ -781,15 +793,17 @@ router.get('/joox', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
-
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 router.get('/igvidio', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             url = req.query.url
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
 
        fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/instagram/video?url=${url}&apikey=SayaHafiz`))
@@ -828,16 +842,16 @@ router.get('/ig', async (req, res, next) => {
          	res.json(loghandler.error)
 })
 } else {
-  res.json(loghandler.invalidKey)
+  res.sendFile(invalidKey)
 }
 })
 
 router.get('/tiktod/stalk', async (req, res, next) => {
-    var apikeyInput = req.query.apikey,
+    const apikey = req.query.apikey,
         username = req.query.username
 
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!username) return res.json(loghandler.notusername)
 
 
@@ -860,10 +874,10 @@ router.get('/tiktod/stalk', async (req, res, next) => {
 
 
 router.get('/katailham', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/katailham?apikey=SayaHafiz`))
         .then(response => response.json())
@@ -880,10 +894,10 @@ router.get('/katailham', async (req, res, next) => {
 
 router.get('/addapikey', (req, res, next) => {
 
-    var apikey = req.query.apikey,
+    const apikey = req.query.apikey,
 
         status = req.query.status,
-        apikeyInput  = req.query.apikeyInput,
+        apikey  = req.query.apikey,
         email = req.query.email,
         nomorhp = req.query.nomorhp
         name = req.query.name,
@@ -892,13 +906,13 @@ router.get('/addapikey', (req, res, next) => {
         exp = req.query.exp;
 
     if (!apikey) return res.json(loghandler.notparam)
-    if (!(status && apikeyInput && email && nomorhp && name && age && country && exp)) return res.json(loghandler.notAddApiKey)
+    if (!(status && apikey && email && nomorhp && name && age && country && exp)) return res.json(loghandler.notAddApiKey)
     if (apikey != 'FREEAPIKEY') return res.json(loghandler.invalidKey)
 
     try {
         zahirr.insert({
         	status: status,
-            apikey: apikeyInput,
+            apikey: apikey,
             email: email,
             nomor_hp: nomorhp,
             name: name,
@@ -910,7 +924,7 @@ router.get('/addapikey', (req, res, next) => {
               res.json({
                   status: true,
                   creator: `${creator}`,
-                  result: 'berhasil menambah data, status : ' + status + ', apikey : ' + apikeyInput + ', email : ' + email + ', nomor_hp : ' + nomorhp + ', name :  ' + name + ', age : ' + age + ', country : ' + country + ', exp : ' + exp
+                  result: 'berhasil menambah data, status : ' + status + ', apikey : ' + apikey + ', email : ' + email + ', nomor_hp : ' + nomorhp + ', name :  ' + name + ', age : ' + age + ', country : ' + country + ', exp : ' + exp
               })
         })
     } catch (e) {
@@ -920,9 +934,9 @@ router.get('/addapikey', (req, res, next) => {
 })
 
 router.get('/remove', (req, res, next) => {
-    var apikey = req.query.apikey,
+    const apikey = req.query.apikey,
         status = req.query.status,
-        apikeyInput  = req.query.apikeyInput,
+        apikey  = req.query.apikey,
         email = req.query.email,
         nomorhp = req.query.nomorhp
         name = req.query.name,
@@ -931,13 +945,13 @@ router.get('/remove', (req, res, next) => {
         exp = req.query.exp;
 
     if (!apikey) return res.json(loghandler.notparam)
-    if (!(status && apikeyInput && email && nomorhp && name && age && country && exp)) return res.json(loghandler.notAddApiKey)
+    if (!(status && apikey && email && nomorhp && name && age && country && exp)) return res.json(loghandler.notAddApiKey)
     if (apikey != 'FREEAPIKEY') return res.json(loghandler.invalidKey)
 
     try {
         zahirr.remove({
             status: status,
-            apikey: apikeyInput,
+            apikey: apikey,
             email: email,
             nomor_hp: nomorhp,
             name: name,
@@ -949,7 +963,7 @@ router.get('/remove', (req, res, next) => {
              res.json({
                   status: true,
                   creator: `${creator}`,
-                  result: 'berhasil menghapus data, status : ' + status + ', apikey : ' + apikeyInput + ', email : ' + email + ', nomor_hp : ' + nomorhp + ', name :  ' + name + ', age : ' + age + ', country : ' + country + ', exp : ' + exp
+                  result: 'berhasil menghapus data, status : ' + status + ', apikey : ' + apikey + ', email : ' + email + ', nomor_hp : ' + nomorhp + ', name :  ' + name + ', age : ' + age + ', country : ' + country + ', exp : ' + exp
               })
         })
     } catch (e) {
@@ -960,11 +974,11 @@ router.get('/remove', (req, res, next) => {
 
 
 router.get('/nama', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             nama = req.query.nama
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!nama) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter nama"})
 
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/artinama?nama=${nama}&apikey=tvT241pY5rPDYQW`))
@@ -981,11 +995,11 @@ router.get('/nama', async (req, res, next) => {
 })
 
 router.get('/nomorhoki', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             nomor = req.query.nomor
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!nomor) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter nomor"})
 
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/nomorhoki?nomer=${nomor}&apikey=tvT241pY5rPDYQW`))
@@ -1003,11 +1017,11 @@ router.get('/nomorhoki', async (req, res, next) => {
 })
 
 router.get('/mimpi', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             mimpi = req.query.mimpi
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!mimpi) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter mimpi"})
 
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/artimimpi?mimpi=${mimpi}&apikey=tvT241pY5rPDYQW`))
@@ -1024,12 +1038,12 @@ router.get('/mimpi', async (req, res, next) => {
 })
 
 router.get('/ramal', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             pasangan1 = req.query.pasangan1,
             pasangan2 = req.query.pasangan2
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!pasangan1) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter pasangan 1"})
     if (!pasangan2) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter pasangan 2"})
 
@@ -1047,10 +1061,10 @@ router.get('/ramal', async (req, res, next) => {
 })
 
 router.get('/cerpen', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/cerpen?apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
@@ -1067,11 +1081,11 @@ router.get('/cerpen', async (req, res, next) => {
 })
 
 router.get('/coming', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/movie/comingsoon?apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
@@ -1088,11 +1102,11 @@ router.get('/coming', async (req, res, next) => {
 })
 
 router.get('/oskop', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/movie/jadwalbioskop?apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
@@ -1109,10 +1123,10 @@ router.get('/oskop', async (req, res, next) => {
 })
 
 router.get('/randomquote', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://python-api-zhirrr.herokuapp.com/api/random/quotes`))
         .then(response => response.json())
@@ -1130,11 +1144,11 @@ router.get('/randomquote', async (req, res, next) => {
 
 
 router.get('/infonpm', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             query = req.query.query
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!query) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter query"})
 
        fetch(encodeURI(`https://registry.npmjs.org/${query}`))
@@ -1155,11 +1169,11 @@ router.get('/infonpm', async (req, res, next) => {
 
 
 router.get('/tiny', async (req, res, next) => {
-    var apikeyInput = req.query.apikey,
+    const apikey = req.query.apikey,
         url = req.query.url
 
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
      if (!url) return res.json(loghandler.noturl)
 
      request(`https://tinyurl.com/api-create.php?url=${url}`, function (error, response, body) {
@@ -1180,11 +1194,11 @@ router.get('/tiny', async (req, res, next) => {
 })
 
 router.get('/string', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             text = req.query.text
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter text"})
 
        fetch(encodeURI(`https://api.lolhuman.xyz/api/convert/strtohex?apikey=sayahafiz&text=${text}`))
@@ -1203,11 +1217,11 @@ router.get('/string', async (req, res, next) => {
 })
 
 router.get('/hex', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             code = req.query.code
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!code) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter code"})
 
        fetch(encodeURI(`https://api.lolhuman.xyz/api/convert/hextostr?apikey=sayahafiz&hex=${code}`))
@@ -1229,9 +1243,9 @@ router.get('/base', async (req, res, next) => {
 	var type = req.query.type,
 		encode = req.query.encode,
 		decode = req.query.decode,
-		apikeyInput = req.query.apikey;
-		if (!apikeyInput) return res.json(loghandler.notparam)
-		if (apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+		apikey = req.query.apikey;
+		if (!apikey) return res.json(loghandler.notparam)
+		if (apikey != 'freeapi') return res.sendFile(invalidKey)
 		if (!type) return res.json({status: false, creator, code: 404, message: 'masukan parameter type, type yang tersedia : base64 , base32'})
 		if (type == 'base64' && encode){
 				Base("b64enc", encode)
@@ -1285,10 +1299,10 @@ router.get('/textmaker', async (req, res, next) => {
              text = req.query.text,
              text2 = req.query.text2,
              text3 = req.query.text3,
-             apikeyInput = req.query.apikey;
+             apikey = req.query.apikey;
         
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
         if (!theme) return res.json(loghandler.nottheme)
         if (theme != 'glitch' && theme != 'google-suggestion') return res.json(loghandler.notheme)
         if (!text) return res.json(loghandler.nottext)
@@ -1375,10 +1389,10 @@ router.get('/textmaker/game', async (req, res, next) => {
              text = req.query.text,
              text2 = req.query.text2,
              text3 = req.query.text3,
-             apikeyInput = req.query.apikey;
+             apikey = req.query.apikey;
         
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
         if (!theme) return res.json(loghandler.nottheme)
         if (theme != 'pubg' && theme != 'battlefield') return res.json(loghandler.notheme)
         if (!text) return res.json(loghandler.nottext)
@@ -1464,10 +1478,10 @@ router.get('/textmaker/senja', async (req, res, next) => {
              text = req.query.text,
              text2 = req.query.text2,
              text3 = req.query.text3,
-             apikeyInput = req.query.apikey;
+             apikey = req.query.apikey;
         
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
         if (!theme) return res.json(loghandler.nottheme)
         if (theme != 'coffee-cup' && theme != 'coffee-cup2') return res.json(loghandler.notheme)
         if (!text) return res.json(loghandler.nottext)
@@ -1548,10 +1562,10 @@ router.get('/textmaker/senja', async (req, res, next) => {
 
 router.get('/kisahnabi', async (req, res, next) => {
 	var nabi = req.query.nabi,
-		apikeyInput = req.query.apikey;
+		apikey = req.query.apikey;
 
-		if (!apikeyInput) return res.json(loghandler.notparam)
-		if (apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+		if (!apikey) return res.json(loghandler.notparam)
+		if (apikey != 'freeapi') return res.sendFile(invalidKey)
 		Searchnabi(nabi)
 		.then(result => {
 			res.json({
@@ -1566,10 +1580,10 @@ router.get('/kisahnabi', async (req, res, next) => {
 })
 
 router.get('/infogempa', async (req, res, next) => {
-	        var apikeyInput = req.query.apikey
+	        const apikey = req.query.apikey
 
-		if (!apikeyInput) return res.json(loghandler.notparam)
-		if (apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+		if (!apikey) return res.json(loghandler.notparam)
+		if (apikey != 'freeapi') return res.sendFile(invalidKey)
 		Gempa()
 		.then(result => {
 			res.json({
@@ -1584,12 +1598,12 @@ router.get('/infogempa', async (req, res, next) => {
 })
 
 router.get('/hadits', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             kitab = req.query.kitab,
             nomor = req.query.nomor
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!kitab) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kitab"})
     if (!nomor) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter nomor"})
 
@@ -1608,12 +1622,12 @@ router.get('/hadits', async (req, res, next) => {
 
 
 router.get('/quran', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             surah = req.query.surah,
             ayat = req.query.ayat
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!surah) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter surah"})
     if (!ayat) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter ayat"})
 
@@ -1632,13 +1646,13 @@ router.get('/quran', async (req, res, next) => {
 
 
 router.get('/fbdown', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
-            url = req.query.url
+        const apikey = req.query.apikey;
+            url = req.query.url;
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
     if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
-
+        
+        if(listkey.includes(apikey)){
        fetch(encodeURI(`https://fb-api-zhirrr.vercel.app/?url=${url}`))
         .then(response => response.json())
         .then(data => {
@@ -1650,6 +1664,9 @@ router.get('/fbdown', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -1658,10 +1675,10 @@ router.get('/textmaker/metallic', async (req, res, next) => {
              text = req.query.text,
              text2 = req.query.text2,
              text3 = req.query.text3,
-             apikeyInput = req.query.apikey;
+             apikey = req.query.apikey;
         
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
         if (!theme) return res.json(loghandler.nottheme)
         if (theme != 'neon' && theme != 'glow') return res.json(loghandler.notheme)
         if (!text) return res.json(loghandler.nottext)
@@ -1745,10 +1762,10 @@ router.get('/textmaker/alam', async (req, res, next) => {
              text = req.query.text,
              text2 = req.query.text2,
              text3 = req.query.text3,
-             apikeyInput = req.query.apikey;
+             apikey = req.query.apikey;
         
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
         if (!theme) return res.json(loghandler.nottheme)
         if (theme != 'summer' && theme != 'flower') return res.json(loghandler.notheme)
         if (!text) return res.json(loghandler.nottext)
@@ -1828,10 +1845,10 @@ router.get('/textmaker/alam', async (req, res, next) => {
 })
 
 router.get('/muslim/tahlil', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/dataTahlil.json`))
         .then(response => response.json())
@@ -1848,10 +1865,10 @@ router.get('/muslim/tahlil', async (req, res, next) => {
 
 
 router.get('/muslim/wirid', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/dataWirid.json`))
         .then(response => response.json())
@@ -1868,10 +1885,10 @@ router.get('/muslim/wirid', async (req, res, next) => {
 
 
 router.get('/muslim/ayatkursi', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/dataAyatKursi.json`))
         .then(response => response.json())
@@ -1888,10 +1905,10 @@ router.get('/muslim/ayatkursi', async (req, res, next) => {
 
 
 router.get('/muslim/doaharian', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/dataDoaHarian.json`))
         .then(response => response.json())
@@ -1908,10 +1925,10 @@ router.get('/muslim/doaharian', async (req, res, next) => {
 
 
 router.get('/muslim/bacaanshalat', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/dataBacaanShalat.json`))
         .then(response => response.json())
@@ -1928,10 +1945,10 @@ router.get('/muslim/bacaanshalat', async (req, res, next) => {
 
 
 router.get('/muslim/niatshalat', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/dataNiatShalat.json`))
         .then(response => response.json())
@@ -1948,10 +1965,10 @@ router.get('/muslim/niatshalat', async (req, res, next) => {
 
 
 router.get('/muslim/kisahnabi', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/dataKisahNabi.json`))
         .then(response => response.json())
@@ -1968,10 +1985,10 @@ router.get('/muslim/kisahnabi', async (req, res, next) => {
 
 
 router.get('/muslim/asmaulhusna', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/dataAsmaulHusna.json`))
         .then(response => response.json())
@@ -1988,10 +2005,10 @@ router.get('/muslim/asmaulhusna', async (req, res, next) => {
 
 
 router.get('/muslim/niatshubuh', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/NiatShubuh.json`))
         .then(response => response.json())
@@ -2008,10 +2025,10 @@ router.get('/muslim/niatshubuh', async (req, res, next) => {
 
 
 router.get('/muslim/niatdzuhur', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/NiatDzuhur.json`))
         .then(response => response.json())
@@ -2028,10 +2045,10 @@ router.get('/muslim/niatdzuhur', async (req, res, next) => {
 
 
 router.get('/muslim/niatmaghrib', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/NiatMaghrib.json`))
         .then(response => response.json())
@@ -2048,10 +2065,10 @@ router.get('/muslim/niatmaghrib', async (req, res, next) => {
 
 
 router.get('/muslim/niatisya', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/NiatIsya.json`))
         .then(response => response.json())
@@ -2068,10 +2085,10 @@ router.get('/muslim/niatisya', async (req, res, next) => {
 
 
 router.get('/muslim/niatashar', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/NiatAshar.json`))
         .then(response => response.json())
@@ -2088,10 +2105,10 @@ router.get('/muslim/niatashar', async (req, res, next) => {
 
 
 router.get('/wallpaper/cyberspace', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/CyberSpace.json`))
         .then(response => response.json())
@@ -2108,10 +2125,10 @@ router.get('/wallpaper/cyberspace', async (req, res, next) => {
 
 
 router.get('/wallpaper/teknologi', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/Technology.json`))
         .then(response => response.json())
@@ -2128,10 +2145,10 @@ router.get('/wallpaper/teknologi', async (req, res, next) => {
 
 
 router.get('/wallpaper/muslim', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/Islamic.json`))
         .then(response => response.json())
@@ -2148,10 +2165,10 @@ router.get('/wallpaper/muslim', async (req, res, next) => {
 
 
 router.get('/wallpaper/programming', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/Programming.json`))
         .then(response => response.json())
@@ -2168,10 +2185,10 @@ router.get('/wallpaper/programming', async (req, res, next) => {
 
 
 router.get('/wallpaper/pegunungan', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/Mountain.json`))
         .then(response => response.json())
@@ -2187,11 +2204,11 @@ router.get('/wallpaper/pegunungan', async (req, res, next) => {
 })
 
 router.get('/grupwa', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             search = req.query.search
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
 
        fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/whatsapp-group?q=${search}&apikey=SayaHafiz`))
@@ -2210,11 +2227,11 @@ router.get('/grupwa', async (req, res, next) => {
 })
 
 router.get('/pinser', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             search = req.query.search
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
 
        fetch(encodeURI(`https://api.lolhuman.xyz/api/pinterest?apikey=sayahafiz&query=${search}`))
@@ -2232,11 +2249,11 @@ router.get('/pinser', async (req, res, next) => {
 })
 
 router.get('/serstik', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             nama = req.query.nama
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!nama) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter nama"})
 
        fetch(encodeURI(`https://api.lolhuman.xyz/api/stickerwa?apikey=sayahafiz&query=${nama}`))
@@ -2254,11 +2271,11 @@ router.get('/serstik', async (req, res, next) => {
 })
 
 router.get('/wikipedia', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             search = req.query.search
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
         if(!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
 
        fetch(encodeURI(`https://api.lolhuman.xyz/api/wiki?apikey=sayahafiz&query=${search}`))
@@ -2276,11 +2293,11 @@ router.get('/wikipedia', async (req, res, next) => {
 })
 
 router.get('/tebakanime', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     
 
        fetch(encodeURI(`https://api.lolhuman.xyz/api/tebakchara?apikey=sayahafiz`))
@@ -2299,11 +2316,11 @@ router.get('/tebakanime', async (req, res, next) => {
 })
 
 router.get('/stalkyt', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             user = req.query.user
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!user) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter user"})
 
        fetch(encodeURI(`https://api.lolhuman.xyz/api/ytchannel?apikey=sayahafiz&query=${user}`))
@@ -2322,10 +2339,10 @@ router.get('/stalkyt', async (req, res, next) => {
 })
 
 router.get('/katadilan', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     
 
        fetch(encodeURI(`https://api.lolhuman.xyz/api/quotes/dilan?apikey=sayahafiz`))
@@ -2344,11 +2361,11 @@ router.get('/katadilan', async (req, res, next) => {
 })
 
 router.get('/ceritahoror', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
            
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
         
        fetch(encodeURI(`https://api.lolhuman.xyz/api/ceritahoror?apikey=sayahafiz`))
         .then(response => response.json())
@@ -2365,10 +2382,10 @@ router.get('/ceritahoror', async (req, res, next) => {
 })
 
 router.get('/randomquote/muslim', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/quote?type=agamis`))
         .then(response => response.json())
@@ -2385,11 +2402,11 @@ router.get('/randomquote/muslim', async (req, res, next) => {
 
 
 router.get('/drakorasia', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             search = req.query.search
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
         if(!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
 
        fetch(encodeURI(`http://docs-api-zahirrr.herokuapp.com/api/drakorasia?search=${search}`))
@@ -2406,11 +2423,11 @@ router.get('/drakorasia', async (req, res, next) => {
 })
 
 router.get('/cersex', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             jenis = req.query.jenis
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!jenis) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter jenis"})
 
        fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/cersex-search?q=${jenis}&apikey=SayaHafiz`))
@@ -2428,11 +2445,11 @@ router.get('/cersex', async (req, res, next) => {
 })
 
 router.get('/shope', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             produk = req.query.produk
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!produk) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter produk"})
 
        fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/shopee?q=${produk}&apikey=SayaHafiz`))
@@ -2451,11 +2468,11 @@ router.get('/shope', async (req, res, next) => {
 })
 
 router.get('/jadwalshalat', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             kota = req.query.kota
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
         if(!kota) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kota"})
 
        fetch(encodeURI(`https://api.lolhuman.xyz/api/sholat/${kota}?apikey=sayahafiz`))
@@ -2473,11 +2490,11 @@ router.get('/jadwalshalat', async (req, res, next) => {
 
 
 router.get('/fakedata', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             country = req.query.country
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
         if(!country) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter country"})
 
        fetch(encodeURI(`https://fakename-api-zhirrr.vercel.app/api/fakename?country=${country}`))
@@ -2495,11 +2512,11 @@ router.get('/fakedata', async (req, res, next) => {
 
 
 router.get('/hilih', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             kata = req.query.kata
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
         if(!kata) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
 
        fetch(encodeURI(`https://hilih-api-zhirrr.vercel.app/api/hilih?kata=${kata}`))
@@ -2516,11 +2533,11 @@ router.get('/hilih', async (req, res, next) => {
 })
 
 router.get('/holoh', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             kata = req.query.kata
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
         if(!kata) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
 
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/vokal/holoh?kata=${kata}&apikey=tvT241pY5rPDYQW`))
@@ -2537,11 +2554,11 @@ router.get('/holoh', async (req, res, next) => {
 })
 
 router.get('/heleh', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             kata = req.query.kata
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
         if(!kata) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
 
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/vokal/heleh?kata=${kata}&apikey=tvT241pY5rPDYQW`))
@@ -2559,11 +2576,11 @@ router.get('/heleh', async (req, res, next) => {
 
 
 router.get('/huluh', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             kata = req.query.kata
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
         if(!kata) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
 
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/vokal/huluh?kata=${kata}&apikey=tvT241pY5rPDYQW`))
@@ -2580,11 +2597,11 @@ router.get('/huluh', async (req, res, next) => {
 })
 
 router.get('/liriklagu', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             lagu = req.query.lagu
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
         if(!lagu) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
 
        fetch(encodeURI(`https://api.lolhuman.xyz/api/lirik?apikey=sayahafiz&query=${lagu}`))
@@ -2601,11 +2618,11 @@ router.get('/liriklagu', async (req, res, next) => {
 })
 
 router.get('/artikata', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             kata = req.query.kata
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!kata) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
 
        fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/arti-kata?q=${kata}&apikey=SayaHafiz`))
@@ -2624,11 +2641,11 @@ router.get('/artikata', async (req, res, next) => {
 })
 
 router.get('/chordlagu', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             lagu = req.query.lagu
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
         if(!lagu) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
 
        fetch(encodeURI(`https://python-api-zhirrr.herokuapp.com/api/chord?q=${lagu}`))
@@ -2646,10 +2663,10 @@ router.get('/chordlagu', async (req, res, next) => {
 
 
 router.get('/random/asmaulhusna', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://python-api-zhirrr.herokuapp.com/api/random/asmaulhusna`))
         .then(response => response.json())
@@ -2666,11 +2683,11 @@ router.get('/random/asmaulhusna', async (req, res, next) => {
 
 
 router.get('/kbbi', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             kata = req.query.kata
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
         if(!kata) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
 
        fetch(encodeURI(`https://kbbi-api-zhirrr.vercel.app/api/kbbi?text=${kata}`))
@@ -2688,10 +2705,10 @@ router.get('/kbbi', async (req, res, next) => {
 
 
 router.get('/covidindo', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://covid19-api-zhirrr.vercel.app/api/covid-indonesia`))
         .then(response => response.json())
@@ -2708,10 +2725,10 @@ router.get('/covidindo', async (req, res, next) => {
 
 
 router.get('/covidworld', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://covid19-api-zhirrr.vercel.app/api/world`))
         .then(response => response.json())
@@ -2728,11 +2745,11 @@ router.get('/covidworld', async (req, res, next) => {
 
 
 router.get('/kodepos', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
 	    kota = req.query.kota
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 	if(!kota) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kota"})
 
        fetch(encodeURI(`https://kodepos-api-zhirrr.vercel.app/?q=${kota}`))
@@ -2750,11 +2767,11 @@ router.get('/kodepos', async (req, res, next) => {
 
 
 router.get('/cuaca', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             kota = req.query.kota
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!kota) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kota"})
 
        fetch(encodeURI(`https://api.lolhuman.xyz/api/cuaca/${kota}?apikey=sayahafiz`))
@@ -2772,10 +2789,10 @@ router.get('/cuaca', async (req, res, next) => {
 })
 
 router.get('/infocuaca/bandara', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
        fetch(encodeURI(`https://bmkg-api-zahirr.herokuapp.com/api/cuaca/bandara`))
         .then(response => response.json())
         .then(data => {
@@ -2791,10 +2808,10 @@ router.get('/infocuaca/bandara', async (req, res, next) => {
 
 
 router.get('/infocuaca/dunia', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
        fetch(encodeURI(`https://bmkg-api-zahirr.herokuapp.com/api/cuaca/dunia`))
         .then(response => response.json())
         .then(data => {
@@ -2810,10 +2827,10 @@ router.get('/infocuaca/dunia', async (req, res, next) => {
 
 
 router.get('/infotsunami', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
        fetch(encodeURI(`https://bmkg-api-zahirr.herokuapp.com/api/tsunami`))
         .then(response => response.json())
         .then(data => {
@@ -2831,10 +2848,10 @@ router.get('/infotsunami', async (req, res, next) => {
 
 
 router.get('/random/meme', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/meme`))
         .then(response => response.json())
@@ -2851,10 +2868,10 @@ router.get('/random/meme', async (req, res, next) => {
 
 
 router.get('/quotes/kanye', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/quote?type=kanye`))
         .then(response => response.json())
@@ -2871,11 +2888,11 @@ router.get('/quotes/kanye', async (req, res, next) => {
 
 
 router.get('/translate', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
 	    kata = req.query.kata
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 	if(!kata) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
        fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/translate?text=${kata}`))
         .then(response => response.json())
@@ -2891,11 +2908,11 @@ router.get('/translate', async (req, res, next) => {
 })
 
 router.get('/jurnal', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
   
 
        fetch(encodeURI(`https://alpin-api-2021.herokuapp.com/api/jurnalotaku?apikey=alpin1`))
@@ -2913,11 +2930,11 @@ router.get('/jurnal', async (req, res, next) => {
 })
 
 router.get('/anime/listnom', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
 	    nomor = req.query.nomor
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 	if(!nomor) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter nomor"})
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/anime/mal-nomer?nomer=${nomor}&apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
@@ -2933,11 +2950,11 @@ router.get('/anime/listnom', async (req, res, next) => {
 })
 
 router.get('/anime/nameanime', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
 	      search = req.query.search
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 	if(!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/anime/mal-name?name=${search}&apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
@@ -2953,11 +2970,11 @@ router.get('/anime/nameanime', async (req, res, next) => {
 })
 
 router.get('/anime/animeindo', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
 	      search = req.query.search
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 	if(!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/anime/animeindo?query=${search}&apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
@@ -2973,11 +2990,11 @@ router.get('/anime/animeindo', async (req, res, next) => {
 })
 
 router.get('/manga', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             judul = req.query.judul
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!judul) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter judul"})
 
        fetch(encodeURI(`https://api.lolhuman.xyz/api/manga?apikey=sayahafiz&query=${judul}`))
@@ -2995,11 +3012,11 @@ router.get('/manga', async (req, res, next) => {
 })
 
 router.get('/anime/kusonime', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
 	    search = req.query.search
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 	if(!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
        fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/kusonime?search=${search}`))
         .then(response => response.json())
@@ -3016,10 +3033,10 @@ router.get('/anime/kusonime', async (req, res, next) => {
 
 
 router.get('/gabut', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/bosan`))
         .then(response => response.json())
@@ -3036,11 +3053,11 @@ router.get('/gabut', async (req, res, next) => {
 
 
 router.get('/manga', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
 	    search = req.query.search
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 	if(!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
        fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/manga?keyword=${search}`))
         .then(response => response.json())
@@ -3057,10 +3074,10 @@ router.get('/manga', async (req, res, next) => {
 
 
 router.get('/random/wallpaper', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/random/wallpaper?genre=acak`))
         .then(response => response.json())
@@ -3077,10 +3094,10 @@ router.get('/random/wallpaper', async (req, res, next) => {
 
 
 router.get('/kuis/caklontong', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/quote?type=caklontong`))
         .then(response => response.json())
@@ -3096,11 +3113,11 @@ router.get('/kuis/caklontong', async (req, res, next) => {
 })
 
 router.get('/jago', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             kata = req.query.kata
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!kata) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
 
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/jagokata?query=${kata}&apikey=tvT241pY5rPDYQW`))
@@ -3117,10 +3134,10 @@ router.get('/jago', async (req, res, next) => {
 })
 
 router.get('/asah', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/asahotak?apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
@@ -3136,11 +3153,11 @@ router.get('/asah', async (req, res, next) => {
 })
 
 router.get('/tebakangka', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             nomor = req.query.nomor
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!nomor) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter nomor"})
 
        fetch(encodeURI(`https://alpin-api-2021.herokuapp.com/api/angka?nomor=${nomor}&apikey=alpin1`))
@@ -3159,10 +3176,10 @@ router.get('/tebakangka', async (req, res, next) => {
 })
 
 router.get('/nebak', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/tebakgambar?apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
@@ -3178,10 +3195,10 @@ router.get('/nebak', async (req, res, next) => {
 })
 
 router.get('/famely', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/family100?apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
@@ -3197,10 +3214,10 @@ router.get('/famely', async (req, res, next) => {
 })
 
 router.get('/lontong', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/caklontong?apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
@@ -3216,11 +3233,11 @@ router.get('/lontong', async (req, res, next) => {
 })
 
 router.get('/news/cnn', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/berita/cnn?apikey=dor_dor`))
         .then(response => response.json())
@@ -3238,11 +3255,11 @@ router.get('/news/cnn', async (req, res, next) => {
 
 
 router.get('/news/cnbc', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     
 
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/berita/bcc?apikey=dor_dor`))
@@ -3261,11 +3278,11 @@ router.get('/news/cnbc', async (req, res, next) => {
 
 
 router.get('/news/republika', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     
 
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/berita/republika?apikey=dor_dor`))
@@ -3284,11 +3301,11 @@ router.get('/news/republika', async (req, res, next) => {
 
 
 router.get('/news/tempo', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     
 
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/berita/tempo?apikey=dor_dor`))
@@ -3307,11 +3324,11 @@ router.get('/news/tempo', async (req, res, next) => {
 
 
 router.get('/news/antara', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     
 
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/berita/antara?apikey=dor_dor`))
@@ -3330,10 +3347,10 @@ router.get('/news/antara', async (req, res, next) => {
 
 
 router.get('/news/okezone', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/berita/okezone?apikey=dor_dor`))
         .then(response => response.json())
@@ -3351,11 +3368,11 @@ router.get('/news/okezone', async (req, res, next) => {
 
 
 router.get('/filmapik/search', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             film = req.query.film
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!film) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter film"})
 
        fetch(encodeURI(`https://filmapik-api-zahirr.herokuapp.com/search?q=${film}`))
@@ -3374,11 +3391,11 @@ router.get('/filmapik/search', async (req, res, next) => {
 
 
 router.get('/filmapik/kategori', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             film = req.query.film
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!film) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter film"})
 
        fetch(encodeURI(`https://filmapik-api-zahirr.herokuapp.com/category?search=${film}`))
@@ -3397,11 +3414,11 @@ router.get('/filmapik/kategori', async (req, res, next) => {
 
 
 router.get('/filmapik/play', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             id = req.query.id
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!id) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter id"})
 
        fetch(encodeURI(`https://filmapik-api-zahirr.herokuapp.com/play?id=${id}`))
@@ -3420,10 +3437,10 @@ router.get('/filmapik/play', async (req, res, next) => {
 
 
 router.get('/filmapik/terbaru', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://filmapik-api-zahirr.herokuapp.com/latest`))
         .then(response => response.json())
@@ -3441,11 +3458,11 @@ router.get('/filmapik/terbaru', async (req, res, next) => {
 
 
 router.get('/lk21/search', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             film = req.query.film
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!film) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter film"})
 
        fetch(encodeURI(`https://lk21-api-zahirr.herokuapp.com/search?query=${film}`))
@@ -3464,10 +3481,10 @@ router.get('/lk21/search', async (req, res, next) => {
 
 
 router.get('/lk21/terbaru', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://lk21-api-zahirr.herokuapp.com/newupload`))
         .then(response => response.json())
@@ -3485,10 +3502,10 @@ router.get('/lk21/terbaru', async (req, res, next) => {
 
 
 router.get('/lk21/comingsoon', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://lk21-api-zahirr.herokuapp.com/comingsoon`))
         .then(response => response.json())
@@ -3506,10 +3523,10 @@ router.get('/lk21/comingsoon', async (req, res, next) => {
 
 
 router.get('/lk21/tvseries', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+        const apikey = req.query.apikey
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
 
        fetch(encodeURI(`https://lk21-api-zahirr.herokuapp.com/tv`))
         .then(response => response.json())
@@ -3527,11 +3544,11 @@ router.get('/lk21/tvseries', async (req, res, next) => {
 
 
 router.get('/lk21/year', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             tahun = req.query.tahun
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!tahun) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter tahun"})
 
        fetch(encodeURI(`https://lk21-api-zahirr.herokuapp.com/year?year=${tahun}`))
@@ -3550,11 +3567,11 @@ router.get('/lk21/year', async (req, res, next) => {
 
 
 router.get('/lk21/country', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             negara = req.query.negara
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!negara) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter negara"})
 
        fetch(encodeURI(`https://lk21-api-zahirr.herokuapp.com/country?country=${negara}`))
@@ -3573,11 +3590,11 @@ router.get('/lk21/country', async (req, res, next) => {
 
 
 router.get('/lk21/genre', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        const apikey = req.query.apikey,
             tipe = req.query.tipe
             
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!tipe) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter tipe"})
 
        fetch(encodeURI(`https://lk21-api-zahirr.herokuapp.com/genre?genre=${tipe}`))
@@ -3600,10 +3617,10 @@ router.get('/textmaker/random', async (req, res, next) => {
              text = req.query.text,
              text2 = req.query.text2,
              text3 = req.query.text3,
-             apikeyInput = req.query.apikey;
+             apikey = req.query.apikey;
         
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
         if (!theme) return res.json(loghandler.nottheme)
         if (theme != 'text-burn' && theme != 'art-quote') return res.json(loghandler.notheme)
         if (!text) return res.json(loghandler.nottext)
@@ -3687,10 +3704,10 @@ router.get('/textmaker/roses', async (req, res, next) => {
              text = req.query.text,
              text2 = req.query.text2,
              text3 = req.query.text3,
-             apikeyInput = req.query.apikey;
+             apikey = req.query.apikey;
         
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
+	if(!apikey) return res.json(loghandler.notparam)
+	if(apikey != 'freeapi') return res.sendFile(invalidKey)
         if (!theme) return res.json(loghandler.nottheme)
         if (theme != 'wooden-boarch' && theme != 'golden') return res.json(loghandler.notheme)
         if (!text) return res.json(loghandler.nottext)
