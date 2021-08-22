@@ -1494,7 +1494,7 @@ router.get('/textmaker/senja', async (req, res, next) => {
 
 router.get('/kisahnabi', async (req, res, next) => {
 	var nabi = req.query.nabi,
-		apikey = req.query.apikey
+		apikey = req.query.apikeym;
 
 		if (!apikey) return res.json(loghandler.notparam)
 		
@@ -1502,7 +1502,7 @@ router.get('/kisahnabi', async (req, res, next) => {
 		Searchnabi(nabi)
 		.then(result => {
 			res.json({
-				creator: creator,
+				creator: 'Hafidz abdillh',
 				result
 			})
 		})
@@ -1523,7 +1523,7 @@ router.get('/infogempa', async (req, res, next) => {
 		Gempa()
 		.then(result => {
 			res.json({
-				creator: creator,
+				creator: 'Hafidz abdillah',
 				result
 			})
 		})
