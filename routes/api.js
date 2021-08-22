@@ -375,7 +375,7 @@ router.get('/mediafire', async (req, res, next) => {
 })
 
 router.get('/covid', async (req, res, next) => {
-        var apikey = req.query.apikey
+        var apikey = req.query.apikey;
             
 	if(!apikey) return res.json(loghandler.notparam)
 
@@ -399,7 +399,7 @@ router.get('/covid', async (req, res, next) => {
 
 
 router.get('/jadwalbola', async (req, res, next) => {
-        var apikey = req.query.apikey
+        var apikey = req.query.apikey;
            
             
 	if(!apikey) return res.json(loghandler.notparam)
@@ -466,7 +466,7 @@ router.get('/google', async (req, res, next) => {
 })
 
 router.get('/gempa', async (req, res, next) => {
-        var apikey = req.query.apikey
+        var apikey = req.query.apikey;
             
 	if(!apikey) return res.json(loghandler.notparam)
 
@@ -489,7 +489,7 @@ router.get('/gempa', async (req, res, next) => {
 })
 
 router.get('/heroml', async (req, res, next) => {
-        var apikey = req.query.apikey
+        var apikey = req.query.apikey;
             
 	if(!apikey) return res.json(loghandler.notparam)
 	
