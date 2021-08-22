@@ -3199,9 +3199,9 @@ router.get('/jago', async (req, res, next) => {
             kata = req.query.kata
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!kata) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
 
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/jagokata?query=${kata}&apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
@@ -3213,6 +3213,9 @@ router.get('/jago', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 router.get('/asah', async (req, res, next) => {
