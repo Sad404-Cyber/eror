@@ -3327,18 +3327,18 @@ router.get('/news/antara', async (req, res, next) => {
 })
 
 
-router.get('/news/kumparan', async (req, res, next) => {
+router.get('/news/okezone', async (req, res, next) => {
         var apikeyInput = req.query.apikey
             
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
 
-       fetch(encodeURI(`https://news-api-zhirrr.vercel.app/v1/kumparan-news`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/berita/okezone?apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zhirrr',
+             	creator: 'Hafidz Abdillah',
                  result
              })
          })
