@@ -2473,7 +2473,7 @@ router.get('/faktaunik', async (req, res, next) => {
 }
 })
 
-router.get('/jadwalshalat', async (req, res, next) => {
+router.get('/kubik', async (req, res, next) => {
         var apikey = req.query.apikey,
             q = req.query.q
             
@@ -2482,6 +2482,30 @@ router.get('/jadwalshalat', async (req, res, next) => {
 
        if(listkey.includes(apikey)){
        fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/bdr/kubik?q=${q}&apikey=SayaHafiz`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+  res.sendFile(invalidKey)
+}
+})
+
+router.get('/kuadrat', async (req, res, next) => {
+        var apikey = req.query.apikey,
+            q = req.query.q
+            
+	if(!apikey) return res.json(loghandler.notparam)
+        if(!q) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter q"})
+
+       if(listkey.includes(apikey)){
+       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/bdr/kuadrat?q=${q}&apikey=SayaHafiz`))
         .then(response => response.json())
         .then(data => {
         var result = data;
