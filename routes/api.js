@@ -3236,19 +3236,19 @@ router.get('/news/cnn', async (req, res, next) => {
 
 
 router.get('/news/cnbc', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
-            type = req.query.type
+        var apikeyInput = req.query.apikey
+            
             
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'freeapi') return res.sendFile(invalidKey)
-    if (!type) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter type"})
+    
 
-       fetch(encodeURI(`https://news-api-zhirrr.vercel.app/v1/cnbc-news/${type}`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/berita/bcc?apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zhirrr',
+             	creator: 'Hafidz Abdillah',
                  result
              })
          })
