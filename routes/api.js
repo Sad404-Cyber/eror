@@ -918,44 +918,21 @@ router.get("/addkey", async (req, res, next) => {
   }
 });
 
-router.get('/remove', (req, res, next) => {
-    var apikey = req.query.apikey,
-        status = req.query.status,
-        apikey  = req.query.apikey,
-        email = req.query.email,
-        nomorhp = req.query.nomorhp
-        name = req.query.name,
-        age = req.query.age,
-        country = req.query.country;
-        exp = req.query.exp;
+router.get("/deletekey", async(req, res, next) => {
 
-    if (!apikey) return res.json(loghandler.notparam)
-    if (!(status && apikey && email && nomorhp && name && age && country && exp)) return res.json(loghandler.notAddApiKey)
-    if (apikey != 'FREEAPIKEY') return res.sendFile(invalidKey)
+	const key = req.query.delete;
 
-    try {
-        zahirr.remove({
-            status: status,
-            apikey: apikey,
-            email: email,
-            nomor_hp: nomorhp,
-            name: name,
-            age: age,
-            country: country,
-            exp: exp
-        })
-        .then(() => {
-             res.json({
-                  status: true,
-                  creator: `${creator}`,
-                  result: 'berhasil menghapus data, status : ' + status + ', apikey : ' + apikey + ', email : ' + email + ', nomor_hp : ' + nomorhp + ', name :  ' + name + ', age : ' + age + ', country : ' + country + ', exp : ' + exp
-              })
-        })
-    } catch (e) {
-        console.log(e)
-        res.json(loghandler.error)
-    }
-})
+	if(listkey.includes(key)) {
+		res.json({
+			message: 'apikey tidak ada sebelumnya'
+			})
+			} else {
+	listkey.splice(key, 1)
+	res.json({
+		message: 'apikey berhasil dihapus' 
+});
+ }
+});
 
 
 router.get('/nama', async (req, res, next) => {
