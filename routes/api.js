@@ -1012,18 +1012,18 @@ router.get('/nama', async (req, res, next) => {
 
 router.get('/nomorhoki', async (req, res, next) => {
         var apikey = req.query.apikey,
-            nomor = req.query.nomor
+            zodiak = req.query.zodiak
             
 	if(!apikey) return res.json(loghandler.notparam)
-    if (!nomor) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter nomor"})
+    if (!zodiak) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter zodiak"})
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/nomorhoki?nomer=${nomor}&apikey=dor_dor`))
+       fetch(encodeURI(`https://api.lolhuman.xyz/api/zodiak/${zodiak}?apikey=sayahafiz`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
-               author : 'Hafidz Abdillah',
+               creator: 'Hafidz Abdillah',
                  result
              })
          })
