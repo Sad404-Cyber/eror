@@ -3215,6 +3215,31 @@ router.get('/anime/animeindo', async (req, res, next) => {
 }
 })
 
+router.get('/searchmanga', async (req, res, next) => {
+        var apikey = req.query.apikey,
+            judul = req.query.judul
+            
+	if(!apikey) return res.json(loghandler.notparam)
+        if(!judul) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter judul"})
+
+       if(listkey.includes(apikey)){
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/search/mangatoon?query=${judul}`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 creator : 'Hafidz Abdillah',
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+  res.sendFile(invalidKey)
+}
+})
+
 router.get('/manga', async (req, res, next) => {
         var apikey = req.query.apikey,
             judul = req.query.judul
