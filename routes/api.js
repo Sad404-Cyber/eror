@@ -3357,20 +3357,20 @@ router.get('/asah', async (req, res, next) => {
 }
 })
 
-router.get('/tebakangka', async (req, res, next) => {
-        var apikey = req.query.apikey,
-            nomor = req.query.nomor
+router.get('/tebakkata', async (req, res, next) => {
+        var apikey = req.query.apikey
+            
             
 	if(!apikey) return res.json(loghandler.notparam)
-    if (!nomor) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter nomor"})
+    
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://alpin-api-2021.herokuapp.com/api/angka?nomor=${nomor}&apikey=alpin1`))
+       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/tebak-kata?apikey=SayaHafiz`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
-              author: 'Hafidz Abdillah', 
+              creator: 'Hafidz Abdillah', 
               result
              })
          })
