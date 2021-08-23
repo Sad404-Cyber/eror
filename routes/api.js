@@ -1010,7 +1010,7 @@ router.get('/nama', async (req, res, next) => {
 }
 })
 
-router.get('/nomorhoki', async (req, res, next) => {
+router.get('/zodiak', async (req, res, next) => {
         var apikey = req.query.apikey,
             zodiak = req.query.zodiak
             
