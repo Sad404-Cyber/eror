@@ -1257,6 +1257,25 @@ router.get('/hex', async (req, res, next) => {
 }
 })
 
+router.get('/maker/attp', async(req, res, next) => {
+
+
+
+  text = req.query.text;
+  var apikey = req.query.apikey;
+  if(!text) return res.json(loghandler.nottext)
+  if(!apikey) return res.json(loghandler.notparam)
+  
+  if(listkey.includes(apikey)) {
+  let hasil = 'https://dapuhy-api.herokuapp.com/api/maker/attp?text=' + text + '&apikey=dor_dor'
+  data = await fetch(hasil).then(v => v.buffer())
+  await fs.writeFileSync(__path +'/tmp/attp.gif', data)
+  res.sendFile(__path +'/tmp/attp.gif')
+  } else {
+    res.json(loghandler.invalidKey)
+  }
+})
+
 router.get('/base', async (req, res, next) => {
 	var type = req.query.type,
 		encode = req.query.encode,
