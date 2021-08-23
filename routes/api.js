@@ -998,6 +998,7 @@ router.get('/nama', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
+                 creator: 'Hafidz Abdillah',
                  result
              })
          })
