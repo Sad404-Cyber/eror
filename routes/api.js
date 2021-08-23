@@ -936,6 +936,7 @@ router.get("/addkey", async (req, res, next) => {
   } else {
     listkey.push(key);
     res.json({
+      status: 'succes',
       message: `berhasil mendaftarkan ${key} Kedatabase apikey`
     });
   }
@@ -947,11 +948,13 @@ router.get("/deletekey", async(req, res, next) => {
 
 	if(listkey.includes(key)) {
 		res.json({
+		  status: 'false',
 			message: 'apikey tidak ada sebelumnya'
 			})
 			} else {
 	listkey.splice(key, 1)
 	res.json({
+	  status: 'succes',
 		message: 'apikey berhasil dihapus' 
 });
  }
