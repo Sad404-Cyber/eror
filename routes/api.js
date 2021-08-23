@@ -1069,7 +1069,7 @@ router.get('/ramal', async (req, res, next) => {
     if (!pasangan2) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter pasangan 2"})
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/ramaljodoh?nama1=${pasangan1}&nama2=${pasangan2}&apikey=dor_dor`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/jodoh?nama1=${pasangan1}&nama2=${pasangan2}&apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
         var result = data;
