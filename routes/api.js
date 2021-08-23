@@ -849,8 +849,8 @@ router.get('/igvidio', async (req, res, next) => {
 })
 
 router.get('/ig', async (req, res, next) => {
-        var apikey = req.query.apikey;
-            username = req.query.username;
+        var apikey = req.query.apikey,
+            username = req.query.username
             
 	if(!apikey) return res.json(loghandler.notparam)
     if (!username) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter username"})
