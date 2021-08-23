@@ -1258,9 +1258,6 @@ router.get('/hex', async (req, res, next) => {
 })
 
 router.get('/maker/attp', async(req, res, next) => {
-
-
-
   text = req.query.text;
   var apikey = req.query.apikey;
   if(!text) return res.json(loghandler.nottext)
