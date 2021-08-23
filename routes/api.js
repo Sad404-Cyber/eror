@@ -637,6 +637,30 @@ router.get('/ucapan', async (req, res) => {
 
 })
 
+router.get('/siapakah', async (req, res, next) => {
+        var apikey = req.query.apikey
+            
+            
+	if(!apikey) return res.json(loghandler.notparam)
+        
+
+       if(listkey.includes(apikey)){
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/siapakah?apikey=dor_dor`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 creator : 'Hafidz Abdillah',
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+  res.sendFile(invalidKey)
+}
+})
 
 router.get('/hitungmundur', async (req, res) => {
         bulan = req.query.bulan
