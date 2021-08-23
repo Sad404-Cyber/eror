@@ -1165,7 +1165,7 @@ router.get('/randomquote', async (req, res, next) => {
 	
 
       if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://python-api-zhirrr.herokuapp.com/api/random/quotes`))
+       fetch(encodeURI(`https://api.lolhuman.xyz/api/random/quotes?apikey=sayahafiz`))
         .then(response => response.json())
         .then(data => {
         var result = data;
