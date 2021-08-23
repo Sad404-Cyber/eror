@@ -430,7 +430,7 @@ router.get('/storeinfo', async (req, res, next) => {
 	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!nama) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter nama"})
 
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/search/playstore-info?id=${nama}&apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/search/playstore-info?id=${nama}&apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -494,7 +494,7 @@ router.get('/heroml', async (req, res, next) => {
 	if(!apikey) return res.json(loghandler.notparam)
 	
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/others/listheroml?apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/others/listheroml?apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -969,7 +969,7 @@ router.get('/nama', async (req, res, next) => {
     if (!nama) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter nama"})
 
        if(listkey.includes(apikey)){  
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/artinama?nama=${nama}&apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/artinama?nama=${nama}&apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -993,7 +993,7 @@ router.get('/nomorhoki', async (req, res, next) => {
     if (!nomor) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter nomor"})
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/nomorhoki?nomer=${nomor}&apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/nomorhoki?nomer=${nomor}&apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -1018,7 +1018,7 @@ router.get('/mimpi', async (req, res, next) => {
     if (!mimpi) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter mimpi"})
        
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/artimimpi?mimpi=${mimpi}&apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/artimimpi?mimpi=${mimpi}&apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -1044,7 +1044,7 @@ router.get('/ramal', async (req, res, next) => {
     if (!pasangan2) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter pasangan 2"})
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/ramaljodoh?nama1=${pasangan1}&nama2=${pasangan2}&apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/ramaljodoh?nama1=${pasangan1}&nama2=${pasangan2}&apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -1066,7 +1066,7 @@ router.get('/cerpen', async (req, res, next) => {
 	if(!apikey) return res.json(loghandler.notparam)
 	
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/cerpen?apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/cerpen?apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -1091,7 +1091,7 @@ router.get('/coming', async (req, res, next) => {
 	
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/movie/comingsoon?apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/movie/comingsoon?apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -1115,7 +1115,7 @@ router.get('/oskop', async (req, res, next) => {
 	if(!apikey) return res.json(loghandler.notparam)
 	
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/movie/jadwalbioskop?apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/movie/jadwalbioskop?apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -2678,7 +2678,7 @@ router.get('/holoh', async (req, res, next) => {
 	if(apikey != 'freeapi') return res.sendFile(invalidKey)
         if(!kata) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
 
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/vokal/holoh?kata=${kata}&apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/vokal/holoh?kata=${kata}&apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -2699,7 +2699,7 @@ router.get('/heleh', async (req, res, next) => {
 	if(apikey != 'freeapi') return res.sendFile(invalidKey)
         if(!kata) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
 
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/vokal/heleh?kata=${kata}&apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/vokal/heleh?kata=${kata}&apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -2721,7 +2721,7 @@ router.get('/huluh', async (req, res, next) => {
 	if(apikey != 'freeapi') return res.sendFile(invalidKey)
         if(!kata) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
 
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/vokal/huluh?kata=${kata}&apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/vokal/huluh?kata=${kata}&apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -3126,7 +3126,7 @@ router.get('/anime/listnom', async (req, res, next) => {
 	if(!nomor) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter nomor"})
 	
 	     if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/anime/mal-nomer?nomer=${nomor}&apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/anime/mal-nomer?nomer=${nomor}&apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -3150,7 +3150,7 @@ router.get('/anime/nameanime', async (req, res, next) => {
 	if(!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
 	 
 	      if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/anime/mal-name?name=${search}&apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/anime/mal-name?name=${search}&apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -3174,7 +3174,7 @@ router.get('/anime/animeindo', async (req, res, next) => {
 	if(!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
 	
 	     if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/anime/animeindo?query=${search}&apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/anime/animeindo?query=${search}&apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -3292,7 +3292,7 @@ router.get('/jago', async (req, res, next) => {
     if (!kata) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/jagokata?query=${kata}&apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/jagokata?query=${kata}&apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -3315,7 +3315,7 @@ router.get('/asah', async (req, res, next) => {
 	if(!apikey) return res.json(loghandler.notparam)
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/asahotak?apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/asahotak?apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -3364,7 +3364,7 @@ router.get('/nebak', async (req, res, next) => {
 	if(!apikey) return res.json(loghandler.notparam)
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/tebakgambar?apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/tebakgambar?apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -3387,7 +3387,7 @@ router.get('/famely', async (req, res, next) => {
 	if(!apikey) return res.json(loghandler.notparam)
 	
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/family100?apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/family100?apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -3411,7 +3411,7 @@ router.get('/lontong', async (req, res, next) => {
 	if(!apikey) return res.json(loghandler.notparam)
 	
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/caklontong?apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/caklontong?apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
         var result = data;
