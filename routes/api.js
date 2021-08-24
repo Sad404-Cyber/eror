@@ -3930,7 +3930,6 @@ router.get('/textmaker/random', async (req, res, next) => {
                 } else {
                res.sendFile(invalidKey)
                }
-               })
                 
         } else if (theme == 'art-quote') {
             request.post({
