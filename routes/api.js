@@ -3890,7 +3890,8 @@ router.get('/textmaker/random', async (req, res, next) => {
         if (!theme) return res.json(loghandler.nottheme)
         if (theme != 'text-burn' && theme != 'art-quote') return res.json(loghandler.notheme)
         if (!text) return res.json(loghandler.nottext)
-
+        
+        if(listkey.includes(apikey)){
         if (theme == 'text-burn') {
             try {
             request.post({
@@ -3924,10 +3925,10 @@ router.get('/textmaker/random', async (req, res, next) => {
                         })
                     }
                 })
-                } catch (e) {
-                	console.log(e);
-                res.json(loghandler.error)
+                } else {
+  res.sendFile(invalidKey)
                 }
+               })
         } else if (theme == 'art-quote') {
             request.post({
                 url: "https://photooxy.com/logo-and-text-effects/write-art-quote-on-wood-heart-370.html",
