@@ -3582,6 +3582,22 @@ router.get('/news/tempo', async (req, res, next) => {
 }
 })
 
+router.get('/maker/ttp', async (req, res, next) => {
+
+  Apikey = req.query.apikey;
+  if (!req.query.text) return res.json({ status: 404, error: 'masukkan parameter text'})
+  if(!Apikey) return res.json(loghandler.notparam)
+  if(listkey.includes(Apikey)) {
+  random = new Date
+data = await fetch(`https://api.areltiyan.site/sticker_maker?text=${encodeURIComponent(req.query.text)}`).then(v => v.json())
+         base64 = data.base64
+         var buffer = base64.slice(22)
+         await fs.writeFileSync(__path +`/tmp/ttp.png`, buffer, 'base64')
+        res.sendFile(__path+'/tmp/ttp.png')
+  } else {
+    res.sendFile(invalidKey)
+  }
+});
 
 router.get('/news/antara', async (req, res, next) => {
         var apikey = req.query.apikey
@@ -3966,6 +3982,7 @@ router.get('/textmaker/random', async (req, res, next) => {
             res.json(loghandler.error)
         }
 })
+
 
 router.get('/textmaker/roses', async (req, res, next) => {
         var theme = req.query.theme,
