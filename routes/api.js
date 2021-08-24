@@ -3590,7 +3590,7 @@ router.get('/maker/ttp', async (req, res, next) => {
   if(!Apikey) return res.json(loghandler.notparam)
   if(listkey.includes(Apikey)) {
   	
-data = await fetch(`https://api.areltiyan.site/sticker_maker?text=${encodeURIComponent(req.query.text)}`).then(v => v.json())
+data = fetch(`https://api.areltiyan.site/sticker_maker?text=${encodeURIComponent(req.query.text)}`).then(v => v.json())
          base64 = data.base64
          var buffer = base64.slice(22)
          await fs.writeFileSync(__path +'/tmp/ttp.png', buffer, 'base64')
