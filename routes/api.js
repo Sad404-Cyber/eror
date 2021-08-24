@@ -316,7 +316,7 @@ router.get('/maker/harta-tahta', async(req, res, next) => {
   if(!apikey) return res.json(loghandler.notparam)
   
   if(listkey.includes(apikey)) {
-  let hasil = fetch(encodeURI(`https://api.lolhuman.xyz/api/textprome/greenneon?apikey=sayahafiz&text=${text}`))
+  let hasil = `https://api.lolhuman.xyz/api/textprome/greenneon?apikey=sayahafiz&text=${text}`
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/tahta.jpg', data)
   res.sendFile(__path +'/tmp/tahta.jpg')
