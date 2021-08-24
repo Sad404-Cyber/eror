@@ -3887,7 +3887,6 @@ router.get('/textmaker/random', async (req, res, next) => {
              apikey = req.query.apikey;
         
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
         if (!theme) return res.json(loghandler.nottheme)
         if (theme != 'text-burn' && theme != 'art-quote') return res.json(loghandler.notheme)
         if (!text) return res.json(loghandler.nottext)
