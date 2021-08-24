@@ -323,7 +323,7 @@ router.get('/maker/harta-tahta', async(req, res, next) => {
   } else {
     res.json(loghandler.invalidKey)
   }
-});
+})
 
 router.get('/store', async (req, res, next) => {
         var apikey = req.query.apikey,
