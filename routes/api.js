@@ -3584,7 +3584,7 @@ router.get('/news/tempo', async (req, res, next) => {
 
 router.get('/maker/ttp', async (req, res, next) => {
 
-  var Apikey = req.query.apikey;
+  var Apikey = req.query.apikey
   
   if (!req.query.text) return res.json({ status: 404, error: 'masukkan parameter text'})
   if(!Apikey) return res.json(loghandler.notparam)
@@ -3598,7 +3598,7 @@ data = await fetch(`https://api.areltiyan.site/sticker_maker?text=${encodeURICom
   } else {
     res.sendFile(invalidKey)
   }
-});
+})
 
 router.get('/news/antara', async (req, res, next) => {
         var apikey = req.query.apikey
