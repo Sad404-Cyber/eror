@@ -3924,12 +3924,15 @@ router.get('/textmaker/random', async (req, res, next) => {
                                 })
                         })
                     }
-                 }
-                })
                 } else {
-  res.sendFile(invalidKey)
+              res.sendFile(invalidKey)
+              }
+              })
+                } catch (e) {
+                	console.log(e);
+                res.json(loghandler.error)
                 }
-               })
+                
         } else if (theme == 'art-quote') {
             request.post({
                 url: "https://photooxy.com/logo-and-text-effects/write-art-quote-on-wood-heart-370.html",
