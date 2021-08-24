@@ -3894,6 +3894,7 @@ router.get('/textmaker/random', async (req, res, next) => {
         
  
         if (theme == 'text-burn') {
+        	if(listkey.includes(apikey)){
             try {
             request.post({
                 url: "https://photooxy.com/logo-and-text-effects/write-text-on-burn-paper-388.html",
