@@ -3964,7 +3964,10 @@ router.get('/textmaker/random', async (req, res, next) => {
                                 })
                         })
                     }
-                }) 
+                } else {
+  res.sendFile(invalidKey)
+               }
+               })
         } else {
             res.json(loghandler.error)
         }
