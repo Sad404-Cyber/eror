@@ -337,7 +337,7 @@ router.get('/store', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Hafidz Abdillah',
+             	creator: 'Hafidz Abdillah',
                  result
              })
          })
