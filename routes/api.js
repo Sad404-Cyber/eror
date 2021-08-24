@@ -268,6 +268,7 @@ router.get('/cekapikey', async(req, res, next) => {
   
   if(!apikey) return res.json(loghandler.notparam)
   if(listkey.includes(apikey)) {
+  	var limit = '1000'
     res.json({
       creator: 'Hafidz Abdillah',
       status: 'true',
