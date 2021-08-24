@@ -3584,7 +3584,8 @@ router.get('/news/tempo', async (req, res, next) => {
 
 router.get('/maker/ttp', async (req, res, next) => {
 
-  Apikey = req.query.apikey;
+  var Apikey = req.query.apikey;
+  
   if (!req.query.text) return res.json({ status: 404, error: 'masukkan parameter text'})
   if(!Apikey) return res.json(loghandler.notparam)
   if(listkey.includes(Apikey)) {
