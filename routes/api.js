@@ -1,5 +1,6 @@
 __path = process.cwd()
 
+// Jan asal ubah ngab
 var express = require('express');
 var db = require(__path + '/database/db');
 try {
