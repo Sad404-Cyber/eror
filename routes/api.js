@@ -308,23 +308,22 @@ router.get('/tiktod', async (req, res, next) => {
          })
 })
 
-router.get('/ssweb', async (req, res, next) => {
-
-        var apikey = req.query.apikey,
-	       url = req.query.url
-
-   if(!apikey) return res.json(loghandler.notparam)
-  	if(apikey != 'freeapi') return res.sendFile(invalidKey)
-    if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
-
-     var hasil = await getBuffer(`http://nurutomo.herokuapp.com/api/ssweb?url=${url}`)
-          res.sendFile(hasil)
-
-         
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
+router.get('/maker/harta-tahta', async(req, res, next) => {
+   text = req.query.text,
+  var apikey = req.query.apikey
+  
+  if(!text) return res.json(loghandler.nottext)
+  if(!apikey) return res.json(loghandler.notparam)
+  
+  if(listkey.includes(apikey)) {
+  let hasil = 'https://api.lolhuman.xyz/api/textprome/greenneon?apikey=sayahafiz&text=' + text +' 
+  data = await fetch(hasil).then(v => v.buffer())
+  await fs.writeFileSync(__path +'/tmp/tahta.jpg', data)
+  res.sendFile(__path +'/tmp/tahta.jpg')
+  } else {
+    res.json(loghandler.invalidKey)
+  }
+});
 
 router.get('/store', async (req, res, next) => {
         var apikey = req.query.apikey,
