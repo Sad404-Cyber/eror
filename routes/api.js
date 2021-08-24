@@ -499,7 +499,7 @@ router.get('/heroml', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Hafidz Abdillah',
+             	creator: 'Hafidz Abdillah',
                  result
              })
          })
@@ -763,7 +763,7 @@ router.get('/rscovid', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Hafidz Abdillah',
+             	creator: 'Hafidz Abdillah',
                  result
              })
          })
@@ -787,7 +787,7 @@ router.get('/sekolah', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Hafidz Abdillah',
+             	creator: 'Hafidz Abdillah',
                  result
              })
          })
@@ -1122,7 +1122,7 @@ router.get('/coming', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-               author: 'Hafidz Abdillah',
+               creator: 'Hafidz Abdillah',
                  result
              })
          })
@@ -1146,7 +1146,7 @@ router.get('/oskop', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-               author: 'Hafidz Abdillah',
+               creator: 'Hafidz Abdillah',
                  result
              })
          })
@@ -3132,7 +3132,7 @@ router.get('/jurnal', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Hafidz Abdillah',
+             	creator: 'Hafidz Abdillah',
                  result
              })
          })
