@@ -3891,7 +3891,7 @@ router.get('/textmaker/random', async (req, res, next) => {
         if (theme != 'text-burn' && theme != 'art-quote') return res.json(loghandler.notheme)
         if (!text) return res.json(loghandler.nottext)
         
-        if(listkey.includes(apikey)){
+ 
         if (theme == 'text-burn') {
             try {
             request.post({
