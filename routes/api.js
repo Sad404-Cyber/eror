@@ -3925,11 +3925,12 @@ router.get('/textmaker/random', async (req, res, next) => {
                                 })
                         })
                     }
-              })
-                } catch (e) {
-                	console.log(e);
-                res.json(loghandler.error)
-                }
+                 }
+               })
+                } else {
+               res.sendFile(invalidKey)
+               }
+               })
                 
         } else if (theme == 'art-quote') {
             request.post({
