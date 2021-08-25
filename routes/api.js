@@ -3358,12 +3358,15 @@ router.get('/anime/kusonime', async (req, res, next) => {
 	if(!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
 	     
 	     if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/kusonime?search=${search}`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/anime/kusonime?query=${search}&apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
-                 result
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 data: result.result
              })
          })
          .catch(e => {
