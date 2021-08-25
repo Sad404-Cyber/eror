@@ -1592,8 +1592,10 @@ router.get('/infogempa', async (req, res, next) => {
 		Gempa()
 		.then(result => {
 			res.json({
-				creator: 'Hafidz abdillah',
-				result
+				creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 data: result.result
 			})
 		})
 		.catch(e => {
