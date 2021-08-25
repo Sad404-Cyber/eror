@@ -2513,7 +2513,7 @@ router.get('/ceritahoror', async (req, res, next) => {
        if(listkey.includes(apikey)){     
        fetch(encodeURI(`https://api.lolhuman.xyz/api/ceritahoror?apikey=sayahafiz`))
         .then(response => response.json())
-        .then(falsedata => {
+        .then(data => {
         var result = data;
              res.json({
                  creator: `Hafidz Abdillah`,
