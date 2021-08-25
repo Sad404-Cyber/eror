@@ -924,7 +924,7 @@ router.get('/katailham', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 result
+                 kata: `${result.result}`
              })
          })
          .catch(e => {
