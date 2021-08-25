@@ -3026,7 +3026,10 @@ router.get('/kodepos', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-                 result
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 data: result.data
              })
          })
          .catch(e => {
