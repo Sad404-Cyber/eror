@@ -1238,7 +1238,9 @@ router.get('/string', async (req, res, next) => {
         var result = data;
              res.json({
              	creator: 'Hafidz Abdillah',
-                 result
+                 code: 200,
+                 message: 'succes',
+                 hasil: `${result.result}
              })
          })
          .catch(e => {
@@ -1263,7 +1265,9 @@ router.get('/hex', async (req, res, next) => {
         var result = data;
              res.json({
              	creator: 'Hafidz Abdillah',
-                 result
+                 code: 200,
+                 message: 'succes',
+                 hasil : `${result.result}`
              })
          })
          .catch(e => {
