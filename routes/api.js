@@ -3508,8 +3508,12 @@ router.get('/nebak', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-                 creator : 'Hafidz Abdillah',
-                 result
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 soal: result.image,
+                 jawaban: result.jawaban,
+                 clue: result.clue
              })
          })
          .catch(e => {
