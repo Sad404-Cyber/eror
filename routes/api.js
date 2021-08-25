@@ -903,12 +903,14 @@ router.get('/tiktod/stalk', async (req, res, next) => {
     if (!username) return res.json(loghandler.notusername)
 
     if(listkey.includes(apikey)){
-    TikTokScraper.getUserProfileInfo(username)
-        .then(user => {
-            res.json({
-                status : true,
-                creator : `${creator}`,
-                user
+    fetch(encodeURI(`https://api.lolhuman.xyz/api/stalktiktok/${username}?apikey=sayahafiz`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+             	creator: 'Hafidz Abdillah',
+                 code: 200,
+                 data: result.result
             })
         })
         .catch(e => {
