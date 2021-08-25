@@ -3555,9 +3555,12 @@ router.get('/lontong', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-                 creator : 'Hafidz Abdillah',
-                 message : 'succes',
-                 result
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 soal: result.soal,
+                 jawaban: result.jawaban,
+                 penjelasan: result.informasi
              })
          })
          .catch(e => {
