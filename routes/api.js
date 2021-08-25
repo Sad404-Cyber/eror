@@ -2665,9 +2665,9 @@ router.get('/hilih', async (req, res, next) => {
             kata = req.query.kata
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
         if(!kata) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
 
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://hilih-api-zhirrr.vercel.app/api/hilih?kata=${kata}`))
         .then(response => response.json())
         .then(data => {
@@ -2679,6 +2679,9 @@ router.get('/hilih', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 router.get('/holoh', async (req, res, next) => {
@@ -2686,9 +2689,9 @@ router.get('/holoh', async (req, res, next) => {
             kata = req.query.kata
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
         if(!kata) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
 
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/vokal/holoh?kata=${kata}&apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
@@ -2700,6 +2703,9 @@ router.get('/holoh', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 router.get('/heleh', async (req, res, next) => {
@@ -2707,9 +2713,9 @@ router.get('/heleh', async (req, res, next) => {
             kata = req.query.kata
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
         if(!kata) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
 
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/vokal/heleh?kata=${kata}&apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
@@ -2721,6 +2727,9 @@ router.get('/heleh', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -2729,9 +2738,9 @@ router.get('/huluh', async (req, res, next) => {
             kata = req.query.kata
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
         if(!kata) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
 
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/vokal/huluh?kata=${kata}&apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
@@ -2743,6 +2752,9 @@ router.get('/huluh', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 router.get('/liriklagu', async (req, res, next) => {
