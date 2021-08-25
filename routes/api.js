@@ -902,7 +902,7 @@ router.get('/tiktod/stalk', async (req, res, next) => {
              res.json({
                  status : false,
                  creator : `${creator}`,
-                 message : "e rror, mungkin username anda tidak valid"
+                 message : "error, mungkin username anda tidak valid"
              })
          })
 } else {
