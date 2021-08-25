@@ -561,7 +561,10 @@ router.get('/ytmp4', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-                 result
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 data: result.result
              })
          })
          .catch(e => {
@@ -1636,12 +1639,15 @@ router.get('/fbdown', async (req, res, next) => {
     if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
         
         if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://fb-api-zhirrr.vercel.app/?url=${url}`))
+       fetch(encodeURI(`https://api.lolhuman.xyz/api/facebook?apikey=sayahafiz&url=${url}`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
-                 result
+             	creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 data: result.result
              })
          })
          .catch(e => {
