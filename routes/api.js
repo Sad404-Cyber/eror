@@ -1544,7 +1544,7 @@ router.get('/textmaker/senja', async (req, res, next) => {
 
 router.get('/kisahnabi', async (req, res, next) => {
 	var nabi = req.query.nabi,
-		apikey = req.query.apikeym;
+		apikey = req.query.apikey;
 
 		if (!apikey) return res.json(loghandler.notparam)
 		
