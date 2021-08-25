@@ -3531,9 +3531,11 @@ router.get('/famely', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-                 creator : 'Hafidz Abdillah',
-                 message : 'succes',
-                 result
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 soal: result.soal,
+                 jawaban: result.jawaban
              })
          })
          .catch(e => {
