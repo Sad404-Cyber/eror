@@ -512,7 +512,7 @@ router.get('/ytmp3', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 result: `${result.result}`
+                 data : `${result.data.result}`
              })
          })
          .catch(e => {
