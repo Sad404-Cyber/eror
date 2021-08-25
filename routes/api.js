@@ -1074,8 +1074,10 @@ router.get('/mimpi', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-                 creator: 'Hafidz',
-                 result
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 data: result.result
              })
          })
          .catch(e => {
@@ -1101,7 +1103,10 @@ router.get('/ramal', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-                 result
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 data: result.result
              })
          })
          .catch(e => {
