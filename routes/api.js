@@ -319,7 +319,7 @@ router.get('/store', async (req, res, next) => {
     if (!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/search/playstore?query=${search]&apikey=dor_dor`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/search/playstore?query=${search}&apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
         var result = data;
