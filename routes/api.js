@@ -506,13 +506,13 @@ router.get('/ytmp3', async (req, res, next) => {
        if(listkey.includes(apikey)){
        fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/ytdl?url=${url}&apikey=SayaHafiz`))
         .then(response => response.json())
-        .then(data.result => {
-        var result = data.result;
+        .then(data => {
+        var result = data;
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 result
+                 data: `${result.data.result}`
              })
          })
          .catch(e => {
