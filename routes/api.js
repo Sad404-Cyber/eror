@@ -3513,7 +3513,9 @@ router.get('/news/cnn', async (req, res, next) => {
         var result = data;
              res.json({
              	creator: 'Hafidz Abdillah',
-                 result
+                 code: 200,
+                 message: 'succes',
+                 data: result.result
              })
          })
          .catch(e => {
@@ -3538,7 +3540,9 @@ router.get('/news/cnbc', async (req, res, next) => {
         var result = data;
              res.json({
              	creator: 'Hafidz Abdillah',
-                 result
+                 code: 200,
+                 message: 'succes',
+                 data: result.result
              })
          })
          .catch(e => {
@@ -3564,7 +3568,9 @@ router.get('/news/republika', async (req, res, next) => {
         var result = data;
              res.json({
              	creator: 'Hafidz Abdillah',
-                 result
+                 code: 200,
+                 message: 'succes',
+                 data: result.result
              })
          })
          .catch(e => {
@@ -3590,7 +3596,9 @@ router.get('/news/tempo', async (req, res, next) => {
         var result = data;
              res.json({
              	creator: 'Hafidz Abdillah',
-                 result
+                 code: 200,
+                 message: 'succes',
+                 data: result.result
              })
          })
          .catch(e => {
@@ -3616,7 +3624,9 @@ router.get('/news/antara', async (req, res, next) => {
         var result = data;
              res.json({
              	creator: 'Hafidz Abdillah',
-                 result
+                 code: 200,
+                 message: 'succes',
+                 data: result.result
              })
          })
          .catch(e => {
@@ -3640,7 +3650,9 @@ router.get('/news/okezone', async (req, res, next) => {
         var result = data;
              res.json({
              	creator: 'Hafidz Abdillah',
-                 result
+                 code: 200,
+                 message: 'succes',
+                 data: result.result
              })
          })
          .catch(e => {
@@ -3666,7 +3678,9 @@ router.get('/filmapik/search', async (req, res, next) => {
         var result = data;
              res.json({
              	creator: 'Hafidz Abdillah',
-                 result
+                 code: 200,
+                 message: 'succes',
+                 data: result.result
              })
          })
          .catch(e => {
