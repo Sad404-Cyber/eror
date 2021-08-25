@@ -880,13 +880,15 @@ router.get('/ig', async (req, res, next) => {
     if (!username) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter username"})
     
       if(listkey.includes(apikey)){
-       fetch(encodeURI(`http://fdz-app.herokuapp.com/api/stalkig?username=${username}`))
+       fetch(encodeURI(`https://mhankbarbar.herokuapp.com/api/stalk?username=${username}`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
              	creator: 'Hafidz Abdillah',
-                 result
+                 code: 200,
+                 message: 'succes',
+                 data: result.result
              })
          })
          .catch(e => {
