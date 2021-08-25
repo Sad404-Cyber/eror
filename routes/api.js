@@ -832,7 +832,9 @@ router.get('/joox', async (req, res, next) => {
         var result = data;
              res.json({
              	creator: 'Hafidz Abdillah',
-                 result
+                 code: 200,
+                 message: 'succes',
+                 data: result.result
              })
          })
          .catch(e => {
