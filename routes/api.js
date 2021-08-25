@@ -923,7 +923,7 @@ router.get('/katailham', async (req, res, next) => {
         var result = data;
              res.json({
              	creator: 'Hafidz Abdillah'
-                 kata: result.result
+                 kata: `${result.result}`
              })
          })
          .catch(e => {
