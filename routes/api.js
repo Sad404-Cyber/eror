@@ -2018,7 +2018,7 @@ router.get('/muslim/kisahnabi', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.data
+                 result
              })
          })
          .catch(e => {
