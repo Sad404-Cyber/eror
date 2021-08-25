@@ -2395,8 +2395,10 @@ router.get('/wikipedia', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-                 creator: `Hafidz Abdillah`,
-                 result
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 data: result.result
              })
          })
          .catch(e => {
@@ -2963,8 +2965,10 @@ router.get('/kbbi', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-                 creator : 'Hafidz',
-                 result
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 data: result.arti
              })
          })
          .catch(e => {
