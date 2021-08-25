@@ -3622,21 +3622,24 @@ router.get('/filmapik/search', async (req, res, next) => {
             film = req.query.film
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!film) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter film"})
 
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://filmapik-api-zahirr.herokuapp.com/search?q=${film}`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zhirrr',
+             	creator: 'Hafidz Abdillah',
                  result
              })
          })
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -3645,21 +3648,24 @@ router.get('/filmapik/kategori', async (req, res, next) => {
             film = req.query.film
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!film) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter film"})
 
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://filmapik-api-zahirr.herokuapp.com/category?search=${film}`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zhirrr',
+             	creator: 'Hafidz Abdillah',
                  result
              })
          })
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -3668,21 +3674,24 @@ router.get('/filmapik/play', async (req, res, next) => {
             id = req.query.id
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!id) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter id"})
 
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://filmapik-api-zahirr.herokuapp.com/play?id=${id}`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zhirrr',
+             	creator: 'Hafidz Abdillah',
                  result
              })
          })
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -3690,20 +3699,23 @@ router.get('/filmapik/terbaru', async (req, res, next) => {
         var apikey = req.query.apikey
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
-
+	
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://filmapik-api-zahirr.herokuapp.com/latest`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zhirrr',
+             	creator: 'Hafidz Abdillah',
                  result
              })
          })
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -3712,21 +3724,24 @@ router.get('/lk21/search', async (req, res, next) => {
             film = req.query.film
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!film) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter film"})
 
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://lk21-api-zahirr.herokuapp.com/search?query=${film}`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zhirrr',
+             	creator: 'Hafidz Abdillah',
                  result
              })
          })
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -3734,20 +3749,23 @@ router.get('/lk21/terbaru', async (req, res, next) => {
         var apikey = req.query.apikey
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
+	
 
        fetch(encodeURI(`https://lk21-api-zahirr.herokuapp.com/newupload`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zhirrr',
+             	creator: 'Hafidz Abdillah',
                  result
              })
          })
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -3755,20 +3773,24 @@ router.get('/lk21/comingsoon', async (req, res, next) => {
         var apikey = req.query.apikey
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
+	
 
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://lk21-api-zahirr.herokuapp.com/comingsoon`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zhirrr',
+             	creator: 'Hafidz Abdillah',
                  result
              })
          })
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -3776,20 +3798,24 @@ router.get('/lk21/tvseries', async (req, res, next) => {
         var apikey = req.query.apikey
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
+	
 
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://lk21-api-zahirr.herokuapp.com/tv`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zhirrr',
+             	creator: 'Hafidz Abdillah',
                  result
              })
          })
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -3798,7 +3824,6 @@ router.get('/lk21/year', async (req, res, next) => {
             tahun = req.query.tahun
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!tahun) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter tahun"})
 
        fetch(encodeURI(`https://lk21-api-zahirr.herokuapp.com/year?year=${tahun}`))
@@ -3806,13 +3831,16 @@ router.get('/lk21/year', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zhirrr',
+             	creator: 'Hafidz Abdillah',
                  result
              })
          })
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -3821,7 +3849,6 @@ router.get('/lk21/country', async (req, res, next) => {
             negara = req.query.negara
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!negara) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter negara"})
 
        fetch(encodeURI(`https://lk21-api-zahirr.herokuapp.com/country?country=${negara}`))
@@ -3829,13 +3856,16 @@ router.get('/lk21/country', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zhirrr',
+             	creator: 'Hafidz Abdillah',
                  result
              })
          })
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
@@ -3844,21 +3874,24 @@ router.get('/lk21/genre', async (req, res, next) => {
             tipe = req.query.tipe
             
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!tipe) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter tipe"})
 
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://lk21-api-zahirr.herokuapp.com/genre?genre=${tipe}`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zhirrr',
+             	creator: 'Hafidz Abdillah',
                  result
              })
          })
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 
