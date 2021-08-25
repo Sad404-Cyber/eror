@@ -646,7 +646,9 @@ router.get('/siapakah', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-                 creator : 'Hafidz Abdillah',
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
                  result
              })
          })
@@ -2406,7 +2408,9 @@ router.get('/tebakanime', async (req, res, next) => {
         var result = data;
              res.json({
              	creator: 'Hafidz Abdillah',
-                 result
+                 code: 200,
+                 message: 'succes',
+                 data: result.result
              })
          })
          .catch(e => {
