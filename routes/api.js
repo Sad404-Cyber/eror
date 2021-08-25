@@ -719,7 +719,7 @@ router.get('/jarak', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.from
+                 data: result.result
              })
          })
          .catch(e => {
