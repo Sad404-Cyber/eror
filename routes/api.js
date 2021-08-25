@@ -1201,8 +1201,10 @@ router.get('/randomquote', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-                 creator : `${creator}`,
-                 result
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 quote: result.quote
              })
          })
          .catch(e => {
