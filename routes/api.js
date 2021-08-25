@@ -3204,7 +3204,7 @@ router.get('/translate', async (req, res, next) => {
 
 router.get('/jurnal', async (req, res, next) => {
         var apikey = req.query.apikey,
-              query = rew.query.query
+              query = req.query.query
             
 	if(!apikey) return res.json(loghandler.notparam)
 	if(!query) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter query"})
