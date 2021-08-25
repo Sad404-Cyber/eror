@@ -1552,8 +1552,10 @@ router.get('/kisahnabi', async (req, res, next) => {
 		Searchnabi(nabi)
 		.then(result => {
 			res.json({
-				creator: 'Hafidz abdillh',
-				result
+				creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 data: result.data
 			})
 		})
 		.catch(e => {
@@ -1628,7 +1630,10 @@ router.get('/quran', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-                 result
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 data: result.data
              })
          })
          .catch(e => {
@@ -1853,8 +1858,10 @@ router.get('/muslim/tahlil', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-                 creator : 'Hafidz Abdillah',
-                 result
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 data: result.data
              })
          })
          .catch(e => {
@@ -1877,8 +1884,10 @@ router.get('/muslim/wirid', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-                 creator : 'Hafidz Abdillah',
-                 result
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 data: result.data
              })
          })
          .catch(e => {
@@ -1927,8 +1936,10 @@ router.get('/muslim/doaharian', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-                 creator : 'Hafidz Abdillah',
-                 result
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 data: result.data
              })
          })
          .catch(e => {
@@ -1952,8 +1963,10 @@ router.get('/muslim/bacaanshalat', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-                 creator : 'Hafidz Abdillah',
-                 result
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 data: result.data
              })
          })
          .catch(e => {
@@ -1976,8 +1989,10 @@ router.get('/muslim/niatshalat', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-                 creator : 'Hafidz Abdillah',
-                 result
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 data: result.data
              })
          })
          .catch(e => {
@@ -2000,8 +2015,10 @@ router.get('/muslim/kisahnabi', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-                 creator : 'Hafidz Abdillah',
-                 result
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 data: result.data
              })
          })
          .catch(e => {
@@ -2024,8 +2041,10 @@ router.get('/muslim/asmaulhusna', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-                 creator : 'Hafidz Abdillah',
-                 result
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 data: result.data
              })
          })
          .catch(e => {
@@ -2048,8 +2067,10 @@ router.get('/muslim/niatshubuh', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-                 creator : 'Hafidz Abdillah',
-                 result
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 data: result.data
              })
          })
          .catch(e => {
@@ -2072,8 +2093,10 @@ router.get('/muslim/niatdzuhur', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-                 creator : 'Hafidz Abdillah',
-                 result
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 data: result.data
              })
          })
          .catch(e => {
@@ -2096,8 +2119,10 @@ router.get('/muslim/niatmaghrib', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-                 creator : 'Hafidz Abdillah',
-                 result
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 data: result.data
              })
          })
          .catch(e => {
@@ -2120,8 +2145,10 @@ router.get('/muslim/niatisya', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-                 creator : 'Hafidz Abdillah',
-                 result
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 data: result.data
              })
          })
          .catch(e => {
@@ -2145,7 +2172,10 @@ router.get('/muslim/niatashar', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-                 result
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 data: result.data
              })
          })
          .catch(e => {
