@@ -3365,7 +3365,7 @@ router.get('/searchmanga', async (req, res, next) => {
         if(!judul) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter judul"})
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/search/mangatoon?query=${judul}`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/search/mangatoon?query=${judul}&apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
         var result = data;
