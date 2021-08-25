@@ -1214,10 +1214,10 @@ router.get('/infonpm', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-                 status : true,
-                 creator : `${creator}`,
-                 result,
-                 message : `succes`
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 result
              })
          })
          .catch(e => {
