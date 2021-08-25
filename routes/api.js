@@ -888,7 +888,7 @@ router.get('/ig', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 data: result
              })
          })
          .catch(e => {
