@@ -3203,20 +3203,22 @@ router.get('/translate', async (req, res, next) => {
 })
 
 router.get('/jurnal', async (req, res, next) => {
-        var apikey = req.query.apikey
-            
+        var apikey = req.query.apikey,
+              query = rew.query.query
             
 	if(!apikey) return res.json(loghandler.notparam)
-	
+	if(!query) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter query"})
   
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://alpin-api-2021.herokuapp.com/api/jurnalotaku?apikey=alpin1`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/anime/jurnalotaku?query=${query}&apikey=dor_dor`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
              	creator: 'Hafidz Abdillah',
-                 result
+                 code: 200,
+                 message: 'succes',
+                 data: result.result
              })
          })
          .catch(e => {
