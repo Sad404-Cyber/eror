@@ -920,10 +920,11 @@ router.get('/katailham', async (req, res, next) => {
        fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/katailham?apikey=SayaHafiz`))
         .then(response => response.json())
         .then(data => {
-        var result = data;
+        var data = data;
              res.json({
-             	creator: 'Hafidz Abdillah'
-                 kata: `${result.result}`
+             	creator: 'Hafidz Abdillah',
+                 status: 200,
+                 data
              })
          })
          .catch(e => {
