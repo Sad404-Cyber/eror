@@ -1240,7 +1240,7 @@ router.get('/string', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 hasil: `${result.result}
+                 hasil: `${result.result}`
              })
          })
          .catch(e => {
