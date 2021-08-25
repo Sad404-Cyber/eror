@@ -923,7 +923,7 @@ router.get('/katailham', async (req, res, next) => {
         var data = data;
              res.json({
              	creator: 'Hafidz Abdillah',
-                 status: 200,
+                 code: 200,
                  data
              })
          })
@@ -948,6 +948,7 @@ router.get("/addkey", async (req, res, next) => {
     listkey.push(key);
     res.json({
       status: 'succes',
+      code: 200,
       message: `berhasil mendaftarkan ${key} Kedatabase apikey`
     });
   }
