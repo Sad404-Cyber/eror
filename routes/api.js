@@ -3765,7 +3765,7 @@ router.get('/lk21/terbaru', async (req, res, next) => {
             
 	if(!apikey) return res.json(loghandler.notparam)
 	
-
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://lk21-api-zahirr.herokuapp.com/newupload`))
         .then(response => response.json())
         .then(data => {
@@ -3840,7 +3840,8 @@ router.get('/lk21/year', async (req, res, next) => {
             
 	if(!apikey) return res.json(loghandler.notparam)
     if (!tahun) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter tahun"})
-
+        
+        if(listkey.includes(apikey)){
        fetch(encodeURI(`https://lk21-api-zahirr.herokuapp.com/year?year=${tahun}`))
         .then(response => response.json())
         .then(data => {
@@ -3865,7 +3866,8 @@ router.get('/lk21/country', async (req, res, next) => {
             
 	if(!apikey) return res.json(loghandler.notparam)
     if (!negara) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter negara"})
-
+    
+       if(listkey.includes(apikey)){
        fetch(encodeURI(`https://lk21-api-zahirr.herokuapp.com/country?country=${negara}`))
         .then(response => response.json())
         .then(data => {
