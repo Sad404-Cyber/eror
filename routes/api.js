@@ -2920,12 +2920,15 @@ router.get('/chordlagu', async (req, res, next) => {
         if(!lagu) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://python-api-zhirrr.herokuapp.com/api/chord?q=${lagu}`))
+       fetch(encodeURI(`https://api.lolhuman.xyz/api/chord?apikey=sayahafiz&query=${lagu}`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
-                 result
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 data: result.result
              })
          })
          .catch(e => {
