@@ -651,7 +651,8 @@ router.get('/siapakah', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 result
+                 pertanyaan: result.pertanyaan,
+                 jawaban: result.jawaban
              })
          })
          .catch(e => {
