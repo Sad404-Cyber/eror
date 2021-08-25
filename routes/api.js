@@ -3511,9 +3511,7 @@ router.get('/nebak', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 soal: result.image,
-                 jawaban: result.jawaban,
-                 clue: result.clue
+                 soal: result.result
              })
          })
          .catch(e => {
