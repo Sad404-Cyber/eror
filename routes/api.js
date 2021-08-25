@@ -1966,7 +1966,7 @@ router.get('/muslim/bacaanshalat', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.data
+                 result
              })
          })
          .catch(e => {
@@ -1992,7 +1992,7 @@ router.get('/muslim/niatshalat', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.data
+                 result
              })
          })
          .catch(e => {
@@ -2611,8 +2611,10 @@ router.get('/jadwalshalat', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-                 creator : 'Hafidz Abdillah',
-                 result
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 data: result.result
              })
          })
          .catch(e => {
