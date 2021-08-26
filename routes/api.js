@@ -275,8 +275,11 @@ router.get('/cekapikey', async(req, res, next) => {
     res.json({
       creator: 'Hafidz Abdillah',
       status: 'true',
+      result: {
       apikey: `${apikey}`,
-      message: 'APIKEY ACTIVE'
+      message: 'Apikey Active',
+      exp: '26 September, 2021',
+      }
     })
   } else {
     res.sendFile(invalidKey)
