@@ -1285,24 +1285,27 @@ router.get('/tiny', async (req, res, next) => {
         url = req.query.url
 
 	if(!apikey) return res.json(loghandler.notparam)
-	if(apikey != 'freeapi') return res.sendFile(invalidKey)
      if (!url) return res.json(loghandler.noturl)
-
+   
+     if(listkey.includes(apikey)){
      request(`https://tinyurl.com/api-create.php?url=${url}`, function (error, response, body) {
          try {
              res.json({
-                 status : true,
-                 creator : `${creator}`,
+               creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
                  result : {
                      link : `${body}`,
-                 },
-                 message : `succes`
+                 }
              })
          } catch (e) {
              console.log('Error :', color(e,'red'))
              res.json(loghandler.invalidlink)
          }
      })
+} else {
+  res.sendFile(invalidKey)
+}
 })
 
 router.get('/string', async (req, res, next) => {
