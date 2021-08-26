@@ -2616,7 +2616,7 @@ router.get('/cerperjuangan', async (req, res, next) => {
     
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://fxc7-api.herokuapp.com/api/random/cerpen?apikey=DoSpPtIj&category=perjuangan`))
+       fetch(encodeURI(`https://fxc7-api.herokuapp.com/api/random/cerpen?apikey=sayahafiz&category=perjuangan`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -2643,7 +2643,7 @@ router.get('/cersex1', async (req, res, next) => {
         
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://fxc7-api.herokuapp.com/api/random/cersex?apikey=DoSpPtIj`))
+       fetch(encodeURI(`https://fxc7-api.herokuapp.com/api/random/cersex?apikey=sayahafiz`))
         .then(response => response.json())
         .then(data => {
         var result = data;
