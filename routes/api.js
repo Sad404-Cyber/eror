@@ -2815,8 +2815,7 @@ router.get('/hilih', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 result: {
-                 data: result.result,
+                 data: result.result
                  }
              })
          })
@@ -2844,8 +2843,7 @@ router.get('/holoh', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 result: {
-                 data: result.result,
+                 data: result.result
                  }
              })
          })
