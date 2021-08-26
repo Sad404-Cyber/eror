@@ -394,32 +394,6 @@ router.get('/covid', async (req, res, next) => {
 })
 
 
-router.get('/jadwalbola', async (req, res, next) => {
-        var apikey = req.query.apikey;
-           
-            
-	if(!apikey) return res.json(loghandler.notparam)
-        
-       if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/jadwalbola?apikey=SayaHafiz`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-               creator: 'Hafidz Abdillah',
-                 code: 200,
-                 message: 'succes',
-                 data: result.result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-} else {
-  res.sendFile(invalidKey)
-}
-})
-
 router.get('/storeinfo', async (req, res, next) => {
         var apikey = req.query.apikey,
             nama = req.query.nama
