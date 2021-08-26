@@ -495,7 +495,9 @@ router.get('/heroml', async (req, res, next) => {
         var result = data;
              res.json({
              	creator: 'Hafidz Abdillah',
-                 result
+                 code: 200,
+                 message: 'succes',
+                 data: result.listhero
              })
          })
          .catch(e => {
