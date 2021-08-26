@@ -346,7 +346,7 @@ router.get('/mediafire', async (req, res, next) => {
     if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
        
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/mediafire?url=${url}&apikey=SayaHafiz`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/socialmedia/mediafire?url=${url}&apikey=loWf7GSVZ0eTVgf`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -354,7 +354,9 @@ router.get('/mediafire', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 file_name: result.result.nama,
+                 file_size: result.result.size,
+                 file_link: result.result.link
              })
          })
          .catch(e => {
