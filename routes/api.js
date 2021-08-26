@@ -2579,6 +2579,33 @@ router.get('/drakorasia', async (req, res, next) => {
 })
 })
 
+router.get('/jadwalshalat', async (req, res, next) => {
+        var apikey = req.query.apikey,
+            jenis = req.query.jenis
+            
+	if(!apikey) return res.json(loghandler.notparam)
+        if(!jenis) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter jenis"})
+
+       if(listkey.includes(apikey)){
+       fetch(encodeURI(`https://fxc7-api.herokuapp.com/api/search/xnxx?apikey=sayahafiz&query=${jenis}`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 data: result.result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+  res.sendFile(invalidKey)
+}
+})
+
 router.get('/cerperjuangan', async (req, res, next) => {
         var apikey = req.query.apikey
             
