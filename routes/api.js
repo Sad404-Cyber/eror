@@ -2572,11 +2572,11 @@ router.get('/drakorasia', async (req, res, next) => {
 })
 
 router.get('/cerperjuangan', async (req, res, next) => {
-        var apikey = req.query.apikey,
-            jenis = req.query.jenis
+        var apikey = req.query.apikey
+            
             
 	if(!apikey) return res.json(loghandler.notparam)
-    if (!jenis) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter jenis"})
+    
 
        if(listkey.includes(apikey)){
        fetch(encodeURI(`https://fxc7-api.herokuapp.com/api/random/cerpen?apikey=DoSpPtIj&category=perjuangan`))
