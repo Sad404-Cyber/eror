@@ -2336,7 +2336,7 @@ router.get('/grupwa', async (req, res, next) => {
     if (!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/whatsapp-group?q=${search}&apikey=SayaHafiz`))
+       fetch(encodeURI(`https://api.lolhuman.xyz/api/groupwhatsapp2?apikey=sayahafiz&query=${search}`))
         .then(response => response.json())
         .then(data => {
         var result = data;
