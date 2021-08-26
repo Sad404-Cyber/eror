@@ -953,20 +953,20 @@ router.get('/tiktod/stalk', async (req, res, next) => {
 })
 
 
-router.get('/katailham', async (req, res, next) => {
+router.get('/quotewibu', async (req, res, next) => {
         var apikey = req.query.apikey
             
 	if(!apikey) return res.json(loghandler.notparam)
 	
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/katailham?apikey=SayaHafiz`))
+       fetch(encodeURI(`https://api.lolhuman.xyz/api/random/quotesnime?apikey=sayahafiz`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 kata: `${result.result}`
+                 kata: result.result.quote
              })
          })
          .catch(e => {
