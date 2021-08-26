@@ -2571,7 +2571,7 @@ router.get('/drakorasia', async (req, res, next) => {
 })
 })
 
-router.get('/cersex', async (req, res, next) => {
+router.get('/cerperjuangan', async (req, res, next) => {
         var apikey = req.query.apikey,
             jenis = req.query.jenis
             
@@ -2579,7 +2579,7 @@ router.get('/cersex', async (req, res, next) => {
     if (!jenis) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter jenis"})
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/cersex-search?q=${jenis}&apikey=SayaHafiz`))
+       fetch(encodeURI(`https://fxc7-api.herokuapp.com/api/random/cerpen?apikey=DoSpPtIj&category=perjuangan`))
         .then(response => response.json())
         .then(data => {
         var result = data;
