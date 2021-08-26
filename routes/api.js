@@ -2899,7 +2899,7 @@ router.get('/liriklagu', async (req, res, next) => {
 }
 })
 
-router.get('/artikata', async (req, res, next) => {
+router.get('/layarkaca', async (req, res, next) => {
         var apikey = req.query.apikey,
             film = req.query.film
             
