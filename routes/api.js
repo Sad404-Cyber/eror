@@ -3534,7 +3534,7 @@ router.get('/asah', async (req, res, next) => {
 }
 })
 
-router.get('/tebakkata', async (req, res, next) => {
+router.get('/tekateki', async (req, res, next) => {
         var apikey = req.query.apikey
             
             
@@ -3542,7 +3542,7 @@ router.get('/tebakkata', async (req, res, next) => {
     
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/tebak-kata?apikey=SayaHafiz`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/tekateki?apikey=loWf7GSVZ0eTVgf`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -3550,7 +3550,8 @@ router.get('/tebakkata', async (req, res, next) => {
               creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 pertanyaan: result.pertanyaan,
+                 jawaban: result.jawaban
              })
          })
          .catch(e => {
