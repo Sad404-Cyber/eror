@@ -2695,7 +2695,7 @@ router.get('/faktaunik', async (req, res, next) => {
         
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/fakta?apikey=SayaHafiz`))
+       fetch(encodeURI(`https://api.lolhuman.xyz/api/random/faktaunik?apikey=sayahafiz`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -2703,7 +2703,7 @@ router.get('/faktaunik', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 hasil: result.result
              })
          })
          .catch(e => {
