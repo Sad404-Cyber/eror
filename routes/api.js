@@ -878,13 +878,15 @@ router.get('/igvidio', async (req, res, next) => {
 	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
 
-       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/instagram/video?url=${url}&apikey=SayaHafiz`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/socialmedia/igdownload?url=${url}&apikey=5phhA3DhvkfEUaK`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
              	creator: 'Hafidz Abdillah',
-                 result
+                 code: 200,
+                 message: 'succes',
+                 data: result.result
              })
          })
          .catch(e => {
