@@ -966,7 +966,7 @@ router.get('/quotewibu', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 kata: result.result.quote
+                 quote: result.result.quote
              })
          })
          .catch(e => {
