@@ -2815,7 +2815,9 @@ router.get('/hilih', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: {
+                 data: result.result,
+                 }
              })
          })
          .catch(e => {
@@ -2842,7 +2844,9 @@ router.get('/holoh', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: {
+                 data: result.result,
+                 }
              })
          })
          .catch(e => {
