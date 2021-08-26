@@ -2844,7 +2844,6 @@ router.get('/holoh', async (req, res, next) => {
                  code: 200,
                  message: 'succes',
                  data: result.result
-                 }
              })
          })
          .catch(e => {
