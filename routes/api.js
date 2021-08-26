@@ -2606,12 +2606,15 @@ router.get('/cersex1', async (req, res, next) => {
         
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/cersex?apikey=SayaHafiz`))
+       fetch(encodeURI(`https://fxc7-api.herokuapp.com/api/random/cersex?apikey=DoSpPtIj`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
-                 result
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 data: result.result
              })
          })
          .catch(e => {
