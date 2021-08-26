@@ -2901,13 +2901,13 @@ router.get('/liriklagu', async (req, res, next) => {
 
 router.get('/artikata', async (req, res, next) => {
         var apikey = req.query.apikey,
-            kata = req.query.kata
+            film = req.query.film
             
 	if(!apikey) return res.json(loghandler.notparam)
-    if (!kata) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
+    if (!film) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter film"})
        
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/arti-kata?q=${kata}&apikey=SayaHafiz`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/search/layarkaca?film=${film}&apikey=loWf7GSVZ0eTVgf`))
         .then(response => response.json())
         .then(data => {
         var result = data;
