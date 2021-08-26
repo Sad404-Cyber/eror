@@ -1256,6 +1256,34 @@ router.get('/infonpm', async (req, res, next) => {
 }
 })
 
+router.get('/cutly', async (req, res, next) => {
+        var apikey = req.query.apikey,
+            kota = req.query.kota
+            
+	if(!apikey) return res.json(loghandler.notparam)
+        if(!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
+
+       if(listkey.includes(apikey)){
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/others/cuttly?url=${url}&apikey=loWf7GSVZ0eTVgf`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 data: {
+                 	link: result.result
+                 }
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+  res.sendFile(invalidKey)
+}
+})
 
 router.get('/tiny', async (req, res, next) => {
     var apikey = req.query.apikey,
