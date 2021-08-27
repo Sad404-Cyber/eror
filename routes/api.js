@@ -495,7 +495,7 @@ router.get('/ytmp3', async (req, res, next) => {
     if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
        
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://fxc7-api.herokuapp.com/api/download/ytmp3?url=${url}&apikey=sayahafiz`))
+       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/ytdl?url=${url}&apikey=dappakntlll`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -576,7 +576,7 @@ router.get('/ytmp4', async (req, res, next) => {
     if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://fxc7-api.herokuapp.com/api/download/ytmp3?url=${url}&apikey=sayahafiz`))
+       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/ytdl?url=${url}&apikey=dappakntlll`))
         .then(response => response.json())
         .then(data => {
         var result = data;
