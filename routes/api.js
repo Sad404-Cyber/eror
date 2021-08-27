@@ -3267,6 +3267,7 @@ router.get('/ppcouple', async (req, res, next) => {
                  result: {
                  	cowo_image: result.result.male,
                      cewe_image: result.result.female
+                  }
              })
          })
          .catch(e => {
