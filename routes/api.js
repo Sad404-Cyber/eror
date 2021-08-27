@@ -533,9 +533,9 @@ router.get('/ytmp3', async (req, res, next) => {
                  code: 200,
                  message: 'succes',
                  result : {
-                 	judul: result.result.title
-                     size_file: result.result.size
-                     image_thumb: result.result.thumbnail
+                 	judul: result.result.title,
+                     size_file: result.result.size,
+                     image_thumb: result.result.thumbnail,
                  	audio_url: result.result.url_audio
                  }
              })
