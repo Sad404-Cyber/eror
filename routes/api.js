@@ -504,7 +504,7 @@ router.get('/ytmp3', async (req, res, next) => {
                  code: 200,
                  message: 'succes',
                  hasil: {
-                  url: result.result.url_audio
+                  url: result.url_audio
                  }	
              })
          })
@@ -590,9 +590,7 @@ router.get('/playmp4', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 hasil: {
-                  url: result.result.url_video
-                 }
+                 data: result.result
              })
          })
          .catch(e => {
