@@ -519,7 +519,7 @@ router.get('/tiktok', async (req, res, next) => {
             kota = req.query.kota
             
 	if(!apikey) return res.json(loghandler.notparam)
-        if(!kota) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kota"})
+        if(!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
 
        if(listkey.includes(apikey)){
        fetch(encodeURI(`https://fxc7-api.herokuapp.com/api/download/tiktok?apikey=sayahafiz&url=${url}`))
