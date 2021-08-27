@@ -2754,7 +2754,7 @@ router.get('/shope', async (req, res, next) => {
     if (!produk) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter produk"})
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://api.lolhuman.xyz/api/shopee?apikey=sayahafiz&query=${produk}`))
+       fetch(encodeURI(`https://h4ck3rs404-api.herokuapp.com/api/shopee?q=${produk}&apikey=404Api`))
         .then(response => response.json())
         .then(data => {
         var result = data;
