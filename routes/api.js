@@ -516,7 +516,7 @@ router.get('/ytmp3', async (req, res, next) => {
 
 router.get('/tiktok', async (req, res, next) => {
         var apikey = req.query.apikey,
-            kota = req.query.kota
+            url = req.query.url
             
 	if(!apikey) return res.json(loghandler.notparam)
         if(!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
