@@ -504,10 +504,10 @@ router.get('/ytmp3', async (req, res, next) => {
                  code: 200,
                  message: 'succes',
                  hasil: {
-                 	thumbnail: result.result.thumb
-                     judul: result.result.title
-                    deskripsi: result.result.desc
-                    url_lagu: result.result.url_audio
+                 	thumbnail: result.result.thumb,
+                     judul: result.result.title,
+                    deskripsi: result.result.desc,
+                    url_lagu: result.result.url_audio,
                     url_vidio: result.result.url_video
                   }                 	
              })
