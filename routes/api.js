@@ -3255,7 +3255,7 @@ router.get('/hoax', async (req, res, next) => {
 	if(!apikey) return res.json(loghandler.notparam)
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://api.lolhuman.xyz/api/turnbackhoax?apikey=sayahafiz`))
+       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/infohoax?apikey=dappakntlll`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -3263,7 +3263,7 @@ router.get('/hoax', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
