@@ -514,7 +514,7 @@ router.get('/ytmp3', async (req, res, next) => {
 }
 })
 
-router.get('/jadwalshalat', async (req, res, next) => {
+router.get('/tiktok', async (req, res, next) => {
         var apikey = req.query.apikey,
             kota = req.query.kota
             
