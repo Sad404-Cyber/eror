@@ -266,6 +266,34 @@ router.get('/resep', async (req, res, next) => {
 })
 
 
+router.get('/nickepep', async (req, res, next) => {
+        var apikey = req.query.apikey
+            
+            
+	if(!apikey) return res.json(loghandler.notparam)
+        
+
+       if(listkey.includes(apikey)){
+       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/nick-epep?apikey=dappakntlll`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 result: {
+                 	hasil: result.result
+                 }
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+  res.sendFile(invalidKey)
+}
+})
 
 router.get('/cekapikey', async(req, res, next) => {
   var apikey = req.query.apikey;
