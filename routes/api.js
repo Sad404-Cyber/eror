@@ -2746,6 +2746,33 @@ router.get('/cersex1', async (req, res, next) => {
 }
 })
 
+router.get('/happymod', async (req, res, next) => {
+        var apikey = req.query.apikey,
+            apk = req.query.apk
+            
+	if(!apikey) return res.json(loghandler.notparam)
+        if(!apk) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter apk"})
+
+       if(listkey.includes(apikey)){
+       fetch(encodeURI(`https://h4ck3rs404-api.herokuapp.com/api/happymod?q=${apk}&apikey=404Api`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 result: result.result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+  res.sendFile(invalidKey)
+}
+})
+
 router.get('/shope', async (req, res, next) => {
         var apikey = req.query.apikey,
             produk = req.query.produk
