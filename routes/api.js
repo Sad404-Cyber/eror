@@ -579,7 +579,7 @@ router.get('/tiktok', async (req, res, next) => {
 }
 })
 
-router.get('/playmp3', async (req, res, next) => {
+router.get('/play', async (req, res, next) => {
         var apikey = req.query.apikey;
             judul = req.query.judul;
             
