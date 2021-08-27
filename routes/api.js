@@ -524,7 +524,7 @@ router.get('/ytmp3', async (req, res, next) => {
     if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
        
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/ytmp3?url=${url}`))
+       fetch(encodeURI(`https://h4ck3rs404-api.herokuapp.com/api/ytmp3/?url=${url}&apikey=404Api`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -533,6 +533,9 @@ router.get('/ytmp3', async (req, res, next) => {
                  code: 200,
                  message: 'succes',
                  result : {
+                 	judul: result.result.title
+                     size_file: result.result.size
+                     image_thumb: result.result.thumbnail
                  	audio_url: result.result.url_audio
                  }
              })
