@@ -524,7 +524,7 @@ router.get('/ytmp3', async (req, res, next) => {
     if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
        
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/socialmedia/ytmp3?url=${url}&apikey=Z2988sEIXPXGI7G`))
+       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/ytmp3?url=${url}`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -532,7 +532,9 @@ router.get('/ytmp3', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 hasil : result.url
+                 result : {
+                 	audio_url: result.result.url_audio
+                 }
              })
          })
          .catch(e => {
