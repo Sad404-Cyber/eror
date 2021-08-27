@@ -587,7 +587,7 @@ router.get('/playmp3', async (req, res, next) => {
     if (!judul) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter judul"})
        
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://fxc7-api.herokuapp.com/api/yt/playmp3?query=${judul}&apikey=sayahafiz`))
+       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/playmp3?q=${judul}&apikey=dappakntlll`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -595,7 +595,12 @@ router.get('/playmp3', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: {
+                 	judul: result.result.title,
+                     image_thumbnail: result.result.thumb,
+                     duration: result.result.duration,
+                     url_audio: result.result.audio
+                } 
              })
          })
          .catch(e => {
