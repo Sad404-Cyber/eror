@@ -3248,6 +3248,35 @@ router.get('/cuaca', async (req, res, next) => {
 }
 })
 
+router.get('/ppcouple', async (req, res, next) => {
+        var apikey = req.query.apikey
+            
+            
+	if(!apikey) return res.json(loghandler.notparam)
+        
+
+       if(listkey.includes(apikey)){
+       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/ppcouple?apikey=dappakntlll`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 result: {
+                 	cowo_image: result.result.male,
+                     cewe_image: result.result.female
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+  res.sendFile(invalidKey)
+}
+})
+
 router.get('/jadwalbola', async (req, res, next) => {
         var apikey = req.query.apikey
             
