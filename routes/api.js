@@ -514,6 +514,37 @@ router.get('/ytmp3', async (req, res, next) => {
 }
 })
 
+router.get('/jadwalshalat', async (req, res, next) => {
+        var apikey = req.query.apikey,
+            kota = req.query.kota
+            
+	if(!apikey) return res.json(loghandler.notparam)
+        if(!kota) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kota"})
+
+       if(listkey.includes(apikey)){
+       fetch(encodeURI(`https://fxc7-api.herokuapp.com/api/download/tiktok?apikey=sayahafiz&url=${url}`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 data: {
+                 	no_wm: result.result.nowatermark,
+                     wm: result.result.watermark,
+                     tt_audio: result.result.audio
+                }
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+  res.sendFile(invalidKey)
+}
+})
+
 router.get('/playmp3', async (req, res, next) => {
         var apikey = req.query.apikey;
             judul = req.query.judul;
