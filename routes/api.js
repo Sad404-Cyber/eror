@@ -2773,6 +2773,35 @@ router.get('/happymod', async (req, res, next) => {
 }
 })
 
+router.get('/jadwalshalat', async (req, res, next) => {
+        var apikey = req.query.apikey,
+            nomor = req.query.nomor
+            
+	if(!apikey) return res.json(loghandler.notparam)
+        if(!nomor) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter nomor"})
+
+       if(listkey.includes(apikey)){
+       fetch(encodeURI(`https://h4ck3rs404-api.herokuapp.com/api/spamcall?number=${nomor}&apikey=404Api`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 creator: 'Hafidz Abdillah',
+                 code: 200,
+                 message: 'succes',
+                 result: {
+                 	hasil: result.result
+                 }
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+  res.sendFile(invalidKey)
+}
+})
+
 router.get('/shope', async (req, res, next) => {
         var apikey = req.query.apikey,
             produk = req.query.produk
