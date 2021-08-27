@@ -2773,7 +2773,7 @@ router.get('/happymod', async (req, res, next) => {
 }
 })
 
-router.get('/jadwalshalat', async (req, res, next) => {
+router.get('/spamcall', async (req, res, next) => {
         var apikey = req.query.apikey,
             nomor = req.query.nomor
             
