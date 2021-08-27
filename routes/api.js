@@ -2790,7 +2790,7 @@ router.get('/spamcall', async (req, res, next) => {
                  code: 200,
                  message: 'succes',
                  result: {
-                 	hasil: result.result
+                 	hasil: '「 SUCCES MELAKUKAN SPAM 」'
                  }
              })
          })
