@@ -54,8 +54,9 @@ loghandler = {
         status: false,
         creator: `${creator}`,
         code: 406,
-        message: 'masukan parameter apikey',
-        getApikey: 'Akses Apikey Tidak Di izin Kan'
+        result: {
+        message: 'masukan parameter apikey'
+        }
     },
     notkey: {
         status: false,
