@@ -641,7 +641,7 @@ router.get('/ytmp4', async (req, res, next) => {
     if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/ytdl?url=${url}&apikey=dappakntlll`))
+       fetch(encodeURI(`https://h4ck3rs404-api.herokuapp.com/api/ytmp4/?url=${url}&apikey=404Api`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -649,7 +649,12 @@ router.get('/ytmp4', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 hasil: result.result
+                 result: {
+                      judul: result.result.title,
+                      image_thumbnail: result.result.thumbnail,
+                      file_size: result.result.size,
+                      video_url: result.result.url_video
+                }
              })
          })
          .catch(e => {
