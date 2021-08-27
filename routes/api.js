@@ -611,33 +611,6 @@ router.get('/playmp3', async (req, res, next) => {
 }
 })
 
-router.get('/playmp4', async (req, res, next) => {
-        var apikey = req.query.apikey;
-            judul = req.query.judul;
-            
-	if(!apikey) return res.json(loghandler.notparam)
-    if (!judul) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter judul"})
-       
-       if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://fxc7-api.herokuapp.com/api/yt/playmp4?query=${judul}&apikey=sayahafiz`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 creator: 'Hafidz Abdillah',
-                 code: 200,
-                 message: 'succes',
-                 data: result.result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-} else {
-  res.sendFile(invalidKey)
-}
-})
-
 router.get('/ytmp4', async (req, res, next) => {
         var apikey = req.query.apikey;
             url = req.query.url;
