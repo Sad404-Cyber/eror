@@ -1504,6 +1504,21 @@ router.get('/hex', async (req, res, next) => {
 }
 })
 
+router.get('/maker/attp', async(req, res, next) => {
+  text = req.query.text;
+  var apikey = req.query.apikey;
+  if(!text) return res.json(loghandler.nottext)
+  if(!apikey) return res.json(loghandler.notparam)
+  
+  if(listkey.includes(apikey)) {
+  let hasil = 'https://dapuhy-api.herokuapp.com/api/maker/attp?text=' + text + '&apikey=dapaapi'
+  data = await fetch(hasil).then(v => v.buffer())
+  await fs.writeFileSync(__path +'/tmp/attp.gif', data)
+  res.sendFile(__path +'/tmp/attp.gif')
+  } else {
+    res.json(loghandler.invalidKey)
+  }
+})
 
 router.get('/base', async (req, res, next) => {
 	var type = req.query.type,
@@ -2307,22 +2322,6 @@ router.get('/muslim/niatdzuhur', async (req, res, next) => {
 }
 })
 
-router.get('/metal', async (req, res, next) => {
-	var apikey = req.query.apikey,
-	 var text = req.query.text
-	
-	if(!apikey) return res.json(loghandler.notparam)
-	if(!text) return res.json(loghandler.nottext)
-	
-       if(listkey.includes(apikey)){
-       	var hasil = (`https://dapuhy-api.herokuapp.com/api/ephoto/metal?text=${tex}&apikey=dapaapi`)
-           var data = await fetch(hasil).then(v => v.getBuffer())
-	         await fs.writeFileSync(__path +'/tmp/metal.jpeg', data)
-	         res.sendFile(__path +'/tmp/metal.jpeg')
-  } else {
-    res.json(loghandler.invalidKey)
-  }
-})
 
 router.get('/muslim/niatmaghrib', async (req, res, next) => {
         var apikey = req.query.apikey
