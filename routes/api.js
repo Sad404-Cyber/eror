@@ -2322,7 +2322,7 @@ router.get('/muslim/niatdzuhur', async (req, res, next) => {
 }
 })
 
-royter.get('/metal', async (req, res, next) => {
+router.get('/metal', async (req, res, next) => {
 	var apikey = req.query.apikey
 	if(!apikey) return res.json(loghandler.notparam)
 	
