@@ -2332,8 +2332,8 @@ router.get('/metal', async (req, res, next) => {
        if(listkey.includes(apikey)){
        	var hasil = 'https://dapuhy-api.herokuapp.com/api/ephoto/metal?text=' + text + '&apikey=dapaapi'
            var data = await fetch(hasil).then(v => v.getBuffer())
-	         await fs.writeFileSync(__path +'/tmp/metal.jpg', data)
-	         res.sendFile(__path +'/tmp/metal.jpg')
+	         await fs.writeFileSync(__path +'/tmp/metal.jpeg', data)
+	         res.sendFile(__path +'/tmp/metal.jepg')
   } else {
     res.json(loghandler.invalidKey)
   }
