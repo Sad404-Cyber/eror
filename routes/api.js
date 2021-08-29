@@ -3880,7 +3880,8 @@ router.get('/nebak', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 soal: result.result
+                 img : result.result.image,
+                 jawaban : result.result.jawaban
              })
          })
          .catch(e => {
