@@ -37,7 +37,7 @@ var fs = require('fs');
 var util = require('util');
 var router  = express.Router();
 
-var { tts, wait, simih, getBuffer, h2k, banner, getRandom, start, info, success, close, pickRandom } = require(__path + '/lib/functions.js');
+var { tts, await, simih, getBuffer, h2k, banner, getRandom, start, info, success, close, pickRandom } = require(__path + '/lib/functions.js');
 var { RemoveBg } = require('remove.bg');
 var { tahta } = require(__path + '/lib/tahta.js');
 var { createHash } = require('crypto')
