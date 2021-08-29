@@ -2862,18 +2862,19 @@ router.get('/happymod', async (req, res, next) => {
 
 router.get('/maker/skatch', async(req, res, next) => {
   var apikey = req.query.apikey,
-        url = req.query.url
+        text = req.query.text
         
   if(!text) return res.json(loghandler.nottext)
   if(!apikey) return res.json(loghandler.notparam)
   
   if(listkey.includes(apikey)){
-  let hasil = `https://dapuhy-api.herokuapp.com/api/maker/nulis?text=${text}&apikey=JxI8MG6pk4NlYa9`
-  data = await fetch(hasil).then(v => v.buffer())
-         await fs.writeFileSync(__path +'/tmp/skatch.jpeg', data)
+  fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/maker/nulis?text=${text}&apikey=JxI8MG6pk4NlYa9`))
+  .then(response => response.json())
+   .then(v => v.getBuffer())
+         await fs.writeFileSync(__path +'/tmp/skatch.jpeg', v)
         res.sendFile(__path+'/tmp/skatch.jpeg')
   } else {
-    res.json(loghandler.invalidKey)
+    res.sendFile(invalidKey)
   }
 })
 
