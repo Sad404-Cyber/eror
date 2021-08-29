@@ -2860,6 +2860,23 @@ router.get('/happymod', async (req, res, next) => {
 }
 })
 
+router.get('/maker/skatch', async(req, res, next) => {
+  var apikey = req.query.apikey,
+        url = req.query.url
+        
+  if(!url) return res.json(loghandler.noturl)
+  if(!apikey) return res.json(loghandler.notparam)
+  
+  if(listkey.includes(apikey)){
+  let hasil = `https://dapuhy-api.herokuapp.com/api/maker/nulis?text=${text}&apikey=JxI8MG6pk4NlYa9`
+  data = await fetch(hasil).then(v => v.buffer())
+         await fs.writeFileSync(__path +'/tmp/skatch.jpeg', data)
+        res.sendFile(__path+'/tmp/skatch.jpeg')
+  } else {
+    res.json(loghandler.invalidKey)
+  }
+})
+
 router.get('/spamcall', async (req, res, next) => {
         var apikey = req.query.apikey,
             nomor = req.query.nomor
