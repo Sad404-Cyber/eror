@@ -2323,8 +2323,11 @@ router.get('/muslim/niatdzuhur', async (req, res, next) => {
 })
 
 router.get('/metal', async (req, res, next) => {
-	var apikey = req.query.apikey
+	var apikey = req.query.apikey,
+	var text = req.query.apikey
+	
 	if(!apikey) return res.json(loghandler.notparam)
+	if(!text) return res.json(loghandler.nottext)
 	
        if(listkey.includes(apikey)){
        	var hasil = 'https://dapuhy-api.herokuapp.com/api/ephoto/metal?text=' + text + '&apikey=dapaapi'
