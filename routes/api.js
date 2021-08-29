@@ -2322,6 +2322,19 @@ router.get('/muslim/niatdzuhur', async (req, res, next) => {
 }
 })
 
+royter.get('/metal', async (req, res, next) => {
+	var apikey = req.query.apikey
+	if(!apikey) return res.json(loghandler.notparam)
+	
+       if(listkey.includes(apikey)){
+       	var hasil = 'https://dapuhy-api.herokuapp.com/api/ephoto/metal?text=' + text + '&apikey=dapaapi'
+           var data = wait fetch(hasil).then(v => v.getBuffer())
+	         wait fs.writeFileSync(__path +'/tmp/metal.jpg', data)
+	         res.sendFile(__path +'/tmp/metal.jpg')
+  } else {
+    res.json(loghandler.invalidKey)
+  }
+})
 
 router.get('/muslim/niatmaghrib', async (req, res, next) => {
         var apikey = req.query.apikey
