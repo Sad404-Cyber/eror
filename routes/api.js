@@ -2309,7 +2309,7 @@ router.get('/muslim/niatdzuhur', async (req, res, next) => {
 
 router.get('/metal', async (req, res, next) => {
 	var apikey = req.query.apikey,
-	 var text = req.query.apikey
+	 var text = req.query.text
 	
 	if(!apikey) return res.json(loghandler.notparam)
 	if(!text) return res.json(loghandler.nottext)
