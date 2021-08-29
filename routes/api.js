@@ -2864,7 +2864,7 @@ router.get('/maker/skatch', async(req, res, next) => {
   var apikey = req.query.apikey,
         url = req.query.url
         
-  if(!url) return res.json(loghandler.noturl)
+  if(!text) return res.json(loghandler.nottext)
   if(!apikey) return res.json(loghandler.notparam)
   
   if(listkey.includes(apikey)){
