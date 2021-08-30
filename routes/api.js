@@ -208,7 +208,7 @@ router.get('/truth', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.data
+                 result: result.data
              })
          })
          .catch(e => {
@@ -359,7 +359,7 @@ router.get('/store', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -567,7 +567,7 @@ router.get('/gempa', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -592,7 +592,7 @@ router.get('/heroml', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.listhero
+                 result: result.listhero
              })
          })
          .catch(e => {
@@ -651,7 +651,7 @@ router.get('/tiktok', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: {
+                 result: {
                  	no_wm: result.result.nowatermark,
                      wm: result.result.watermark,
                      tt_audio: result.result.audio
@@ -863,7 +863,7 @@ router.get('/jarak', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -890,7 +890,7 @@ router.get('/nsfwcek', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -919,7 +919,7 @@ router.get('/rscovid', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -945,7 +945,7 @@ router.get('/sekolah', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -972,7 +972,7 @@ router.get('/stalkgh', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -999,7 +999,7 @@ router.get('/joox', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -1026,7 +1026,7 @@ router.get('/igvidio', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -1077,7 +1077,7 @@ router.get('/tiktod/stalk', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 data: result.result
+                 result: result.result
             })
         })
         .catch(e => {
@@ -1171,7 +1171,7 @@ router.get('/nama', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -1198,7 +1198,7 @@ router.get('/zodiak', async (req, res, next) => {
                creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -1225,7 +1225,7 @@ router.get('/mimpi', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -1254,7 +1254,7 @@ router.get('/ramal', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -1279,7 +1279,7 @@ router.get('/cerpen', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -1409,7 +1409,7 @@ router.get('/cutly', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: {
+                 result: {
                  	link: result.result
                  }
              })
@@ -1768,7 +1768,7 @@ router.get('/kisahnabi', async (req, res, next) => {
 				creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.data
+                 result: result.data
 			})
 		})
 		.catch(e => {
@@ -1791,7 +1791,7 @@ router.get('/infogempa', async (req, res, next) => {
 				creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
 			})
 		})
 		.catch(e => {
@@ -1818,7 +1818,7 @@ router.get('/hadits', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.data   
+                 result: result.data   
              })
          })
          .catch(e => {
@@ -1848,7 +1848,7 @@ router.get('/quran', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.data
+                 result: result.data
              })
          })
          .catch(e => {
@@ -1876,7 +1876,7 @@ router.get('/fbdown', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -2076,7 +2076,7 @@ router.get('/muslim/tahlil', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.data
+                 result: result.data
              })
          })
          .catch(e => {
@@ -2102,7 +2102,7 @@ router.get('/muslim/wirid', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.data
+                 result: result.data
              })
          })
          .catch(e => {
@@ -2128,7 +2128,7 @@ router.get('/muslim/ayatkursi', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.data
+                 result: result.data
              })
          })
          .catch(e => {
@@ -2154,7 +2154,7 @@ router.get('/muslim/doaharian', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.data
+                 result: result.data
              })
          })
          .catch(e => {
@@ -2259,7 +2259,7 @@ router.get('/muslim/asmaulhusna', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.data
+                 result: result.data
              })
          })
          .catch(e => {
@@ -2285,7 +2285,7 @@ router.get('/muslim/niatshubuh', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.data
+                 result: result.data
              })
          })
          .catch(e => {
@@ -2311,7 +2311,7 @@ router.get('/muslim/niatdzuhur', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.data
+                 result: result.data
              })
          })
          .catch(e => {
@@ -2337,7 +2337,7 @@ router.get('/muslim/niatmaghrib', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.data
+                 result: result.data
              })
          })
          .catch(e => {
@@ -2363,7 +2363,7 @@ router.get('/muslim/niatisya', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.data
+                 result: result.data
              })
          })
          .catch(e => {
@@ -2390,7 +2390,7 @@ router.get('/muslim/niatashar', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.data
+                 result: result.data
              })
          })
          .catch(e => {
@@ -2517,7 +2517,7 @@ router.get('/grupwa', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -2594,7 +2594,7 @@ router.get('/wikipedia', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -2621,7 +2621,7 @@ router.get('/tebakanime', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -2648,7 +2648,7 @@ router.get('/stalkyt', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -2674,7 +2674,7 @@ router.get('/katadilan', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -2700,7 +2700,7 @@ router.get('/ceritahoror', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -2768,7 +2768,7 @@ router.get('/jadwalshalat', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -2795,7 +2795,7 @@ router.get('/cerperjuangan', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -2822,7 +2822,7 @@ router.get('/cersex1', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -2950,7 +2950,7 @@ router.get('/jadwalshalat', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -3026,7 +3026,7 @@ router.get('/hilih', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -3053,7 +3053,7 @@ router.get('/holoh', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -3080,7 +3080,7 @@ router.get('/heleh', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -3108,7 +3108,7 @@ router.get('/huluh', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -3135,7 +3135,7 @@ router.get('/liriklagu', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -3162,7 +3162,7 @@ router.get('/layarkaca', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -3189,7 +3189,7 @@ router.get('/chordlagu', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -3240,7 +3240,7 @@ router.get('/kbbi', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.arti
+                 result: result.arti
              })
          })
          .catch(e => {
@@ -3314,7 +3314,7 @@ router.get('/kodepos', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.data
+                 result: result.data
              })
          })
          .catch(e => {
@@ -3342,7 +3342,7 @@ router.get('/cuaca', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -3571,7 +3571,7 @@ router.get('/jurnal', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -3598,7 +3598,7 @@ router.get('/anime/listnom', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -3625,7 +3625,7 @@ router.get('/anime/nameanime', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -3652,7 +3652,7 @@ router.get('/anime/animeindo', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -3704,7 +3704,7 @@ router.get('/manga', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -3731,7 +3731,7 @@ router.get('/anime/kusonime', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -3802,7 +3802,7 @@ router.get('/jago', async (req, res, next) => {
                  creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -3960,7 +3960,7 @@ router.get('/news/cnn', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -3987,7 +3987,7 @@ router.get('/news/cnbc', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -4015,7 +4015,7 @@ router.get('/news/republika', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -4043,7 +4043,7 @@ router.get('/news/tempo', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -4071,7 +4071,7 @@ router.get('/news/antara', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -4097,7 +4097,7 @@ router.get('/news/okezone', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
@@ -4125,7 +4125,7 @@ router.get('/filmapik/search', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 data: result.result
+                 result: result.result
              })
          })
          .catch(e => {
