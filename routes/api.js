@@ -351,7 +351,7 @@ router.get('/store', async (req, res, next) => {
     if (!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/search/playstore?query=${search}&apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/search/playstore?query=${search}&apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -465,7 +465,7 @@ router.get('/mediafire', async (req, res, next) => {
     if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
        
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/socialmedia/mediafire?url=${url}&apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/socialmedia/mediafire?url=${url}&apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -518,7 +518,7 @@ router.get('/storeinfo', async (req, res, next) => {
 	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!nama) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter nama"})
 
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/search/playstore-info?id=${nama}&apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/search/playstore-info?id=${nama}&apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -584,7 +584,7 @@ router.get('/heroml', async (req, res, next) => {
 	if(!apikey) return res.json(loghandler.notparam)
 	
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/others/listheroml?apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/others/listheroml?apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -791,7 +791,7 @@ router.get('/siapakah', async (req, res, next) => {
         
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/siapakah?apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/siapakah?apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -1018,7 +1018,7 @@ router.get('/igvidio', async (req, res, next) => {
 	if(apikey != 'freeapi') return res.sendFile(invalidKey)
     if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
 
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/socialmedia/igdownload?url=${url}&apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/socialmedia/igdownload?url=${url}&apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -1163,7 +1163,7 @@ router.get('/nama', async (req, res, next) => {
     if (!nama) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter nama"})
 
        if(listkey.includes(apikey)){  
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/artinama?nama=${nama}&apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/artinama?nama=${nama}&apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -1217,7 +1217,7 @@ router.get('/mimpi', async (req, res, next) => {
     if (!mimpi) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter mimpi"})
        
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/artimimpi?mimpi=${mimpi}&apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/artimimpi?mimpi=${mimpi}&apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -1246,7 +1246,7 @@ router.get('/ramal', async (req, res, next) => {
     if (!pasangan2) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter pasangan 2"})
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/jodoh?nama1=${pasangan1}&nama2=${pasangan2}&apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/jodoh?nama1=${pasangan1}&nama2=${pasangan2}&apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -1271,7 +1271,7 @@ router.get('/cerpen', async (req, res, next) => {
 	if(!apikey) return res.json(loghandler.notparam)
 	
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/cerpen?apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/cerpen?apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -1298,7 +1298,7 @@ router.get('/coming', async (req, res, next) => {
 	
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/movie/comingsoon?apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/movie/comingsoon?apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -1322,7 +1322,7 @@ router.get('/oskop', async (req, res, next) => {
 	if(!apikey) return res.json(loghandler.notparam)
 	
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/movie/jadwalbioskop?apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/movie/jadwalbioskop?apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -1401,7 +1401,7 @@ router.get('/cutly', async (req, res, next) => {
         if(!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/others/cuttly?url=${url}&apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/others/cuttly?url=${url}&apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -1511,7 +1511,7 @@ router.get('/maker/attp', async(req, res, next) => {
   if(!apikey) return res.json(loghandler.notparam)
   
   if(listkey.includes(apikey)) {
-  let hasil = 'https://dapuhy-api.herokuapp.com/api/maker/attp?text=' + text + '&apikey=dapaapi'
+  let hasil = 'https://dapuhy-api.herokuapp.com/api/maker/attp?text=' + text + '&apikey=hnjsbA3gRbT0pwS'
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/attp.gif', data)
   res.sendFile(__path +'/tmp/attp.gif')
@@ -3045,7 +3045,7 @@ router.get('/holoh', async (req, res, next) => {
         if(!kata) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/vokal/holoh?kata=${kata}&apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/vokal/holoh?kata=${kata}&apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -3072,7 +3072,7 @@ router.get('/heleh', async (req, res, next) => {
         if(!kata) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/vokal/heleh?kata=${kata}&apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/vokal/heleh?kata=${kata}&apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -3100,7 +3100,7 @@ router.get('/huluh', async (req, res, next) => {
         if(!kata) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/vokal/huluh?kata=${kata}&apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/vokal/huluh?kata=${kata}&apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -3154,7 +3154,7 @@ router.get('/layarkaca', async (req, res, next) => {
     if (!film) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter film"})
        
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/search/layarkaca?film=${film}&apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/search/layarkaca?film=${film}&apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -3563,7 +3563,7 @@ router.get('/jurnal', async (req, res, next) => {
 	if(!query) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter query"})
   
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/anime/jurnalotaku?query=${query}&apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/anime/jurnalotaku?query=${query}&apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -3590,7 +3590,7 @@ router.get('/anime/listnom', async (req, res, next) => {
 	if(!nomor) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter nomor"})
 	
 	     if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/anime/mal-nomer?nomer=${nomor}&apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/anime/mal-nomer?nomer=${nomor}&apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -3617,7 +3617,7 @@ router.get('/anime/nameanime', async (req, res, next) => {
 	if(!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
 	 
 	      if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/anime/mal-name?name=${search}&apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/anime/mal-name?name=${search}&apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -3644,7 +3644,7 @@ router.get('/anime/animeindo', async (req, res, next) => {
 	if(!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
 	
 	     if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/anime/animeindo?query=${search}&apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/anime/animeindo?query=${search}&apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -3671,7 +3671,7 @@ router.get('/searchmanga', async (req, res, next) => {
         if(!judul) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter judul"})
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/search/mangatoon?query=${judul}&apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/search/mangatoon?query=${judul}&apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -3723,7 +3723,7 @@ router.get('/anime/kusonime', async (req, res, next) => {
 	if(!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
 	     
 	     if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/anime/kusonime?query=${search}&apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/anime/kusonime?query=${search}&apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -3794,7 +3794,7 @@ router.get('/jago', async (req, res, next) => {
     if (!kata) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/jagokata?query=${kata}&apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/jagokata?query=${kata}&apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -3819,7 +3819,7 @@ router.get('/asah', async (req, res, next) => {
 	if(!apikey) return res.json(loghandler.notparam)
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/asahotak?apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/asahotak?apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -3846,7 +3846,7 @@ router.get('/tekateki', async (req, res, next) => {
     
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/tekateki?apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/tekateki?apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -3872,7 +3872,7 @@ router.get('/nebak', async (req, res, next) => {
 	if(!apikey) return res.json(loghandler.notparam)
 
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/tebakgambar?apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/tebakgambar?apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -3898,7 +3898,7 @@ router.get('/famely', async (req, res, next) => {
 	if(!apikey) return res.json(loghandler.notparam)
 	
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/family100?apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/family100?apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -3924,7 +3924,7 @@ router.get('/lontong', async (req, res, next) => {
 	if(!apikey) return res.json(loghandler.notparam)
 	
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/caklontong?apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/caklontong?apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -3952,7 +3952,7 @@ router.get('/news/cnn', async (req, res, next) => {
 	if(!apikey) return res.json(loghandler.notparam)
        
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/berita/cnn?apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/berita/cnn?apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -3979,7 +3979,7 @@ router.get('/news/cnbc', async (req, res, next) => {
 	if(!apikey) return res.json(loghandler.notparam)
     
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/berita/bcc?apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/berita/bcc?apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -4007,7 +4007,7 @@ router.get('/news/republika', async (req, res, next) => {
 	
     
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/berita/republika?apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/berita/republika?apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -4035,7 +4035,7 @@ router.get('/news/tempo', async (req, res, next) => {
 	
     
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/berita/tempo?apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/berita/tempo?apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -4063,7 +4063,7 @@ router.get('/news/antara', async (req, res, next) => {
 	
     
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/berita/antara?apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/berita/antara?apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -4089,7 +4089,7 @@ router.get('/news/okezone', async (req, res, next) => {
 	if(!apikey) return res.json(loghandler.notparam)
 	
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/berita/okezone?apikey=dapaapi`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/berita/okezone?apikey=hnjsbA3gRbT0pwS`))
         .then(response => response.json())
         .then(data => {
         var result = data;
