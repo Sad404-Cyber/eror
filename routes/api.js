@@ -320,7 +320,7 @@ router.get('/cekapikey', async(req, res, next) => {
       }
     })
   } else {
-    res.sendFile(invalidKey)
+    res.json(loghandler.erorkey)
   }
 })
 
