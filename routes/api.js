@@ -64,15 +64,6 @@ loghandler = {
         code: 406,
         message: 'masukan parameter key'
     },
-    erorkey: {
-        creator: 'Hafidz Abdillah',
-        status: 'false',
-        result: {
-        apikey: `${apikey}`,
-        message: 'Apikey Invalid',
-        exp: 'Not-Found',
-      }
-    },
     noturl: {
         status: false,
         creator: `${creator}`,
@@ -320,7 +311,7 @@ router.get('/cekapikey', async(req, res, next) => {
       }
     })
   } else {
-    res.json(loghandler.erorkey)
+    res.sendFile(invalidKey)
   }
 })
 
