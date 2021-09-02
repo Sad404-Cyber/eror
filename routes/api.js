@@ -64,6 +64,12 @@ loghandler = {
         code: 406,
         message: 'masukan parameter key'
     },
+    keyinvalid: {
+        status: false,
+        creator: `${creator}`,
+        code: 406,
+        message: `Apikey ${apikey} Invalid, Please Create Apikey First`
+    },
     noturl: {
         status: false,
         creator: `${creator}`,
