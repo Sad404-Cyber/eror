@@ -310,11 +310,9 @@ router.get('/cekapikey', async(req, res, next) => {
     res.json({
       creator: 'Hafidz Abdillah',
       status: 'true',
-      result: {
       apikey: `${apikey}`,
       message: 'Apikey Active',
       exp: '26 September, 2021'
-      }
     })
   } else {
     res.json(loghandler.keyinvalid)
