@@ -68,7 +68,7 @@ loghandler = {
         status: false,
         creator: `${creator}`,
         code: 406,
-        message: `Apikey ${apikey} Invalid Please Create Apikey First`
+        message: 'Apikey Invalid'
     },
     noturl: {
         status: false,
