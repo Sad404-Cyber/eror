@@ -313,7 +313,7 @@ router.get('/cekapikey', async(req, res, next) => {
       result: {
       apikey: `${apikey}`,
       message: 'Apikey Active',
-      exp: '26 September, 2021',
+      exp: '26 September, 2021'
       }
     })
   } else {
