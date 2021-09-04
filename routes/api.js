@@ -1047,7 +1047,7 @@ router.get('/ig', async (req, res, next) => {
     if (!username) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter username"})
     
       if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://mhankbarbar.herokuapp.com/api/stalk?username=${username}`))
+       fetch(encodeURI(`https://fdz-app.herokuapp.com/api/stalkig?username=${username}`))
         .then(response => response.json())
         .then(data => {
         var result = data;
