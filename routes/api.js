@@ -1055,7 +1055,14 @@ router.get('/ig', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'succes',
-                 result
+                 result: {
+                 	Username: result.username,
+                 	Name: result.fullname,
+                 	Biodata: result.bio,
+                     Jumlah_Followers: result.followers,
+                     Jumlah_Following: result.following,
+                     Profile_pic: result.picurl
+                     }              
              })
          })
          .catch(e => {
