@@ -213,7 +213,7 @@ router.get('/truth', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.data
              })
          })
@@ -287,7 +287,7 @@ router.get('/nickepep', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: {
                  	hasil: result.result
                  }
@@ -362,7 +362,7 @@ router.get('/store', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -389,7 +389,7 @@ router.get('/katailham', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: {
                  	hasil: result.result
                  }
@@ -418,7 +418,7 @@ router.get('/pantunpakboy', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: {
                  	hasil: result.result
                  }
@@ -447,7 +447,7 @@ router.get('/nyindir', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: {
                  	hasil: result.result
                  }
@@ -476,7 +476,7 @@ router.get('/mediafire', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  file_name: result.result.nama,
                  file_size: result.result.size,
                  file_link: result.result.link
@@ -570,7 +570,7 @@ router.get('/gempa', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -595,7 +595,7 @@ router.get('/heroml', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.listhero
              })
          })
@@ -622,7 +622,7 @@ router.get('/ytmp3', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result : {
                  	judul: result.result.title,
                      size_file: result.result.size,
@@ -654,7 +654,7 @@ router.get('/tiktok', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: {
                  	no_wm: result.result.nowatermark,
                      wm: result.result.watermark,
@@ -685,7 +685,7 @@ router.get('/play', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: {
                  	judul: result.result.title,
                      image_thumbnail: result.result.thumb,
@@ -717,7 +717,7 @@ router.get('/ytmp4', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: {
                       judul: result.result.title,
                       image_thumbnail: result.result.thumbnail,
@@ -802,7 +802,7 @@ router.get('/siapakah', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  pertanyaan: result.pertanyaan,
                  jawaban: result.jawaban
              })
@@ -866,7 +866,7 @@ router.get('/jarak', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -893,7 +893,7 @@ router.get('/nsfwcek', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -922,7 +922,7 @@ router.get('/rscovid', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -948,7 +948,7 @@ router.get('/sekolah', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -975,7 +975,7 @@ router.get('/stalkgh', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -1002,7 +1002,7 @@ router.get('/joox', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -1029,7 +1029,7 @@ router.get('/igvidio', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -1054,7 +1054,7 @@ router.get('/ig', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: {
                  	Username: result.username,
                  	Name: result.fullname,
@@ -1181,7 +1181,7 @@ router.get('/nama', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -1208,7 +1208,7 @@ router.get('/zodiak', async (req, res, next) => {
              res.json({
                creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -1235,7 +1235,7 @@ router.get('/mimpi', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -1264,7 +1264,7 @@ router.get('/ramal', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -1289,7 +1289,7 @@ router.get('/cerpen', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -1364,7 +1364,7 @@ router.get('/randomquote', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  quote: result.result.quote
              })
          })
@@ -1392,7 +1392,7 @@ router.get('/infonpm', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result
              })
          })
@@ -1419,7 +1419,7 @@ router.get('/cutly', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: {
                  	link: result.result
                  }
@@ -1446,7 +1446,7 @@ router.get('/tiny', async (req, res, next) => {
              res.json({
                creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result : {
                      link : `${body}`,
                  }
@@ -1476,7 +1476,7 @@ router.get('/string', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  hasil: `${result.result}`
              })
          })
@@ -1503,7 +1503,7 @@ router.get('/hex', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  hasil : `${result.result}`
              })
          })
@@ -1778,7 +1778,7 @@ router.get('/kisahnabi', async (req, res, next) => {
 			res.json({
 				creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.data
 			})
 		})
@@ -1801,7 +1801,7 @@ router.get('/infogempa', async (req, res, next) => {
 			res.json({
 				creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
 			})
 		})
@@ -1828,7 +1828,7 @@ router.get('/hadits', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.data   
              })
          })
@@ -1858,7 +1858,7 @@ router.get('/quran', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.data
              })
          })
@@ -1886,7 +1886,7 @@ router.get('/fbdown', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -2086,7 +2086,7 @@ router.get('/muslim/tahlil', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.data
              })
          })
@@ -2112,7 +2112,7 @@ router.get('/muslim/wirid', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.data
              })
          })
@@ -2138,7 +2138,7 @@ router.get('/muslim/ayatkursi', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.data
              })
          })
@@ -2164,7 +2164,7 @@ router.get('/muslim/doaharian', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.data
              })
          })
@@ -2191,7 +2191,7 @@ router.get('/muslim/bacaanshalat', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result
              })
          })
@@ -2217,7 +2217,7 @@ router.get('/muslim/niatshalat', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result
              })
          })
@@ -2243,7 +2243,7 @@ router.get('/muslim/kisahnabi', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result
              })
          })
@@ -2269,7 +2269,7 @@ router.get('/muslim/asmaulhusna', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.data
              })
          })
@@ -2295,7 +2295,7 @@ router.get('/muslim/niatshubuh', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.data
              })
          })
@@ -2321,7 +2321,7 @@ router.get('/muslim/niatdzuhur', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.data
              })
          })
@@ -2347,7 +2347,7 @@ router.get('/muslim/niatmaghrib', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.data
              })
          })
@@ -2373,7 +2373,7 @@ router.get('/muslim/niatisya', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.data
              })
          })
@@ -2400,7 +2400,7 @@ router.get('/muslim/niatashar', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.data
              })
          })
@@ -2527,7 +2527,7 @@ router.get('/grupwa', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -2604,7 +2604,7 @@ router.get('/wikipedia', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -2631,7 +2631,7 @@ router.get('/tebakanime', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -2658,7 +2658,7 @@ router.get('/stalkyt', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -2684,7 +2684,7 @@ router.get('/katadilan', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -2710,7 +2710,7 @@ router.get('/ceritahoror', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -2778,7 +2778,7 @@ router.get('/jadwalshalat', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -2805,7 +2805,7 @@ router.get('/cerperjuangan', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -2832,7 +2832,7 @@ router.get('/cersex1', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -2859,7 +2859,7 @@ router.get('/happymod', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -2904,7 +2904,7 @@ router.get('/spamcall', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: {
                  	hasil: '「 SUCCES MELAKUKAN SPAM 」'
                  }
@@ -2933,7 +2933,7 @@ router.get('/shope', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -2960,7 +2960,7 @@ router.get('/jadwalshalat', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -2987,7 +2987,7 @@ router.get('/faktaunik', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  hasil: result.result
              })
          })
@@ -3036,7 +3036,7 @@ router.get('/hilih', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -3063,7 +3063,7 @@ router.get('/holoh', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -3090,7 +3090,7 @@ router.get('/heleh', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -3118,7 +3118,7 @@ router.get('/huluh', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -3145,7 +3145,7 @@ router.get('/liriklagu', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -3172,7 +3172,7 @@ router.get('/layarkaca', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -3199,7 +3199,7 @@ router.get('/chordlagu', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -3250,7 +3250,7 @@ router.get('/kbbi', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.arti
              })
          })
@@ -3276,7 +3276,7 @@ router.get('/covidindo', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result
              })
          })
@@ -3324,7 +3324,7 @@ router.get('/kodepos', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.data
              })
          })
@@ -3352,7 +3352,7 @@ router.get('/cuaca', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -3379,7 +3379,7 @@ router.get('/ppcouple', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: {
                  	cowo_image: result.result.male,
                      cewe_image: result.result.female
@@ -3409,7 +3409,7 @@ router.get('/jadwalbola', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -3435,7 +3435,7 @@ router.get('/hoax', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -3581,7 +3581,7 @@ router.get('/jurnal', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -3608,7 +3608,7 @@ router.get('/anime/listnom', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -3635,7 +3635,7 @@ router.get('/anime/nameanime', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -3662,7 +3662,7 @@ router.get('/anime/animeindo', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -3714,7 +3714,7 @@ router.get('/manga', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -3741,7 +3741,7 @@ router.get('/anime/kusonime', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -3812,7 +3812,7 @@ router.get('/jago', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -3837,7 +3837,7 @@ router.get('/asah', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result
              })
          })
@@ -3864,7 +3864,7 @@ router.get('/tekateki', async (req, res, next) => {
              res.json({
               creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  pertanyaan: result.pertanyaan,
                  jawaban: result.jawaban
              })
@@ -3890,7 +3890,7 @@ router.get('/nebak', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  img : result.result.image,
                  jawaban : result.result.jawaban
              })
@@ -3916,7 +3916,7 @@ router.get('/famely', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  soal: result.soal,
                  jawaban: result.jawaban
              })
@@ -3942,7 +3942,7 @@ router.get('/lontong', async (req, res, next) => {
              res.json({
                  creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  soal: result.soal,
                  jawaban: result.jawaban,
                  penjelasan: result.informasi
@@ -3970,7 +3970,7 @@ router.get('/news/cnn', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -3997,7 +3997,7 @@ router.get('/news/cnbc', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -4025,7 +4025,7 @@ router.get('/news/republika', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -4053,7 +4053,7 @@ router.get('/news/tempo', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -4081,7 +4081,7 @@ router.get('/news/antara', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -4107,7 +4107,7 @@ router.get('/news/okezone', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
@@ -4135,7 +4135,7 @@ router.get('/filmapik/search', async (req, res, next) => {
              res.json({
              	creator: 'Hafidz Abdillah',
                  code: 200,
-                 message: 'succes',
+                 message: 'Jangan Ditembak Bang',
                  result: result.result
              })
          })
