@@ -608,8 +608,8 @@ router.get('/heroml', async (req, res, next) => {
 })
 
 router.get('/ytmp3', async (req, res, next) => {
-          var apikey = req.query.apikey;
-            url = req.query.url;
+          var apikey = req.query.apikey,
+            url = req.query.url
             
 	if(!apikey) return res.json(loghandler.notparam)
     if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
