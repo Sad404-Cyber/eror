@@ -615,7 +615,7 @@ router.get('/ytmp3', async (req, res, next) => {
     if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
        
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://h4ck3rs404-api.herokuapp.com/api/ytmp3/?url=${url}&apikey=404Api`))
+       fetch(encodeURI(`https://api.dhnjing.xyz/downloader/youtube/music?url=${url}&apikey=beta`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -623,11 +623,14 @@ router.get('/ytmp3', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'Jangan Ditembak Bang',
-                 result : {
-                 	judul: result.result.title,
-                     size_file: result.result.size,
-                     image_thumb: result.result.thumbnail,
-                 	audio_url: result.result.url_audio
+                 result: {
+                 	Title: result.media_metadata.title,
+                     Description: result.result.size,
+                 },
+                 media_down: {
+                      Thumbnail: result.media_resources.thumbnail,
+                      File_Size: result.media_resources.size,
+                      Audio_Link: result.media_resources.musicUrl
                  }
              })
          })
