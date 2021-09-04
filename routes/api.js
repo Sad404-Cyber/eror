@@ -968,7 +968,7 @@ router.get('/stalkgh', async (req, res, next) => {
     if (!username) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter username"})
        
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://api.lolhuman.xyz/api/github/${username}?apikey=sayahafiz`))
+       fetch(encodeURI(`https://leyscoders-api.herokuapp.com/api/github?q=${username}&apikey=dappakntlll`))
         .then(response => response.json())
         .then(data => {
         var result = data;
