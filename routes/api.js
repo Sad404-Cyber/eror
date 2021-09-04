@@ -629,7 +629,7 @@ router.get('/ytmp3', async (req, res, next) => {
                  },
                  media_down: {
                       Thumbnail: result.media_resources.thumbnail,
-                      File_Size: result.media_resources.size,
+                      File_Size: result.media_resources.description,
                       Audio_Link: result.media_resources.musicUrl
                  }
              })
