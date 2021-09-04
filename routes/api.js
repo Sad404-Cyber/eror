@@ -976,7 +976,16 @@ router.get('/stalkgh', async (req, res, next) => {
              	creator: 'Hafidz Abdillah',
                  code: 200,
                  message: 'Jangan Ditembak Bang',
-                 result: result.result
+                 result: {
+                      username: result.result.username,
+                      name: result.result.name,
+                      url_user: result.result.link,
+                      bio_user: result.result.bio,
+                      repos_public: result.result.public_repos,
+                      following_user: result.result.following,
+                      followers_user: result.result.followers,
+                      url_thumb: result.user.avatar
+                  }
              })
          })
          .catch(e => {
