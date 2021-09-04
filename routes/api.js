@@ -625,11 +625,11 @@ router.get('/ytmp3', async (req, res, next) => {
                  message: 'Jangan Ditembak Bang',
                  result: {
                  	Title: result.media_metadata.title,
-                     Description: result.result.size,
+                     Description: result.media_metadata.description,
                  },
                  media_down: {
                       Thumbnail: result.media_resources.thumbnail,
-                      File_Size: result.media_resources.description,
+                      File_Size: result.media_resources.size,
                       Audio_Link: result.media_resources.musicUrl
                  }
              })
