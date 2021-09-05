@@ -615,7 +615,7 @@ router.get('/ytmp3', async (req, res, next) => {
     if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
        
        if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://api.dhnjing.xyz/downloader/youtube/music?url=${url}&apikey=beta`))
+       fetch(encodeURI(`https://api.lolhuman.xyz/api/ytaudio2?apikey=sayahafiz&url=https://www.youtube.com/watch?v=eZskFo64rs8`))
         .then(response => response.json())
         .then(data => {
         var result = data;
