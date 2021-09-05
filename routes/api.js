@@ -719,9 +719,9 @@ router.get('/ytmp4', async (req, res, next) => {
                  code: 200,
                  message: 'Jangan Ditembak Bang',
                  result: {
-                      judul: result.result.title,
-                      image_thumbnail: result.result.thumbnail,
-                      file_size: result.result.size,
+                      title_file: result.result.title,
+                      thumbnail_file: result.result.thumbnail,
+                      size_file: result.result.size,
                       video_url: result.result.url_video
                 }
              })
